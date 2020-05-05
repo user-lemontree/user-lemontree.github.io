@@ -1,0 +1,715 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=2">
+<meta name="theme-color" content="#222">
+<meta name="generator" content="Hexo 4.2.0">
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16.png">
+
+<link rel="stylesheet" href="/css/main.css">
+
+
+<link rel="stylesheet" href="/lib/font-awesome/css/all.min.css">
+  <link rel="stylesheet" href="/lib/pace/pace-theme-minimal.min.css">
+  <script src="/lib/pace/pace.min.js"></script>
+
+<script id="hexo-configurations">
+    var NexT = window.NexT || {};
+    var CONFIG = {"hostname":"cnkangym.com","root":"/","scheme":"Gemini","version":"7.8.0","exturl":false,"sidebar":{"position":"left","display":"hide","padding":18,"offset":12,"onmobile":true},"copycode":{"enable":false,"show_result":false,"style":null},"back2top":{"enable":true,"sidebar":true,"scrollpercent":true},"bookmark":{"enable":false,"color":"#222","save":"auto"},"fancybox":false,"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"algolia":{"hits":{"per_page":10},"labels":{"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}},"localsearch":{"enable":true,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false},"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},"path":"search.xml"};
+  </script>
+
+  <meta name="description" content="参考《JavaScript核心技术开发解密》  执行上下文（EC）全局上下文 全局对象为 window 对象。 全局上下文的变量对象就是 window 对象，而且全局上下文的变量对象不能变为活动对象。">
+<meta property="og:type" content="article">
+<meta property="og:title" content="执行上下文与变量对象">
+<meta property="og:url" content="http://cnkangym.com/2020/05/05/javascript/%E6%89%A7%E8%A1%8C%E4%B8%8A%E4%B8%8B%E6%96%87%E4%B8%8E%E5%8F%98%E9%87%8F%E5%AF%B9%E8%B1%A1/index.html">
+<meta property="og:site_name" content="我的博客">
+<meta property="og:description" content="参考《JavaScript核心技术开发解密》  执行上下文（EC）全局上下文 全局对象为 window 对象。 全局上下文的变量对象就是 window 对象，而且全局上下文的变量对象不能变为活动对象。">
+<meta property="og:locale" content="zh_CN">
+<meta property="og:image" content="https://gitee.com/cnkangym/BlogImageBed/raw/master/img/js_ec_01.png">
+<meta property="og:image" content="https://gitee.com/cnkangym/BlogImageBed/raw/master/img/js_ec_02.png">
+<meta property="og:image" content="https://gitee.com/cnkangym/BlogImageBed/raw/master/img/js_ec_03.png">
+<meta property="og:image" content="https://gitee.com/cnkangym/BlogImageBed/raw/master/img/js_ec_04.png">
+<meta property="article:published_time" content="2020-05-04T17:53:29.000Z">
+<meta property="article:modified_time" content="2020-05-05T10:38:49.489Z">
+<meta property="article:author" content="dkk">
+<meta property="article:tag" content="javascript">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="https://gitee.com/cnkangym/BlogImageBed/raw/master/img/js_ec_01.png">
+
+<link rel="canonical" href="http://cnkangym.com/2020/05/05/javascript/%E6%89%A7%E8%A1%8C%E4%B8%8A%E4%B8%8B%E6%96%87%E4%B8%8E%E5%8F%98%E9%87%8F%E5%AF%B9%E8%B1%A1/">
+
+
+<script id="page-configurations">
+  // https://hexo.io/docs/variables.html
+  CONFIG.page = {
+    sidebar: "",
+    isHome : false,
+    isPost : true,
+    lang   : 'zh-CN'
+  };
+</script>
+
+  <title>执行上下文与变量对象 | 我的博客</title>
+  
+
+
+
+
+
+
+  <noscript>
+  <style>
+  .use-motion .brand,
+  .use-motion .menu-item,
+  .sidebar-inner,
+  .use-motion .post-block,
+  .use-motion .pagination,
+  .use-motion .comments,
+  .use-motion .post-header,
+  .use-motion .post-body,
+  .use-motion .collection-header { opacity: initial; }
+
+  .use-motion .site-title,
+  .use-motion .site-subtitle {
+    opacity: initial;
+    top: initial;
+  }
+
+  .use-motion .logo-line-before i { left: initial; }
+  .use-motion .logo-line-after i { right: initial; }
+  </style>
+</noscript>
+
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage">
+  <div class="container use-motion">
+    <div class="headband"></div>
+
+    <header class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-container">
+  <div class="site-nav-toggle">
+    <div class="toggle" aria-label="切换导航栏">
+      <span class="toggle-line toggle-line-first"></span>
+      <span class="toggle-line toggle-line-middle"></span>
+      <span class="toggle-line toggle-line-last"></span>
+    </div>
+  </div>
+
+  <div class="site-meta">
+
+    <a href="/" class="brand" rel="start">
+      <span class="logo-line-before"><i></i></span>
+      <h1 class="site-title">我的博客</h1>
+      <span class="logo-line-after"><i></i></span>
+    </a>
+  </div>
+
+  <div class="site-nav-right">
+    <div class="toggle popup-trigger">
+        <i class="fa fa-search fa-fw fa-lg"></i>
+    </div>
+  </div>
+</div>
+
+
+
+
+<nav class="site-nav">
+  <ul id="menu" class="main-menu menu">
+        <li class="menu-item menu-item-home">
+
+    <a href="/" rel="section"><i class="fa fa-home fa-fw"></i>首页</a>
+
+  </li>
+        <li class="menu-item menu-item-about">
+
+    <a href="/about/" rel="section"><i class="fa fa-user fa-fw"></i>关于</a>
+
+  </li>
+        <li class="menu-item menu-item-tags">
+
+    <a href="/tags/" rel="section"><i class="fa fa-tags fa-fw"></i>标签</a>
+
+  </li>
+        <li class="menu-item menu-item-categories">
+
+    <a href="/categories/" rel="section"><i class="fa fa-th fa-fw"></i>分类</a>
+
+  </li>
+        <li class="menu-item menu-item-archives">
+
+    <a href="/archives/" rel="section"><i class="fa fa-archive fa-fw"></i>归档</a>
+
+  </li>
+      <li class="menu-item menu-item-search">
+        <a role="button" class="popup-trigger"><i class="fa fa-search fa-fw"></i>搜索
+        </a>
+      </li>
+  </ul>
+</nav>
+
+
+
+  <div class="search-pop-overlay">
+    <div class="popup search-popup">
+        <div class="search-header">
+  <span class="search-icon">
+    <i class="fa fa-search"></i>
+  </span>
+  <div class="search-input-container">
+    <input autocomplete="off" autocapitalize="off"
+           placeholder="搜索..." spellcheck="false"
+           type="search" class="search-input">
+  </div>
+  <span class="popup-btn-close">
+    <i class="fa fa-times-circle"></i>
+  </span>
+</div>
+<div id="search-result">
+  <div id="no-result">
+    <i class="fa fa-spinner fa-pulse fa-5x fa-fw"></i>
+  </div>
+</div>
+
+    </div>
+  </div>
+
+</div>
+    </header>
+
+    
+  <div class="reading-progress-bar"></div>
+
+  <a href="https://github.com/cnkangym" class="github-corner" title="Follow me on GitHub" aria-label="Follow me on GitHub" rel="noopener" target="_blank"><svg width="80" height="80" viewBox="0 0 250 250" aria-hidden="true"><path d="M0,0 L115,115 L130,115 L142,142 L250,250 L250,0 Z"></path><path d="M128.3,109.0 C113.8,99.7 119.0,89.6 119.0,89.6 C122.0,82.7 120.5,78.6 120.5,78.6 C119.2,72.0 123.4,76.3 123.4,76.3 C127.3,80.9 125.5,87.3 125.5,87.3 C122.9,97.6 130.6,101.9 134.4,103.2" fill="currentColor" style="transform-origin: 130px 106px;" class="octo-arm"></path><path d="M115.0,115.0 C114.9,115.1 118.7,116.5 119.8,115.4 L133.7,101.6 C136.9,99.2 139.9,98.4 142.2,98.6 C133.8,88.0 127.5,74.4 143.8,58.0 C148.5,53.4 154.0,51.2 159.7,51.0 C160.3,49.4 163.2,43.6 171.4,40.1 C171.4,40.1 176.1,42.5 178.8,56.2 C183.1,58.6 187.2,61.8 190.9,65.4 C194.5,69.0 197.7,73.2 200.1,77.6 C213.8,80.2 216.3,84.9 216.3,84.9 C212.7,93.1 206.9,96.0 205.4,96.6 C205.1,102.4 203.0,107.8 198.3,112.5 C181.9,128.9 168.3,122.5 157.7,114.1 C157.9,116.9 156.7,120.9 152.7,124.9 L141.0,136.5 C139.8,137.7 141.6,141.9 141.8,141.8 Z" fill="currentColor" class="octo-body"></path></svg></a>
+
+
+    <main class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          
+
+          <div class="content post posts-expand">
+            
+
+    
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
+    <link itemprop="mainEntityOfPage" href="http://cnkangym.com/2020/05/05/javascript/%E6%89%A7%E8%A1%8C%E4%B8%8A%E4%B8%8B%E6%96%87%E4%B8%8E%E5%8F%98%E9%87%8F%E5%AF%B9%E8%B1%A1/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/dkk.jpg">
+      <meta itemprop="name" content="dkk">
+      <meta itemprop="description" content="">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="我的博客">
+    </span>
+      <header class="post-header">
+        <h1 class="post-title" itemprop="name headline">
+          执行上下文与变量对象
+        </h1>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-calendar"></i>
+              </span>
+              <span class="post-meta-item-text">发表于</span>
+              
+
+              <time title="创建时间：2020-05-05 01:53:29 / 修改时间：18:38:49" itemprop="dateCreated datePublished" datetime="2020-05-05T01:53:29+08:00">2020-05-05</time>
+            </span>
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-folder"></i>
+              </span>
+              <span class="post-meta-item-text">分类于</span>
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/javascript/" itemprop="url" rel="index"><span itemprop="name">javascript</span></a>
+                </span>
+            </span>
+
+          
+            <span class="post-meta-item" title="阅读次数" id="busuanzi_container_page_pv" style="display: none;">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-eye"></i>
+              </span>
+              <span class="post-meta-item-text">阅读次数：</span>
+              <span id="busuanzi_value_page_pv"></span>
+            </span><br>
+            <span class="post-meta-item" title="本文字数">
+              <span class="post-meta-item-icon">
+                <i class="far fa-file-word"></i>
+              </span>
+                <span class="post-meta-item-text">本文字数：</span>
+              <span>2.4k</span>
+            </span>
+            <span class="post-meta-item" title="阅读时长">
+              <span class="post-meta-item-icon">
+                <i class="far fa-clock"></i>
+              </span>
+                <span class="post-meta-item-text">阅读时长 &asymp;</span>
+              <span>2 分钟</span>
+            </span>
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+        <blockquote>
+<p>参考《JavaScript核心技术开发解密》</p>
+</blockquote>
+<h1 id="执行上下文（EC）"><a href="#执行上下文（EC）" class="headerlink" title="执行上下文（EC）"></a>执行上下文（EC）</h1><h2 id="全局上下文"><a href="#全局上下文" class="headerlink" title="全局上下文"></a>全局上下文</h2><ul>
+<li>全局对象为 window 对象。</li>
+<li>全局上下文的变量对象就是 window 对象，而且全局上下文的变量对象不能变为活动对象。<a id="more"></a>
+  <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line">&#x2F;&#x2F; 以浏览器为例，全局对象为 window</span><br><span class="line">&#x2F;&#x2F; 全局上下文</span><br><span class="line">windowEC &#x3D; &#123;</span><br><span class="line">    VO: window,</span><br><span class="line">    scopeChain: &#123;&#125;</span><br><span class="line">    this: window</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></li>
+<li>全局上下文的生命周期<ul>
+<li>全局上下文的生命周期与程序和生命周期一致，只要程序运行不结束（比如关掉浏览器窗口），全局上下文就会一起存在，其他所有的上下文环境都能直接访问全局上下文的属性。</li>
+</ul>
+</li>
+</ul>
+<h2 id="函数执行上下文"><a href="#函数执行上下文" class="headerlink" title="函数执行上下文"></a>函数执行上下文</h2><ul>
+<li>定义：函数运行时，会创建一个执行环境，这个执行环境叫做执行上下文（Execution Context）。</li>
+<li>执行上下文的执行过程：<ul>
+<li>上下文的创建阶段<ul>
+<li>确认变量对象并完成变量对象的创建</li>
+</ul>
+</li>
+<li>上下文的执行阶段<ul>
+<li>完成变量的赋值工作</li>
+</ul>
+</li>
+<li>当前函数上下文处于激活状态<ul>
+<li>变量对象称之为活动对象(AO, Activation Object)：活动变量包含了变量对象的所有属性，并且此时所有的属性都已经完成了赋值。除此之外，活动对象还包含了 this 的指向。</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>变量提升（Hoisting）  <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">console.log(a);</span><br><span class="line">var a &#x3D; 30;</span><br><span class="line"></span><br><span class="line">&#x2F;&#x2F; 实际执行顺序：</span><br><span class="line">&#x2F;&#x2F; 创建阶段</span><br><span class="line">var a &#x3D; undefined;</span><br><span class="line"></span><br><span class="line">&#x2F;&#x2F; 执行阶段</span><br><span class="line">console.log(a);</span><br><span class="line">a &#x3D; 30;</span><br></pre></td></tr></table></figure></li>
+<li>ES6 支持的新的变量声明方式 let/const：是在上下文的执行阶段开始执行的，避免了变量提升带来的一系列问题。</li>
+</ul>
+<h1 id="变量对象（VO）"><a href="#变量对象（VO）" class="headerlink" title="变量对象（VO）"></a>变量对象（VO）</h1><ul>
+<li>由来：在执行上下文中会创建一个叫做变量对象（VO: varaiable Object）的特殊对象。</li>
+<li>变量对象里包括以下内容：<ul>
+<li>当前上下文中的所有变量声明<ul>
+<li>通过 var 声明的变量</li>
+</ul>
+</li>
+<li>当前上下文中的所有函数声明<ul>
+<li>通过 function 声明的函数</li>
+</ul>
+</li>
+<li>函数的所有参数<ul>
+<li>Firefox 中为参数对象 arguments</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>创建过程<ul>
+<li>Chrome 浏览器，变量对象会首先获得函数的参数变量及其值</li>
+<li>Firefox 浏览器，直接将参数对象 arguments 保存在变量对象中</li>
+<li>依次获取当前上下文中所有的函数声明；变量对象中会以函数名建立一个属性，属性值为指向该函数所在的内存地址的引用。如果函数名的属性已经存在，那么该属性的值会被新的引用覆盖。</li>
+<li>依次获取当前上下文中所有的变更声明（使用 var 关键字声明的变量）；每找到一个变量声明，就在变量对象中以变量名建立一个属性，属性值为 undefined。如果该变更名的属性已经存在，为了防止同名的函数被修改为 undefined，则会直接跳过，原属性值不会被修改。</li>
+</ul>
+</li>
+<li>理解变量对象：  <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br></pre></td><td class="code"><pre><span class="line">function test()&#123;</span><br><span class="line">    console.log(foo);</span><br><span class="line">    console.log(bar);</span><br><span class="line"></span><br><span class="line">    var foo &#x3D; &#39;Hello&#39;;</span><br><span class="line"></span><br><span class="line">    console.log(foo);</span><br><span class="line"></span><br><span class="line">    var bar &#x3D; function()&#123;</span><br><span class="line">        return &#39;world&#39;;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    console.log(bar);</span><br><span class="line"></span><br><span class="line">    function foo()&#123;</span><br><span class="line">        return &#39;hello&#39;;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line">test();</span><br><span class="line"></span><br><span class="line">&#x2F;&#x2F; 变量对象创建阶段</span><br><span class="line">VO &#x3D; &#123;</span><br><span class="line">    arguments: &#123;...&#125;,</span><br><span class="line">    foo: &lt;foo reference&gt;,</span><br><span class="line">    bar: undefined</span><br><span class="line">&#125;</span><br><span class="line">&#x2F;&#x2F; 变量对象执行阶段</span><br><span class="line">VO -&gt; AO</span><br><span class="line">AO &#x3D; &#123;</span><br><span class="line">    arguments: &#123;...&#125;,</span><br><span class="line">    foo: &#39;Hello&#39;,</span><br><span class="line">    bar: &lt;bar reference&gt;,   &#x2F;&#x2F; world</span><br><span class="line">    this: Window            &#x2F;&#x2F; 当前函数的 this 是在函数被调用执行时，才确定的。</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<ul>
+<li>Local: 当前正在执行的活动对象，随着函数的执行，变量对象中的属性值会一直发生变化<ul>
+<li>执行到 var foo = ‘Hello’; 之前<ul>
+<li><img src="https://gitee.com/cnkangym/BlogImageBed/raw/master/img/js_ec_01.png" alt=""></li>
+</ul>
+</li>
+<li>执行到 var foo = ‘Hello’; 之后<ul>
+<li><img src="https://gitee.com/cnkangym/BlogImageBed/raw/master/img/js_ec_02.png" alt=""></li>
+</ul>
+</li>
+<li>执行过 var bar = function(){return ‘world’;}之后<ul>
+<li><img src="https://gitee.com/cnkangym/BlogImageBed/raw/master/img/js_ec_03.png" alt=""></li>
+</ul>
+</li>
+</ul>
+</li>
+<li>执行结果<ul>
+<li><img src="https://gitee.com/cnkangym/BlogImageBed/raw/master/img/js_ec_04.png" alt=""></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<h1 id="JavaScript代码的运行机制"><a href="#JavaScript代码的运行机制" class="headerlink" title="JavaScript代码的运行机制"></a>JavaScript代码的运行机制</h1><h2 id="JavaScript中的运行环境包括："><a href="#JavaScript中的运行环境包括：" class="headerlink" title="JavaScript中的运行环境包括："></a>JavaScript中的运行环境包括：</h2><ul>
+<li>全局环境：代码运行起来后会首先进入全局环境</li>
+<li>函数环境：当函数被调用时，会进入当前函数中执行代码</li>
+<li>eval环境：不建议使用</li>
+</ul>
+<h2 id="执行上下文与函数调用栈（Call-Stack）"><a href="#执行上下文与函数调用栈（Call-Stack）" class="headerlink" title="执行上下文与函数调用栈（Call Stack）"></a>执行上下文与函数调用栈（Call Stack）</h2><ul>
+<li>来源：函数执行时，会创建一个执行环境。这个执行环境叫做执行上下文（EC）。函数执行时，才会创建执行上下文</li>
+<li>JavaScript 代码在执行时，会进入一个执行上下文中。执行上下文可以理解为当前代码的运行环境。</li>
+<li>一个JavaScript程序中，会出现多少执行上下文。</li>
+<li>JavaScript引擎会使用函数调用栈来处理执行上下文。栈底永远都是全局上下文，栈顶则是当前正在执行的上下文。处于栈顶的执行上下文执行完毕之后，会自动出栈。</li>
+</ul>
+<h2 id="JavaScript代码的生命周期"><a href="#JavaScript代码的生命周期" class="headerlink" title="JavaScript代码的生命周期"></a>JavaScript代码的生命周期</h2><ul>
+<li>全局上下文入栈，并一起在于栈底</li>
+<li>全局上下文入栈之后，从可执行代码开始执行。创建可执行代码自己的执行上下文，并把当前的执行上下文入栈。</li>
+<li>执行当前执行上下文中的可执行代码。创建它自己的可执行上下文，并入栈。</li>
+<li>可执行代码执行完后，依次出栈。</li>
+<li>ECStack中就只剩下全局上下文了，全局上下文在浏览器窗口关闭后出栈。</li>
+<li>注意：函数执行过程中遇到Return能直接终止可执行代码的执行，因此会直接将当前上下文弹出栈。</li>
+</ul>
+
+    </div>
+
+    
+    
+    <div>
+    
+        <div style="text-align:center;color: #ccc;font-size:14px;">
+        -------------本文结束 <i class="fa fa-paw"></i> 感谢您的阅读-------------
+        </div>
+    
+</div>
+        
+
+<div>
+<ul class="post-copyright">
+  <li class="post-copyright-author">
+    <strong>本文作者： </strong>dkk
+  </li>
+  <li class="post-copyright-link">
+    <strong>本文链接：</strong>
+    <a href="http://cnkangym.com/2020/05/05/javascript/%E6%89%A7%E8%A1%8C%E4%B8%8A%E4%B8%8B%E6%96%87%E4%B8%8E%E5%8F%98%E9%87%8F%E5%AF%B9%E8%B1%A1/" title="执行上下文与变量对象">http://cnkangym.com/2020/05/05/javascript/执行上下文与变量对象/</a>
+  </li>
+  <li class="post-copyright-license">
+    <strong>版权声明： </strong>本博客所有文章除特别声明外，均采用 <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/zh-CN" rel="noopener" target="_blank"><i class="fab fa-fw fa-creative-commons"></i>BY-NC-SA</a> 许可协议。转载请注明出处！
+  </li>
+</ul>
+</div>
+
+
+      <footer class="post-footer">
+          
+          <div class="post-tags">
+              <a href="/tags/javascript/" rel="tag"><i class="fa fa-tag"></i> javascript</a>
+          </div>
+
+        
+
+
+        
+    <div class="post-nav">
+      <div class="post-nav-item">
+    <a href="/2020/05/05/javascript/%E5%9B%9E%E8%B0%83%E5%87%BD%E6%95%B0/" rel="prev" title="回调函数">
+      <i class="fa fa-chevron-left"></i> 回调函数
+    </a></div>
+      <div class="post-nav-item">
+    <a href="/2020/05/05/javascript/%E9%97%AD%E5%8C%85/" rel="next" title="闭包">
+      闭包 <i class="fa fa-chevron-right"></i>
+    </a></div>
+    </div>
+      </footer>
+    
+  </article>
+  
+  
+  
+
+
+
+          </div>
+          
+
+<script>
+  window.addEventListener('tabs:register', () => {
+    let { activeClass } = CONFIG.comments;
+    if (CONFIG.comments.storage) {
+      activeClass = localStorage.getItem('comments_active') || activeClass;
+    }
+    if (activeClass) {
+      let activeTab = document.querySelector(`a[href="#comment-${activeClass}"]`);
+      if (activeTab) {
+        activeTab.click();
+      }
+    }
+  });
+  if (CONFIG.comments.storage) {
+    window.addEventListener('tabs:click', event => {
+      if (!event.target.matches('.tabs-comment .tab-content .tab-pane')) return;
+      let commentClass = event.target.classList[1];
+      localStorage.setItem('comments_active', commentClass);
+    });
+  }
+</script>
+
+        </div>
+          
+  
+  <div class="toggle sidebar-toggle">
+    <span class="toggle-line toggle-line-first"></span>
+    <span class="toggle-line toggle-line-middle"></span>
+    <span class="toggle-line toggle-line-last"></span>
+  </div>
+
+  <aside class="sidebar">
+    <div class="sidebar-inner">
+
+      <ul class="sidebar-nav motion-element">
+        <li class="sidebar-nav-toc">
+          文章目录
+        </li>
+        <li class="sidebar-nav-overview">
+          站点概览
+        </li>
+      </ul>
+
+      <!--noindex-->
+      <div class="post-toc-wrap sidebar-panel">
+          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#执行上下文（EC）"><span class="nav-number">1.</span> <span class="nav-text">执行上下文（EC）</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#全局上下文"><span class="nav-number">1.1.</span> <span class="nav-text">全局上下文</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#函数执行上下文"><span class="nav-number">1.2.</span> <span class="nav-text">函数执行上下文</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#变量对象（VO）"><span class="nav-number">2.</span> <span class="nav-text">变量对象（VO）</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#JavaScript代码的运行机制"><span class="nav-number">3.</span> <span class="nav-text">JavaScript代码的运行机制</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#JavaScript中的运行环境包括："><span class="nav-number">3.1.</span> <span class="nav-text">JavaScript中的运行环境包括：</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#执行上下文与函数调用栈（Call-Stack）"><span class="nav-number">3.2.</span> <span class="nav-text">执行上下文与函数调用栈（Call Stack）</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#JavaScript代码的生命周期"><span class="nav-number">3.3.</span> <span class="nav-text">JavaScript代码的生命周期</span></a></li></ol></li></ol></div>
+      </div>
+      <!--/noindex-->
+
+      <div class="site-overview-wrap sidebar-panel">
+        <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+    <img class="site-author-image" itemprop="image" alt="dkk"
+      src="/images/dkk.jpg">
+  <p class="site-author-name" itemprop="name">dkk</p>
+  <div class="site-description" itemprop="description"></div>
+</div>
+<div class="site-state-wrap motion-element">
+  <nav class="site-state">
+      <div class="site-state-item site-state-posts">
+          <a href="/archives/">
+        
+          <span class="site-state-item-count">21</span>
+          <span class="site-state-item-name">日志</span>
+        </a>
+      </div>
+      <div class="site-state-item site-state-categories">
+            <a href="/categories/">
+          
+        <span class="site-state-item-count">7</span>
+        <span class="site-state-item-name">分类</span></a>
+      </div>
+      <div class="site-state-item site-state-tags">
+            <a href="/tags/">
+          
+        <span class="site-state-item-count">6</span>
+        <span class="site-state-item-name">标签</span></a>
+      </div>
+  </nav>
+</div>
+  <div class="links-of-author motion-element">
+      <span class="links-of-author-item">
+        <a href="https://github.com/cnkangym" title="GitHub → https:&#x2F;&#x2F;github.com&#x2F;cnkangym" rel="noopener" target="_blank"><i class="fab fa-github fa-fw"></i>GitHub</a>
+      </span>
+      <span class="links-of-author-item">
+        <a href="mailto:cnkangym@gmail.com" title="E-Mail → mailto:cnkangym@gmail.com" rel="noopener" target="_blank"><i class="fa fa-envelope fa-fw"></i>E-Mail</a>
+      </span>
+  </div>
+  <div class="cc-license motion-element" itemprop="license">
+    <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/zh-CN" class="cc-opacity" rel="noopener" target="_blank"><img src="/images/cc-by-nc-sa.svg" alt="Creative Commons"></a>
+  </div>
+
+
+
+      </div>
+        <div class="back-to-top motion-element">
+          <i class="fa fa-arrow-up"></i>
+          <span>0%</span>
+        </div>
+
+    </div>
+  </aside>
+  <div id="sidebar-dimmer"></div>
+
+
+      </div>
+    </main>
+
+    <footer class="footer">
+      <div class="footer-inner">
+        
+
+        
+
+<div class="copyright">
+  
+  &copy; 2019 – 
+  <span itemprop="copyrightYear">2020</span>
+  <span class="with-love">
+    <i class="fa fa-heart"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">dkk</span>
+    <span class="post-meta-divider">|</span>
+    <span class="post-meta-item-icon">
+      <i class="fa fa-chart-area"></i>
+    </span>
+      <span class="post-meta-item-text">站点总字数：</span>
+    <span title="站点总字数">46k</span>
+    <span class="post-meta-divider">|</span>
+    <span class="post-meta-item-icon">
+      <i class="fa fa-coffee"></i>
+    </span>
+      <span class="post-meta-item-text">站点阅读时长 &asymp;</span>
+    <span title="站点阅读时长">41 分钟</span>
+</div>
+
+        
+<div class="busuanzi-count">
+  <script data-pjax async src="https://busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+    <span class="post-meta-item" id="busuanzi_container_site_uv" style="display: none;">
+      <span class="post-meta-item-icon">
+        <i class="fa fa-user"></i>
+      </span>
+      <span class="site-uv" title="总访客量">
+        <span id="busuanzi_value_site_uv"></span>
+      </span>
+    </span>
+    <span class="post-meta-divider">|</span>
+    <span class="post-meta-item" id="busuanzi_container_site_pv" style="display: none;">
+      <span class="post-meta-item-icon">
+        <i class="fa fa-eye"></i>
+      </span>
+      <span class="site-pv" title="总访问量">
+        <span id="busuanzi_value_site_pv"></span>
+      </span>
+    </span>
+</div>
+
+
+
+
+
+
+
+
+      </div>
+    </footer>
+  </div>
+
+  
+  <script src="/lib/anime.min.js"></script>
+  <script src="/lib/pjax/pjax.min.js"></script>
+  <script src="/lib/velocity/velocity.min.js"></script>
+  <script src="/lib/velocity/velocity.ui.min.js"></script>
+
+<script src="/js/utils.js"></script>
+
+<script src="/js/motion.js"></script>
+
+
+<script src="/js/schemes/pisces.js"></script>
+
+
+<script src="/js/next-boot.js"></script>
+
+  <script>
+var pjax = new Pjax({
+  selectors: [
+    'head title',
+    '#page-configurations',
+    '.content-wrap',
+    '.post-toc-wrap',
+    '.languages',
+    '#pjax'
+  ],
+  switches: {
+    '.post-toc-wrap': Pjax.switches.innerHTML
+  },
+  analytics: false,
+  cacheBust: false,
+  scrollTo : !CONFIG.bookmark.enable
+});
+
+window.addEventListener('pjax:success', () => {
+  document.querySelectorAll('script[data-pjax], script#page-configurations, #pjax script').forEach(element => {
+    var code = element.text || element.textContent || element.innerHTML || '';
+    var parent = element.parentNode;
+    parent.removeChild(element);
+    var script = document.createElement('script');
+    if (element.id) {
+      script.id = element.id;
+    }
+    if (element.className) {
+      script.className = element.className;
+    }
+    if (element.type) {
+      script.type = element.type;
+    }
+    if (element.src) {
+      script.src = element.src;
+      // Force synchronous loading of peripheral JS.
+      script.async = false;
+    }
+    if (element.dataset.pjax !== undefined) {
+      script.dataset.pjax = '';
+    }
+    if (code !== '') {
+      script.appendChild(document.createTextNode(code));
+    }
+    parent.appendChild(script);
+  });
+  NexT.boot.refresh();
+  // Define Motion Sequence & Bootstrap Motion.
+  if (CONFIG.motion.enable) {
+    NexT.motion.integrator
+      .init()
+      .add(NexT.motion.middleWares.subMenu)
+      .add(NexT.motion.middleWares.postList)
+      .bootstrap();
+  }
+  NexT.utils.updateSidebarPosition();
+});
+</script>
+
+
+  <script defer src="/lib/three/three.min.js"></script>
+    <script defer src="/lib/three/canvas_lines.min.js"></script>
+
+
+  
+
+
+
+
+  
+<script src="/js/local-search.js"></script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+    <div id="pjax">
+  
+
+  
+  <script src="//cdn.jsdelivr.net/npm/quicklink@1/dist/quicklink.umd.js"></script>
+  <script>
+      window.addEventListener('load', () => {
+      quicklink({
+        timeout : 3000,
+        priority: true,
+        ignores : [uri => uri.includes('#'),uri => uri === 'http://cnkangym.com/2020/05/05/javascript/%E6%89%A7%E8%A1%8C%E4%B8%8A%E4%B8%8B%E6%96%87%E4%B8%8E%E5%8F%98%E9%87%8F%E5%AF%B9%E8%B1%A1/',]
+      });
+      });
+  </script>
+
+    </div>
+</body>
+</html>

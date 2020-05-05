@@ -2,8 +2,10 @@
 <search>
   <entry>
     <title>Hexo 博客框架</title>
-    <url>/2020/05/02/Hexo%20%E5%8D%9A%E5%AE%A2/</url>
+    <url>/2020/05/02/hexo/Hexo%20%E5%8D%9A%E5%AE%A2/</url>
     <content><![CDATA[<h1 id="Hexo-博客框架"><a href="#Hexo-博客框架" class="headerlink" title="Hexo 博客框架"></a>Hexo 博客框架</h1><h2 id="Hexo-介绍"><a href="#Hexo-介绍" class="headerlink" title="Hexo 介绍"></a>Hexo 介绍</h2><p>Hexo 是简洁的博客框架，Hexo使用 Markdown 解析文章。</p>
+<a id="more"></a>
+
 <h2 id="Hexo-安装"><a href="#Hexo-安装" class="headerlink" title="Hexo 安装"></a>Hexo 安装</h2><ul>
 <li>安装依赖<ul>
 <li>Node.js(Node.js 版本需不低于 8.10，建议使用 Node.js 10.0 及以上版本): 建议用nvm来安装node和npm</li>
@@ -34,21 +36,2368 @@
       </tags>
   </entry>
   <entry>
-    <title>Hello World</title>
-    <url>/2020/05/02/hello-world/</url>
-    <content><![CDATA[<p>Welcome to <a href="https://hexo.io/" target="_blank" rel="noopener">Hexo</a>! This is your very first post. Check <a href="https://hexo.io/docs/" target="_blank" rel="noopener">documentation</a> for more info. If you get any problems when using Hexo, you can find the answer in <a href="https://hexo.io/docs/troubleshooting.html" target="_blank" rel="noopener">troubleshooting</a> or you can ask me on <a href="https://github.com/hexojs/hexo/issues" target="_blank" rel="noopener">GitHub</a>.</p>
-<h2 id="Quick-Start"><a href="#Quick-Start" class="headerlink" title="Quick Start"></a>Quick Start</h2><h3 id="Create-a-new-post"><a href="#Create-a-new-post" class="headerlink" title="Create a new post"></a>Create a new post</h3><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ hexo new <span class="string">"My New Post"</span></span><br></pre></td></tr></table></figure>
+    <title>字符编码方式</title>
+    <url>/2020/05/05/codingbasic/%E5%AD%97%E7%AC%A6%E7%BC%96%E7%A0%81%E6%96%B9%E5%BC%8F/</url>
+    <content><![CDATA[<h1 id="字符编码方式"><a href="#字符编码方式" class="headerlink" title="字符编码方式"></a>字符编码方式</h1><p>在计算机中，所有的数据存储和运算时都要使用二进制数据表示</p>
+<a id="more"></a>
 
-<p>More info: <a href="https://hexo.io/docs/writing.html" target="_blank" rel="noopener">Writing</a></p>
-<h3 id="Run-server"><a href="#Run-server" class="headerlink" title="Run server"></a>Run server</h3><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ hexo server</span><br></pre></td></tr></table></figure>
-
-<p>More info: <a href="https://hexo.io/docs/server.html" target="_blank" rel="noopener">Server</a></p>
-<h3 id="Generate-static-files"><a href="#Generate-static-files" class="headerlink" title="Generate static files"></a>Generate static files</h3><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ hexo generate</span><br></pre></td></tr></table></figure>
-
-<p>More info: <a href="https://hexo.io/docs/generating.html" target="_blank" rel="noopener">Generating</a></p>
-<h3 id="Deploy-to-remote-sites"><a href="#Deploy-to-remote-sites" class="headerlink" title="Deploy to remote sites"></a>Deploy to remote sites</h3><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ hexo deploy</span><br></pre></td></tr></table></figure>
-
-<p>More info: <a href="https://hexo.io/docs/one-command-deployment.html" target="_blank" rel="noopener">Deployment</a></p>
+<h2 id="ASCII-码"><a href="#ASCII-码" class="headerlink" title="ASCII 码"></a>ASCII 码</h2><p>ASCII(American Standard Code for Information Interchange)，美国信息交换标准代码，主要用于显示现代英语和其他西欧语言。</p>
+<h3 id="表达方式"><a href="#表达方式" class="headerlink" title="表达方式"></a>表达方式</h3><p>ASCII 码使用指定的7位或8位二进制数组合来表示128或256种可能的字符。标准ACSII码也叫基础ASCII码，使用7位二进制数来表示（最高位二进制为0）。</p>
+<h3 id="编码标准表"><a href="#编码标准表" class="headerlink" title="编码标准表"></a>编码标准表</h3><h4 id="控制字符-0-31及127"><a href="#控制字符-0-31及127" class="headerlink" title="控制字符(0~31及127)"></a>控制字符(0~31及127)</h4><table>
+<thead>
+<tr>
+<th>Bin(二进制)</th>
+<th>Oct(八进制)</th>
+<th>Dec(十进制)</th>
+<th>Hex(十六进制)</th>
+<th>缩写/字符</th>
+<th>解释</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>0000 0000</td>
+<td>0</td>
+<td>0</td>
+<td>0x00</td>
+<td>NUL(null)</td>
+<td>空字符</td>
+</tr>
+<tr>
+<td>0000 0001</td>
+<td>1</td>
+<td>1</td>
+<td>0x01</td>
+<td>SOH(start of headline)</td>
+<td>标题开始</td>
+</tr>
+<tr>
+<td>0000 0010</td>
+<td>2</td>
+<td>2</td>
+<td>0x02</td>
+<td>STX (start of text)</td>
+<td>正文开始</td>
+</tr>
+<tr>
+<td>0000 0011</td>
+<td>3</td>
+<td>3</td>
+<td>0x03</td>
+<td>ETX (end of text)</td>
+<td>正文结束</td>
+</tr>
+<tr>
+<td>0000 0100</td>
+<td>4</td>
+<td>4</td>
+<td>0x04</td>
+<td>EOT (end of transmission)</td>
+<td>传输结束</td>
+</tr>
+<tr>
+<td>0000 0101</td>
+<td>5</td>
+<td>5</td>
+<td>0x05</td>
+<td>ENQ (enquiry)</td>
+<td>请求</td>
+</tr>
+<tr>
+<td>0000 0110</td>
+<td>6</td>
+<td>6</td>
+<td>0x06</td>
+<td>ACK (acknowledge)</td>
+<td>收到通知</td>
+</tr>
+<tr>
+<td>0000 0111</td>
+<td>7</td>
+<td>7</td>
+<td>0x07</td>
+<td>BEL (bell)</td>
+<td>响铃</td>
+</tr>
+<tr>
+<td>0000 1000</td>
+<td>10</td>
+<td>8</td>
+<td>0x08</td>
+<td>BS (backspace)</td>
+<td>退格</td>
+</tr>
+<tr>
+<td>0000 1001</td>
+<td>11</td>
+<td>9</td>
+<td>0x09</td>
+<td>HT (horizontal tab)</td>
+<td>水平制表符</td>
+</tr>
+<tr>
+<td>0000 1010</td>
+<td>12</td>
+<td>10</td>
+<td>0x0A</td>
+<td>LF (NL line feed, new line)</td>
+<td>换行键</td>
+</tr>
+<tr>
+<td>0000 1011</td>
+<td>13</td>
+<td>11</td>
+<td>0x0B</td>
+<td>VT (vertical tab)</td>
+<td>垂直制表符</td>
+</tr>
+<tr>
+<td>0000 1100</td>
+<td>14</td>
+<td>12</td>
+<td>0x0C</td>
+<td>FF (NP form feed, new page)</td>
+<td>换页键</td>
+</tr>
+<tr>
+<td>0000 1101</td>
+<td>15</td>
+<td>13</td>
+<td>0x0D</td>
+<td>CR (carriage return)</td>
+<td>回车键</td>
+</tr>
+<tr>
+<td>0000 1110</td>
+<td>16</td>
+<td>14</td>
+<td>0x0E</td>
+<td>SO (shift out)</td>
+<td>不用切换</td>
+</tr>
+<tr>
+<td>0000 1111</td>
+<td>17</td>
+<td>15</td>
+<td>0x0F</td>
+<td>SI (shift in)</td>
+<td>启用切换</td>
+</tr>
+<tr>
+<td>0001 0000</td>
+<td>20</td>
+<td>16</td>
+<td>0x10</td>
+<td>DLE (data link escape)</td>
+<td>数据链路转义</td>
+</tr>
+<tr>
+<td>0001 0001</td>
+<td>21</td>
+<td>17</td>
+<td>0x11</td>
+<td>DC1 (device control 1)</td>
+<td>设备控制1</td>
+</tr>
+<tr>
+<td>0001 0010</td>
+<td>22</td>
+<td>18</td>
+<td>0x12</td>
+<td>DC2 (device control 2)</td>
+<td>设备控制2</td>
+</tr>
+<tr>
+<td>0001 0011</td>
+<td>23</td>
+<td>19</td>
+<td>0x13</td>
+<td>DC3 (device control 3)</td>
+<td>设备控制3</td>
+</tr>
+<tr>
+<td>0001 0100</td>
+<td>24</td>
+<td>20</td>
+<td>0x14</td>
+<td>DC4 (device control 4)</td>
+<td>设备控制4</td>
+</tr>
+<tr>
+<td>0001 0101</td>
+<td>25</td>
+<td>21</td>
+<td>0x15</td>
+<td>NAK (negative acknowledge)</td>
+<td>拒绝接收</td>
+</tr>
+<tr>
+<td>0001 0110</td>
+<td>26</td>
+<td>22</td>
+<td>0x16</td>
+<td>SYN (synchronous idle)</td>
+<td>同步空闲</td>
+</tr>
+<tr>
+<td>0001 0111</td>
+<td>27</td>
+<td>23</td>
+<td>0x17</td>
+<td>ETB (end of trans. block)</td>
+<td>结束传输块</td>
+</tr>
+<tr>
+<td>0001 1000</td>
+<td>30</td>
+<td>24</td>
+<td>0x18</td>
+<td>CAN (cancel)</td>
+<td>取消</td>
+</tr>
+<tr>
+<td>0001 1001</td>
+<td>31</td>
+<td>25</td>
+<td>0x19</td>
+<td>EM (end of medium)</td>
+<td>媒介结束</td>
+</tr>
+<tr>
+<td>0111 1111</td>
+<td>177</td>
+<td>127</td>
+<td>0x7F</td>
+<td>DEL (delete)</td>
+<td>删除</td>
+</tr>
+</tbody></table>
+<h4 id="显示字符-32-126"><a href="#显示字符-32-126" class="headerlink" title="显示字符(32~126)"></a>显示字符(32~126)</h4><table>
+<thead>
+<tr>
+<th>Bin(二进制)</th>
+<th>Oct(八进制)</th>
+<th>Dec(十进制)</th>
+<th>Hex(十六进制)</th>
+<th>缩写/字符</th>
+<th>解释</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>0001 1010</td>
+<td>32</td>
+<td>26</td>
+<td>0x1A</td>
+<td>SUB (substitute)</td>
+<td>代替</td>
+</tr>
+<tr>
+<td>0001 1011</td>
+<td>33</td>
+<td>27</td>
+<td>0x1B</td>
+<td>ESC (escape)</td>
+<td>换码(溢出)</td>
+</tr>
+<tr>
+<td>0001 1100</td>
+<td>34</td>
+<td>28</td>
+<td>0x1C</td>
+<td>FS (file separator)</td>
+<td>文件分隔符</td>
+</tr>
+<tr>
+<td>0001 1101</td>
+<td>35</td>
+<td>29</td>
+<td>0x1D</td>
+<td>GS (group separator)</td>
+<td>分组符</td>
+</tr>
+<tr>
+<td>0001 1110</td>
+<td>36</td>
+<td>30</td>
+<td>0x1E</td>
+<td>RS (record separator)</td>
+<td>记录分隔符</td>
+</tr>
+<tr>
+<td>0001 1111</td>
+<td>37</td>
+<td>31</td>
+<td>0x1F</td>
+<td>US (unit separator)</td>
+<td>单元分隔符</td>
+</tr>
+<tr>
+<td>0010 0000</td>
+<td>40</td>
+<td>32</td>
+<td>0x20</td>
+<td>(space)</td>
+<td>空格</td>
+</tr>
+<tr>
+<td>0010 0001</td>
+<td>41</td>
+<td>33</td>
+<td>0x21</td>
+<td>!</td>
+<td>叹号</td>
+</tr>
+<tr>
+<td>0010 0010</td>
+<td>42</td>
+<td>34</td>
+<td>0x22</td>
+<td>“</td>
+<td>双引号</td>
+</tr>
+<tr>
+<td>0010 0011</td>
+<td>43</td>
+<td>35</td>
+<td>0x23</td>
+<td>#</td>
+<td>井号</td>
+</tr>
+<tr>
+<td>0010 0100</td>
+<td>44</td>
+<td>36</td>
+<td>0x24</td>
+<td>$</td>
+<td>美元符</td>
+</tr>
+<tr>
+<td>0010 0101</td>
+<td>45</td>
+<td>37</td>
+<td>0x25</td>
+<td>%</td>
+<td>百分号</td>
+</tr>
+<tr>
+<td>0010 0110</td>
+<td>46</td>
+<td>38</td>
+<td>0x26</td>
+<td>&amp;</td>
+<td>和号</td>
+</tr>
+<tr>
+<td>0010 0111</td>
+<td>47</td>
+<td>39</td>
+<td>0x27</td>
+<td>‘</td>
+<td>闭单引号</td>
+</tr>
+<tr>
+<td>0010 1000</td>
+<td>50</td>
+<td>40</td>
+<td>0x28</td>
+<td>(</td>
+<td>开括号</td>
+</tr>
+<tr>
+<td>0010 1001</td>
+<td>51</td>
+<td>41</td>
+<td>0x29</td>
+<td>)</td>
+<td>闭括号</td>
+</tr>
+<tr>
+<td>0010 1010</td>
+<td>52</td>
+<td>42</td>
+<td>0x2A</td>
+<td>*</td>
+<td>星号</td>
+</tr>
+<tr>
+<td>0010 1011</td>
+<td>53</td>
+<td>43</td>
+<td>0x2B</td>
+<td>+</td>
+<td>加号</td>
+</tr>
+<tr>
+<td>0010 1100</td>
+<td>54</td>
+<td>44</td>
+<td>0x2C</td>
+<td>,</td>
+<td>逗号</td>
+</tr>
+<tr>
+<td>0010 1101</td>
+<td>55</td>
+<td>45</td>
+<td>0x2D</td>
+<td>-</td>
+<td>减号/破折号</td>
+</tr>
+<tr>
+<td>0010 1110</td>
+<td>56</td>
+<td>46</td>
+<td>0x2E</td>
+<td>.</td>
+<td>句号</td>
+</tr>
+<tr>
+<td>0010 1111</td>
+<td>57</td>
+<td>47</td>
+<td>0x2F</td>
+<td>/</td>
+<td>斜杠</td>
+</tr>
+<tr>
+<td>0011 0000</td>
+<td>60</td>
+<td>48</td>
+<td>0x30</td>
+<td>0</td>
+<td>字符0</td>
+</tr>
+<tr>
+<td>0011 0001</td>
+<td>61</td>
+<td>49</td>
+<td>0x31</td>
+<td>1</td>
+<td>字符1</td>
+</tr>
+<tr>
+<td>0011 0010</td>
+<td>62</td>
+<td>50</td>
+<td>0x32</td>
+<td>2</td>
+<td>字符2</td>
+</tr>
+<tr>
+<td>0011 0011</td>
+<td>63</td>
+<td>51</td>
+<td>0x33</td>
+<td>3</td>
+<td>字符3</td>
+</tr>
+<tr>
+<td>0011 0100</td>
+<td>64</td>
+<td>52</td>
+<td>0x34</td>
+<td>4</td>
+<td>字符4</td>
+</tr>
+<tr>
+<td>0011 0101</td>
+<td>65</td>
+<td>53</td>
+<td>0x35</td>
+<td>5</td>
+<td>字符5</td>
+</tr>
+<tr>
+<td>0011 0110</td>
+<td>66</td>
+<td>54</td>
+<td>0x36</td>
+<td>6</td>
+<td>字符6</td>
+</tr>
+<tr>
+<td>0011 0111</td>
+<td>67</td>
+<td>55</td>
+<td>0x37</td>
+<td>7</td>
+<td>字符7</td>
+</tr>
+<tr>
+<td>0011 1000</td>
+<td>70</td>
+<td>56</td>
+<td>0x38</td>
+<td>8</td>
+<td>字符8</td>
+</tr>
+<tr>
+<td>0011 1001</td>
+<td>71</td>
+<td>57</td>
+<td>0x39</td>
+<td>9</td>
+<td>字符9</td>
+</tr>
+<tr>
+<td>0011 1010</td>
+<td>72</td>
+<td>58</td>
+<td>0x3A</td>
+<td>:</td>
+<td>冒号</td>
+</tr>
+<tr>
+<td>0011 1011</td>
+<td>73</td>
+<td>59</td>
+<td>0x3B</td>
+<td>;</td>
+<td>分号</td>
+</tr>
+<tr>
+<td>0011 1100</td>
+<td>74</td>
+<td>60</td>
+<td>0x3C</td>
+<td>&lt;</td>
+<td>小于</td>
+</tr>
+<tr>
+<td>0011 1101</td>
+<td>75</td>
+<td>61</td>
+<td>0x3D</td>
+<td>=</td>
+<td>等号</td>
+</tr>
+<tr>
+<td>0011 1110</td>
+<td>76</td>
+<td>62</td>
+<td>0x3E</td>
+<td>&gt;</td>
+<td>大于</td>
+</tr>
+<tr>
+<td>0011 1111</td>
+<td>77</td>
+<td>63</td>
+<td>0x3F</td>
+<td>?</td>
+<td>问号</td>
+</tr>
+<tr>
+<td>0100 0000</td>
+<td>100</td>
+<td>64</td>
+<td>0x40</td>
+<td>@</td>
+<td>电子邮件符号</td>
+</tr>
+<tr>
+<td>0100 0001</td>
+<td>101</td>
+<td>65</td>
+<td>0x41</td>
+<td>A</td>
+<td>大写字母A</td>
+</tr>
+<tr>
+<td>0100 0010</td>
+<td>102</td>
+<td>66</td>
+<td>0x42</td>
+<td>B</td>
+<td>大写字母B</td>
+</tr>
+<tr>
+<td>0100 0011</td>
+<td>103</td>
+<td>67</td>
+<td>0x43</td>
+<td>C</td>
+<td>大写字母C</td>
+</tr>
+<tr>
+<td>0100 0100</td>
+<td>104</td>
+<td>68</td>
+<td>0x44</td>
+<td>D</td>
+<td>大写字母D</td>
+</tr>
+<tr>
+<td>0100 0101</td>
+<td>105</td>
+<td>69</td>
+<td>0x45</td>
+<td>E</td>
+<td>大写字母E</td>
+</tr>
+<tr>
+<td>0100 0110</td>
+<td>106</td>
+<td>70</td>
+<td>0x46</td>
+<td>F</td>
+<td>大写字母F</td>
+</tr>
+<tr>
+<td>0100 0111</td>
+<td>107</td>
+<td>71</td>
+<td>0x47</td>
+<td>G</td>
+<td>大写字母G</td>
+</tr>
+<tr>
+<td>0100 1000</td>
+<td>110</td>
+<td>72</td>
+<td>0x48</td>
+<td>H</td>
+<td>大写字母H</td>
+</tr>
+<tr>
+<td>0100 1001</td>
+<td>111</td>
+<td>73</td>
+<td>0x49</td>
+<td>I</td>
+<td>大写字母I</td>
+</tr>
+<tr>
+<td>1001010</td>
+<td>112</td>
+<td>74</td>
+<td>0x4A</td>
+<td>J</td>
+<td>大写字母J</td>
+</tr>
+<tr>
+<td>0100 1011</td>
+<td>113</td>
+<td>75</td>
+<td>0x4B</td>
+<td>K</td>
+<td>大写字母K</td>
+</tr>
+<tr>
+<td>0100 1100</td>
+<td>114</td>
+<td>76</td>
+<td>0x4C</td>
+<td>L</td>
+<td>大写字母L</td>
+</tr>
+<tr>
+<td>0100 1101</td>
+<td>115</td>
+<td>77</td>
+<td>0x4D</td>
+<td>M</td>
+<td>大写字母M</td>
+</tr>
+<tr>
+<td>0100 1110</td>
+<td>116</td>
+<td>78</td>
+<td>0x4E</td>
+<td>N</td>
+<td>大写字母N</td>
+</tr>
+<tr>
+<td>0100 1111</td>
+<td>117</td>
+<td>79</td>
+<td>0x4F</td>
+<td>O</td>
+<td>大写字母O</td>
+</tr>
+<tr>
+<td>0101 0000</td>
+<td>120</td>
+<td>80</td>
+<td>0x50</td>
+<td>P</td>
+<td>大写字母P</td>
+</tr>
+<tr>
+<td>0101 0001</td>
+<td>121</td>
+<td>81</td>
+<td>0x51</td>
+<td>Q</td>
+<td>大写字母Q</td>
+</tr>
+<tr>
+<td>0101 0010</td>
+<td>122</td>
+<td>82</td>
+<td>0x52</td>
+<td>R</td>
+<td>大写字母R</td>
+</tr>
+<tr>
+<td>0101 0011</td>
+<td>123</td>
+<td>83</td>
+<td>0x53</td>
+<td>S</td>
+<td>大写字母S</td>
+</tr>
+<tr>
+<td>0101 0100</td>
+<td>124</td>
+<td>84</td>
+<td>0x54</td>
+<td>T</td>
+<td>大写字母T</td>
+</tr>
+<tr>
+<td>0101 0101</td>
+<td>125</td>
+<td>85</td>
+<td>0x55</td>
+<td>U</td>
+<td>大写字母U</td>
+</tr>
+<tr>
+<td>0101 0110</td>
+<td>126</td>
+<td>86</td>
+<td>0x56</td>
+<td>V</td>
+<td>大写字母V</td>
+</tr>
+<tr>
+<td>0101 0111</td>
+<td>127</td>
+<td>87</td>
+<td>0x57</td>
+<td>W</td>
+<td>大写字母W</td>
+</tr>
+<tr>
+<td>0101 1000</td>
+<td>130</td>
+<td>88</td>
+<td>0x58</td>
+<td>X</td>
+<td>大写字母X</td>
+</tr>
+<tr>
+<td>0101 1001</td>
+<td>131</td>
+<td>89</td>
+<td>0x59</td>
+<td>Y</td>
+<td>大写字母Y</td>
+</tr>
+<tr>
+<td>0101 1010</td>
+<td>132</td>
+<td>90</td>
+<td>0x5A</td>
+<td>Z</td>
+<td>大写字母Z</td>
+</tr>
+<tr>
+<td>0101 1011</td>
+<td>133</td>
+<td>91</td>
+<td>0x5B</td>
+<td>[</td>
+<td>开方括号</td>
+</tr>
+<tr>
+<td>0101 1100</td>
+<td>134</td>
+<td>92</td>
+<td>0x5C</td>
+<td>\</td>
+<td>反斜杠</td>
+</tr>
+<tr>
+<td>0101 1101</td>
+<td>135</td>
+<td>93</td>
+<td>0x5D</td>
+<td>]</td>
+<td>闭方括号</td>
+</tr>
+<tr>
+<td>0101 1110</td>
+<td>136</td>
+<td>94</td>
+<td>0x5E</td>
+<td>^</td>
+<td>脱字符</td>
+</tr>
+<tr>
+<td>0101 1111</td>
+<td>137</td>
+<td>95</td>
+<td>0x5F</td>
+<td>_</td>
+<td>下划线</td>
+</tr>
+<tr>
+<td>0110 0000</td>
+<td>140</td>
+<td>96</td>
+<td>0x60</td>
+<td>`</td>
+<td>开单引号</td>
+</tr>
+<tr>
+<td>0110 0001</td>
+<td>141</td>
+<td>97</td>
+<td>0x61</td>
+<td>a</td>
+<td>小写字母a</td>
+</tr>
+<tr>
+<td>0110 0010</td>
+<td>142</td>
+<td>98</td>
+<td>0x62</td>
+<td>b</td>
+<td>小写字母b</td>
+</tr>
+<tr>
+<td>0110 0011</td>
+<td>143</td>
+<td>99</td>
+<td>0x63</td>
+<td>c</td>
+<td>小写字母c</td>
+</tr>
+<tr>
+<td>0110 0100</td>
+<td>144</td>
+<td>100</td>
+<td>0x64</td>
+<td>d</td>
+<td>小写字母d</td>
+</tr>
+<tr>
+<td>0110 0101</td>
+<td>145</td>
+<td>101</td>
+<td>0x65</td>
+<td>e</td>
+<td>小写字母e</td>
+</tr>
+<tr>
+<td>0110 0110</td>
+<td>146</td>
+<td>102</td>
+<td>0x66</td>
+<td>f</td>
+<td>小写字母f</td>
+</tr>
+<tr>
+<td>0110 0111</td>
+<td>147</td>
+<td>103</td>
+<td>0x67</td>
+<td>g</td>
+<td>小写字母g</td>
+</tr>
+<tr>
+<td>0110 1000</td>
+<td>150</td>
+<td>104</td>
+<td>0x68</td>
+<td>h</td>
+<td>小写字母h</td>
+</tr>
+<tr>
+<td>0110 1001</td>
+<td>151</td>
+<td>105</td>
+<td>0x69</td>
+<td>i</td>
+<td>小写字母i</td>
+</tr>
+<tr>
+<td>0110 1010</td>
+<td>152</td>
+<td>106</td>
+<td>0x6A</td>
+<td>j</td>
+<td>小写字母j</td>
+</tr>
+<tr>
+<td>0110 1011</td>
+<td>153</td>
+<td>107</td>
+<td>0x6B</td>
+<td>k</td>
+<td>小写字母k</td>
+</tr>
+<tr>
+<td>0110 1100</td>
+<td>154</td>
+<td>108</td>
+<td>0x6C</td>
+<td>l</td>
+<td>小写字母l</td>
+</tr>
+<tr>
+<td>0110 1101</td>
+<td>155</td>
+<td>109</td>
+<td>0x6D</td>
+<td>m</td>
+<td>小写字母m</td>
+</tr>
+<tr>
+<td>0110 1110</td>
+<td>156</td>
+<td>110</td>
+<td>0x6E</td>
+<td>n</td>
+<td>小写字母n</td>
+</tr>
+<tr>
+<td>0110 1111</td>
+<td>157</td>
+<td>111</td>
+<td>0x6F</td>
+<td>o</td>
+<td>小写字母o</td>
+</tr>
+<tr>
+<td>0111 0000</td>
+<td>160</td>
+<td>112</td>
+<td>0x70</td>
+<td>p</td>
+<td>小写字母p</td>
+</tr>
+<tr>
+<td>0111 0001</td>
+<td>161</td>
+<td>113</td>
+<td>0x71</td>
+<td>q</td>
+<td>小写字母q</td>
+</tr>
+<tr>
+<td>0111 0010</td>
+<td>162</td>
+<td>114</td>
+<td>0x72</td>
+<td>r</td>
+<td>小写字母r</td>
+</tr>
+<tr>
+<td>0111 0011</td>
+<td>163</td>
+<td>115</td>
+<td>0x73</td>
+<td>s</td>
+<td>小写字母s</td>
+</tr>
+<tr>
+<td>0111 0100</td>
+<td>164</td>
+<td>116</td>
+<td>0x74</td>
+<td>t</td>
+<td>小写字母t</td>
+</tr>
+<tr>
+<td>0111 0101</td>
+<td>165</td>
+<td>117</td>
+<td>0x75</td>
+<td>u</td>
+<td>小写字母u</td>
+</tr>
+<tr>
+<td>0111 0110</td>
+<td>166</td>
+<td>118</td>
+<td>0x76</td>
+<td>v</td>
+<td>小写字母v</td>
+</tr>
+<tr>
+<td>0111 0111</td>
+<td>167</td>
+<td>119</td>
+<td>0x77</td>
+<td>w</td>
+<td>小写字母w</td>
+</tr>
+<tr>
+<td>0111 1000</td>
+<td>170</td>
+<td>120</td>
+<td>0x78</td>
+<td>x</td>
+<td>小写字母x</td>
+</tr>
+<tr>
+<td>0111 1001</td>
+<td>171</td>
+<td>121</td>
+<td>0x79</td>
+<td>y</td>
+<td>小写字母y</td>
+</tr>
+<tr>
+<td>0111 1010</td>
+<td>172</td>
+<td>122</td>
+<td>0x7A</td>
+<td>z</td>
+<td>小写字母z</td>
+</tr>
+<tr>
+<td>0111 1011</td>
+<td>173</td>
+<td>123</td>
+<td>0x7B</td>
+<td>{</td>
+<td>开花括号</td>
+</tr>
+<tr>
+<td>0111 1100</td>
+<td>174</td>
+<td>124</td>
+<td>0x7C</td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>0111 1101</td>
+<td>175</td>
+<td>125</td>
+<td>0x7D</td>
+<td>}</td>
+<td>闭花括号</td>
+</tr>
+<tr>
+<td>0111 1110</td>
+<td>176</td>
+<td>126</td>
+<td>0x7E</td>
+<td>~</td>
+<td>波浪号</td>
+</tr>
+</tbody></table>
+<h2 id="ISO-8859-1"><a href="#ISO-8859-1" class="headerlink" title="ISO-8859-1"></a>ISO-8859-1</h2><p>ISO-8859-1是单字节编码，向下兼容ASCII码。</p>
+<h3 id="编码范围"><a href="#编码范围" class="headerlink" title="编码范围"></a>编码范围</h3><p>其编码范围是0x00-0xFF，0x00-0x7F之间完全和ASCII一致，0x80-0x9F之间是控制字符，0xA0-0xFF之间是文字符号。</p>
+<h2 id="GB2312"><a href="#GB2312" class="headerlink" title="GB2312"></a>GB2312</h2><p>它的全称是《信息交换用汉字编码字符集基本集》，向下兼容ASCII码。</p>
+<h3 id="字节结构（区位码-区字节-位字节）"><a href="#字节结构（区位码-区字节-位字节）" class="headerlink" title="字节结构（区位码 = 区字节 + 位字节）"></a>字节结构（区位码 = 区字节 + 位字节）</h3><p>它是双字节编码，每个汉字及符号用两个字节来表示。第一个字节称为“高位字节（也称区字节）”，第二个字节称为“低位字节（也称位字节）”</p>
+<h2 id="GBK"><a href="#GBK" class="headerlink" title="GBK"></a>GBK</h2><p>GBK全称《汉字内码扩展规范》（GBK即“国标”、“扩展”汉语拼音的第一个字母，英文名称：Chinese Internal Code Specification） ，中华人民共和国全国信息技术标准化技术委员会1995年12月1日制订，国家技术监督局标准化司、电子工业部科技与质量监督司1995年12月15日联合以技监标函1995 229号文件的形式，将它确定为技术规范指导性文件。这一版的GBK规范为1.0版。</p>
+<p>GBK 向下与 GB 2312 编码兼容，向上支持 ISO 10646.1国际标准，是前者向后者过渡过程中的一个承上启下的产物。</p>
+<h3 id="编码方式"><a href="#编码方式" class="headerlink" title="编码方式"></a>编码方式</h3><p>GBK 是采用单双字节变长编码，英文使用单字节，完成兼容ASCII码。中文部分采用双字节编码。</p>
+<h2 id="Unicode"><a href="#Unicode" class="headerlink" title="Unicode"></a>Unicode</h2><p>Unicode（统一码、万国码、单一码）是计算机科学领域里的一项业界标准，包括字符集、编码方案等。Unicode 是为了解决传统的字符编码方案的局限而产生的，它为每种语言中的每个字符设定了统一并且唯一的二进制编码，以满足跨语言、跨平台进行文本转换、处理的要求。1990年开始研发，1994年正式公布。</p>
+<h3 id="Unicode-平面"><a href="#Unicode-平面" class="headerlink" title="Unicode 平面"></a><a href="https://www.ibm.com/developerworks/cn/java/unicode-programming-language/index.html" target="_blank" rel="noopener">Unicode 平面</a></h3><p>Unicode 编码分为17个平面（plane），每个平面包含2^16 (即65536)个码位（Code Point）。共计17 * 65536 = 1114112 个码点。</p>
+<p><img src="https://gitee.com/cnkangym/BlogImageBed/raw/master/img/20200505153404.png" alt=""></p>
+<p><img src="https://gitee.com/cnkangym/BlogImageBed/raw/master/img/20200505151827.png" alt=""></p>
+<p>通用字符集（Universal Character Set, UCS）是由ISO制定的ISO 10646（或称ISO/IEC 10646）标准所定义的标准字符集。UCS-2用两个字节编码，UCS-4用4个字节编码。</p>
+<h3 id="Unicode-的实现方式"><a href="#Unicode-的实现方式" class="headerlink" title="Unicode 的实现方式"></a>Unicode 的实现方式</h3><p>Unicode 统一了所有字符的编码，是一个 Character Set，也就是字符集，字符集只是给所有字符一个编号，但没有规定如何存储。</p>
+<h4 id="UTF-8"><a href="#UTF-8" class="headerlink" title="UTF-8"></a>UTF-8</h4><p>UTF-8 最大的一个特点，就是它是一种变长的编码方式。它可以使用1~4个字节表示一个符号，根据不同的符号而变化字节长度。</p>
+<ul>
+<li><p>在UTF-8编码中，英文字符占一个字节，中文字符占用3个字节。</p>
+</li>
+<li><p>编码规则：</p>
+<table>
+<thead>
+<tr>
+<th>Unicode编码(十六进制)</th>
+<th>UTF-8 字节流(二进制)</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>000000-00007F</td>
+<td>0xxxxxxx</td>
+</tr>
+<tr>
+<td>000080-0007FF</td>
+<td>110xxxxx 10xxxxxx</td>
+</tr>
+<tr>
+<td>000800-00FFFF</td>
+<td>1110xxxx 10xxxxxx 10xxxxxx</td>
+</tr>
+<tr>
+<td>010000-10FFFF</td>
+<td>11110xxx 10xxxxxx 10xxxxxx 10xxxxxx</td>
+</tr>
+</tbody></table>
+<ul>
+<li><p>对于单字节符号，字节的第一位设为0，后面7位为这个符号的Unicode码。（因此，对于英文字母ASCII码和Unicode码是相同的）</p>
+</li>
+<li><p>对于n字节的符号（n &gt; 1），第一个字节的前n位都设为1，第n+1位都设为0，后面字节的前两位都设为10。剩下的没有提及的二进制位，全部用这个符号的Unicode码。</p>
+<p>  那么对于一个具体的 Unicode 编号，具体怎么进行 UTF-8 的编码呢？<br>首先找到该 Unicode 编号所在的编号范围，进而可以找到与之对应的二进制格式，然后将该 Unicode 编号转化为二进制数（去掉高位的 0），最后将该二进制数从右向左依次填入二进制格式的 X 中，如果还有 X 未填，则设为 0 。<br>比如：“马”的 Unicode 编号是：0x9A6C，整数编号是 39532，对应第三个范围（2048 - 65535），其格式为：1110XXXX 10XXXXXX 10XXXXXX，39532 对应的二进制是 1001 1010 0110 1100，将二进制填入进去就为：<br>11101001 10101001 10101100 。</p>
+</li>
+</ul>
+</li>
+</ul>
+<h4 id="UTF-16"><a href="#UTF-16" class="headerlink" title="UTF-16"></a>UTF-16</h4><p>用两个字节或四个字节表示一个字符。</p>
+<h4 id="UTF-32"><a href="#UTF-32" class="headerlink" title="UTF-32"></a>UTF-32</h4><p>一个字符用四个字节存储，也就是32位。</p>
+<h3 id="Unicode-中的BOM"><a href="#Unicode-中的BOM" class="headerlink" title="Unicode 中的BOM"></a>Unicode 中的BOM</h3><p>BOM是byte order mark的缩写，在UTF-16和UTF-32中需要使用BOM来区分字节的顺序，因为我们目前的CPU有两种系列，一种是大端模式，一种是小端模式（我们常用的电脑手机均是这种）。当我们在自己电脑上编写文件时可能并不会出现问题，但是如果我们在自己电脑（小端）上写了一个文件上传给服务器（大端）进行分析，就会出现问题，因此人们为了解决这个问题就在整个文本文件的最前面添加了一个叫BOM的东西，用来记录这个文件是用小端顺序存储的还是大端顺序存储的。这样以来不管这个文件传到哪里，只要按照BOM所记录的顺序来解析就不会出错。</p>
+<p>你可能会注意我们在上面仅提到了UTF-16和UTF-32，并没有提到UFT-8，这是因为UTF-8自己的编码方式决定了它不可能出现由字节顺序引起的问题，但是带有强迫症的微软公司，没错就是这个叫Microsoft的公司，莫名其妙在UTF-8这种编码的文件头也添加了BOM，这就导致后来的UTF-8编码的文件有带有BOM版和不带BOM版这两个版本，大部分高级编辑器默认保存的文件是不带BOM版，Microsoft自家的notpad默认保存的文件是带有BOM版的。UTF-8的BOM为”EF BB BF”，所以如果接受者收到”EF BB BF”开头的字节流，就知道就是UTF-8编码了。Windows就是使用BOM来标记文件的编码方式的。UTF-8编码的文件中，BOM占三个字节。</p>
+<h4 id="BOM方式-EF-BB-BF、LE、BE"><a href="#BOM方式-EF-BB-BF、LE、BE" class="headerlink" title="BOM方式(EF BB BF、LE、BE)"></a>BOM方式(EF BB BF、LE、BE)</h4><p>用来标记多字节编码文件的编码类型和字节顺序（big-endian或little- endian）。</p>
+<ul>
+<li><p>UTF-8</p>
+<ul>
+<li>EF BB BF</li>
+</ul>
+</li>
+<li><p>UTF-16</p>
+<ul>
+<li>LE: little-endian(小尾字节序列标)，十六进制表示为：FF FE</li>
+<li>BE: big-endian(大尾字节序列标)，十六进制表示为: FE FF</li>
+</ul>
+</li>
+<li><p>UTF-32</p>
+<ul>
+<li>LE: little-endian(小尾字节序列标)，十六进制表示为：FF FE 0000</li>
+<li>BE: big-endian(大尾字节序列标)，十六进制表示为: 0000 FE FF</li>
+</ul>
+</li>
+</ul>
 ]]></content>
+      <categories>
+        <category>boding basic</category>
+      </categories>
+      <tags>
+        <tag>coding basic</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>作用域与作用域链</title>
+    <url>/2020/05/05/javascript/%E4%BD%9C%E7%94%A8%E5%9F%9F%E4%B8%8E%E4%BD%9C%E7%94%A8%E5%9F%9F%E9%93%BE/</url>
+    <content><![CDATA[<blockquote>
+<p>参考《JavaScript核心技术开发解密》</p>
+</blockquote>
+<h2 id="作用域"><a href="#作用域" class="headerlink" title="作用域"></a>作用域</h2><ul>
+<li>作用域分类<ul>
+<li>全局作用域：全局作用域中声明的变量与函数可以在代码的任何地方被访问<a id="more"></a>
+<ul>
+<li>全局对象下拥有的属性与方法</li>
+<li>在最外层声明的变量与方法</li>
+<li>非严格模式下，函数作用域中未定义但直接赋值的变量与方法（这样的变量与方法会自动变成全局对象 window 的属性，因此它们也有用全局作用域）</li>
+</ul>
+</li>
+<li>函数作用域：函数作用域中声明的变量与方法，只能被下层子作用域访问，而不能被其他不相干的作用域访问</li>
+<li>块级作用域<ul>
+<li>ES6 引入了块级作用域</li>
+<li>模拟块级作用域：利用函数的自执行生成一个作用域<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">var arr &#x3D; [1, 2, 3, 4, 5];</span><br><span class="line"></span><br><span class="line">(function()&#123;</span><br><span class="line">    for(var i &#x3D; 0; i &lt; arr.length; i++)&#123;</span><br><span class="line">        console.log(&#39;do something by&#39;, i);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;)();</span><br><span class="line"></span><br><span class="line">console.log(i);                         &#x2F;&#x2F; i is not defined</span><br></pre></td></tr></table></figure>
+
+</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<h2 id="作用域链（Scope-Chain）"><a href="#作用域链（Scope-Chain）" class="headerlink" title="作用域链（Scope Chain）"></a>作用域链（Scope Chain）</h2><ul>
+<li>由当前执行环境与上层执行环境的一系列变量对象组成的，它保证了当前执行环境对符合访问权限的变量和函数有有序访问。</li>
+<li>作用域链的有序性，用数组表示<ul>
+<li>数组的第一项 scopeChain[0] 为作用域链的最前端，为当前上下文的变量对象</li>
+<li>数组的最后一项为作用域链的最末端，所有作用域链的最末端都是全局变量对象</li>
+</ul>
+</li>
+</ul>
+]]></content>
+      <categories>
+        <category>javascript</category>
+      </categories>
+      <tags>
+        <tag>javascript</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>js 类、对象、对象原型和原型链</title>
+    <url>/2020/05/05/javascript/js-%E7%B1%BB%E3%80%81%E5%AF%B9%E8%B1%A1%E3%80%81%E5%AF%B9%E8%B1%A1%E5%8E%9F%E5%9E%8B%E5%92%8C%E5%8E%9F%E5%9E%8B%E9%93%BE/</url>
+    <content><![CDATA[<blockquote>
+<p>参考《JavaScript核心技术开发解密》<br>参考《JavaScript设计模式》</p>
+</blockquote>
+<h1 id="js-类、对象、对象原型和原型链"><a href="#js-类、对象、对象原型和原型链" class="headerlink" title="js 类、对象、对象原型和原型链"></a>js 类、对象、对象原型和原型链</h1><h2 id="类"><a href="#类" class="headerlink" title="类"></a>类</h2><ul>
+<li><p>javascript中没有类的概念，用构造函数和静态公有属性和静态公有方法来实现类的功能。</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">&#x2F;&#x2F; 构造方法</span><br><span class="line">var Book &#x3D; function(title, time, type)&#123;</span><br><span class="line"></span><br><span class="line">    &#x2F;&#x2F; 类的私有属性，只能在类中访问</span><br><span class="line">    var num;</span><br><span class="line">    </span><br><span class="line">    &#x2F;&#x2F; 类的私有方法，只能在类中访问</span><br><span class="line">    function init()&#123;</span><br><span class="line">        console.log(&#39;Book类的私有方法：初始化 Book&#39;);</span><br><span class="line">    &#125;</span><br><span class="line">    </span><br><span class="line">    &#x2F;&#x2F; </span><br><span class="line">    this.title &#x3D; title;</span><br><span class="line">    this.time &#x3D; time;</span><br><span class="line">    this.type &#x3D; type;</span><br><span class="line">    &#125;</span><br><span class="line">    &#x2F;&#x2F; Book 原型上的公有属性</span><br><span class="line">    Book.prototype.publisher &#x3D; &#39;XXXXX&#39;;</span><br><span class="line">    </span><br><span class="line">    &#x2F;&#x2F; Book 原型上的公有方法</span><br><span class="line">    Book.prototype.getBookName &#x3D; function()&#123;</span><br><span class="line">    console.log(&quot;原型方法...&quot;);</span><br><span class="line">&#125;;</span><br><span class="line"></span><br><span class="line">&#x2F;&#x2F; 类静态公有属性（对象不能访问，类可以访问）</span><br><span class="line">Book.isChinese &#x3D; true;</span><br><span class="line">&#x2F;&#x2F; 类静态公有方法（对象不能访问，类可以访问）</span><br><span class="line">Book.resetTime &#x3D; function()&#123;</span><br><span class="line">    console.log(&#39;new time&#39;);</span><br><span class="line">&#125;;</span><br><span class="line"></span><br><span class="line">console.log(&quot;Book 类：&quot;, Book);           &#x2F;&#x2F; 显示的是构造函数里的内容</span><br></pre></td></tr></table></figure>
+<a id="more"></a>
+</li>
+<li><p>执行结果如图：<br>  <img src="https://gitee.com/cnkangym/BlogImageBed/raw/master/img/20200505161841.png" alt=""></p>
+</li>
+</ul>
+<h3 id="构造函数"><a href="#构造函数" class="headerlink" title="构造函数"></a>构造函数</h3><ul>
+<li>构造函数与普通函数并无区别，首字母大写是一种约定，用来表示这是一个构造函数。</li>
+<li>声明一个函数，将函数保存在一个变量里。按照编程习惯，一般将这个代表类的变量名首字母大写。然后在这个函数（类）的内部通过对 this （函数内部自带的一个变量，用于指向当前这个对象）变量添加属性或者方法来实现对类添加属性或者方法。  <figure class="highlight plain"><table><tr><td class="code"><pre><span class="line"></span><br><span class="line">var Book &#x3D; function(id, bookName, price)&#123;</span><br><span class="line">     this.id &#x3D; id;</span><br><span class="line">     this.bookName &#x3D; bookName;</span><br><span class="line">     this.price &#x3D; price;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">console.log(&#39;Book 类：&#39;, Book);</span><br></pre></td></tr></table></figure>
+
+</li>
+</ul>
+<h3 id="类的属性和方法"><a href="#类的属性和方法" class="headerlink" title="类的属性和方法"></a>类的属性和方法</h3><ul>
+<li>给类添加属性和方法  <figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">var Book &#x3D; function(id, name, price)&#123;</span><br><span class="line">    </span><br><span class="line">    &#x2F;&#x2F; 私有属性</span><br><span class="line">    var num &#x3D; 1;</span><br><span class="line">    &#x2F;&#x2F; 私有方法</span><br><span class="line">    function checkId()&#123;</span><br><span class="line">    &#125;;</span><br><span class="line"></span><br><span class="line">    this.id &#x3D; id;</span><br><span class="line">    this.name &#x3D; name;</span><br><span class="line">    this.price &#x3D; price;</span><br><span class="line">&#125;;</span><br><span class="line"></span><br><span class="line">&#x2F;&#x2F; 类静态公有属性（对象不能访问，类可以访问）</span><br><span class="line">Book.isChinese &#x3D; true;</span><br><span class="line">&#x2F;&#x2F; 类静态公有方法（对象不能访问，类可以访问）</span><br><span class="line">Book.resetTime &#x3D; function()&#123;</span><br><span class="line">    console.log(&#39;new time&#39;);</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure></li>
+<li>访问类的属性和方法  <figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">console.log(&quot;访问类的属性：&quot;, Book.isChinese); &#x2F;&#x2F; true</span><br><span class="line">console.log(&quot;访问类的方法：&quot;, Book.resetTime());   &#x2F;&#x2F; new time</span><br></pre></td></tr></table></figure>
+
+</li>
+</ul>
+<h3 id="访问构造函数的原型："><a href="#访问构造函数的原型：" class="headerlink" title="访问构造函数的原型："></a>访问构造函数的原型：</h3><ul>
+<li>构造函数的 prototype 属性 <code>console.log(Book.prototype);</code></li>
+</ul>
+<h2 id="对象"><a href="#对象" class="headerlink" title="对象"></a>对象</h2><h3 id="对象的定义"><a href="#对象的定义" class="headerlink" title="对象的定义"></a>对象的定义</h3><ul>
+<li>ECMAScript-262中，对象被定义为“无序属性的集合，其属性可以包含基本值、对象或者函数”。</li>
+</ul>
+<h3 id="对象的创建"><a href="#对象的创建" class="headerlink" title="对象的创建"></a>对象的创建</h3><ul>
+<li><p>通过对象字面量的形式创建一个对象</p>
+  <figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">var book &#x3D; &#123;</span><br><span class="line">    title: &quot;High Performance JavaScript&quot;,</span><br><span class="line">    publisher: &quot;Yahoo! Press&quot;,</span><br><span class="line"></span><br><span class="line">    showBookName: function()&#123;</span><br><span class="line"></span><br><span class="line">    &#125;</span><br><span class="line">&#125;;</span><br><span class="line">console.log(&quot;book 实例对象：&quot;, book);</span><br><span class="line">console.log(&quot;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&quot;);</span><br><span class="line">console.log(&quot;book 的原型对象：&quot;, book.__proto__);</span><br></pre></td></tr></table></figure>
+<ul>
+<li><img src="https://gitee.com/cnkangym/BlogImageBed/raw/master/img/20200505162136.png" alt=""></li>
+<li>book实例对象：显示实例对象的属性的方法，再加一个<strong>proto</strong>属性</li>
+<li>book的原型对象：<ul>
+<li>constructor: Object 对象实例</li>
+<li>book的原型对象Object原型链上的方法</li>
+</ul>
+</li>
+</ul>
+</li>
+<li><p>通过 new 关键字创建一个对象</p>
+  <figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">        var book &#x3D; new Object();</span><br><span class="line">    </span><br><span class="line">        book.title &#x3D; &quot;High Performance JavaScript&quot;;</span><br><span class="line">        book.publisher &#x3D; &quot;Yahoo! Press&quot;;</span><br><span class="line">        book.showBookName &#x3D; function()&#123;</span><br><span class="line">        </span><br><span class="line">        &#125;;</span><br><span class="line">        </span><br><span class="line">        console.log(&quot;book 实例对象：&quot;, book);</span><br><span class="line">        console.log(&quot;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;</span><br><span class="line">&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&quot;);</span><br><span class="line">        console.log(&quot;book 的原型对象：&quot;, book.__proto__);</span><br></pre></td></tr></table></figure>
+<ul>
+<li><img src="https://gitee.com/cnkangym/BlogImageBed/raw/master/img/20200505162136.png" alt=""></li>
+<li><em>同通过对象字面量创建的对象。</em> </li>
+</ul>
+</li>
+<li><p>当面对具有共同特征的一类事物时，可以结合构造函数与原型的方式，将这类事物封装成对象</p>
+  <figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">var Book &#x3D; function(title, time, type)&#123;</span><br><span class="line"></span><br><span class="line">    &#x2F;&#x2F; 类的私有属性，只能在类中访问</span><br><span class="line">    var num;</span><br><span class="line">    </span><br><span class="line">    &#x2F;&#x2F; 类的私有方法，只能在类中访问</span><br><span class="line">    function init()&#123;</span><br><span class="line">        console.log(&#39;Book类的私有方法：初始化 Book&#39;);</span><br><span class="line">    &#125;</span><br><span class="line">    </span><br><span class="line">    &#x2F;&#x2F; 对象公有属性</span><br><span class="line">    this.title &#x3D; title;</span><br><span class="line">    this.time &#x3D; time;</span><br><span class="line">    this.type &#x3D; type;</span><br><span class="line">    &#125;</span><br><span class="line">    &#x2F;&#x2F; Book 原型上的公有属性</span><br><span class="line">    Book.prototype.publisher &#x3D; &#39;XXXXX&#39;;</span><br><span class="line">    </span><br><span class="line">    &#x2F;&#x2F; Book 原型上的公有方法</span><br><span class="line">    Book.prototype.getBookName &#x3D; function()&#123;</span><br><span class="line">    console.log(&quot;原型方法...&quot;);</span><br><span class="line">&#125;;</span><br><span class="line"></span><br><span class="line">&#x2F;&#x2F; 类静态公有属性（对象不能访问，类可以访问）</span><br><span class="line">Book.isChinese &#x3D; true;</span><br><span class="line">&#x2F;&#x2F; 类静态公有方法（对象不能访问，类可以访问）</span><br><span class="line">Book.resetTime &#x3D; function()&#123;</span><br><span class="line">    console.log(&#39;new time&#39;);</span><br><span class="line">&#125;;</span><br><span class="line"></span><br><span class="line">var book &#x3D; new Book(&quot;javascript&quot;, &quot;2020&quot;, &quot;js&quot;);</span><br><span class="line"></span><br><span class="line">console.log(&quot;book 实例对象：&quot;, book);</span><br><span class="line">console.log(&quot;book 的原型对象：&quot;, book.__proto__);</span><br></pre></td></tr></table></figure>
+<ul>
+<li><img src="https://gitee.com/cnkangym/BlogImageBed/raw/master/img/20200505182648.png" alt=""></li>
+<li>book 实例对象：<ul>
+<li>实例对象的属性和方法</li>
+<li>实例对象的<strong>proto</strong>属性</li>
+</ul>
+</li>
+<li>book 的原型对象：<ul>
+<li>book 原型上的属性</li>
+<li>book 原型上的方法</li>
+<li>constructor: 指向 Book 构造函数。<ul>
+<li>构造函数上的原型属性</li>
+<li>构造函数上的原型方法</li>
+<li>prototype属性：Book构造函数的原型，等于book实例对象的原型</li>
+<li><code>__proto__</code>属性</li>
+</ul>
+</li>
+<li><code>__proto__</code>属性： Object对象的实例<h3 id="对象的属性与方法"><a href="#对象的属性与方法" class="headerlink" title="对象的属性与方法"></a>对象的属性与方法</h3></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<ul>
+<li>给对象添加属性和方法<ul>
+<li>方法一：<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">var person &#x3D; &#123;&#125;;</span><br><span class="line"></span><br><span class="line">person.name &#x3D; &#39;Donny&#39;;</span><br><span class="line">person.getName &#x3D; function()&#123;</span><br><span class="line">    return this.name;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></li>
+<li>方法二：<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">var person &#x3D; &#123;</span><br><span class="line">    name: &#39;Donny&#39;,</span><br><span class="line">    getName: function()&#123;</span><br><span class="line">        return this.name;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></li>
+</ul>
+</li>
+<li>访问对象的属性与方法<ul>
+<li>访问对象的属性<ul>
+<li>点（.）运算符<br><code>person.name;</code></li>
+<li>中括号（[ ]）方式<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">&#x2F;&#x2F; 中括号方式一</span><br><span class="line">person[&#39;name&#39;];</span><br><span class="line"></span><br><span class="line">&#x2F;&#x2F; 中括号方式二</span><br><span class="line">var _name &#x3D; &#39;name&#39;;</span><br><span class="line">person[_name];</span><br></pre></td></tr></table></figure></li>
+</ul>
+</li>
+<li>访问对象的方法<ul>
+<li>点（.）运算符<br><code>person.getName();</code></li>
+<li>中括号方式<br><code>person[&#39;getName&#39;]();</code></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<h3 id="对象访问原型"><a href="#对象访问原型" class="headerlink" title="对象访问原型"></a>对象访问原型</h3><ul>
+<li>对象通过一个内部属性绑定到它的原型，这个属性为: <code>__proto__</code>  <figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">var book &#x3D; &#123;</span><br><span class="line">    &#x2F;&#x2F; </span><br><span class="line">&#125;;</span><br><span class="line"></span><br><span class="line">console.log(&quot;book对象的原型&quot;, book.__proto__);</span><br></pre></td></tr></table></figure>
+
+</li>
+</ul>
+<h3 id="对象成员变量的类型"><a href="#对象成员变量的类型" class="headerlink" title="对象成员变量的类型"></a>对象成员变量的类型</h3><ul>
+<li>对象有两种成员类型，实例成员(存在于实例对象中)和原型成员(从对象原型继承而来)可以用<code>hasOwnProperty()</code>方法来判断对象是否包含特定的实例成员可以用<code>in</code>操作符来判断对象是否包含特定的属性(包含实例成员和原型成员)  <figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">&#x2F;&#x2F; 创建一个book对象</span><br><span class="line">var book &#x3D; &#123;</span><br><span class="line">    title: &quot;High Performance JavaScript&quot;,</span><br><span class="line">    publisher: &quot;Yahoo! Press&quot;</span><br><span class="line">&#125;;</span><br><span class="line"></span><br><span class="line">&#x2F;&#x2F; 使用 hasOwnProperty 方法来判断是否包含实例成员</span><br><span class="line">console.log(book.hasOwnProperty(&quot;title&quot;));  &#x2F;&#x2F; true</span><br><span class="line">console.log(book.hasOwnProperty(&quot;toString&quot;));   &#x2F;&#x2F; false</span><br><span class="line"></span><br><span class="line">&#x2F;&#x2F; 使用&quot;in&quot;操作符判断是否包含属性和方法（实例成员和原型成员）</span><br><span class="line">console.log(&quot;title&quot; in book);   &#x2F;&#x2F; true</span><br><span class="line">console.log(&quot;toString&quot; in book);    &#x2F;&#x2F; true;</span><br></pre></td></tr></table></figure>
+
+</li>
+</ul>
+<h2 id="原型"><a href="#原型" class="headerlink" title="原型"></a>原型</h2><h3 id="原型包含的内容"><a href="#原型包含的内容" class="headerlink" title="原型包含的内容"></a>原型包含的内容</h3><figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">console.log(&quot;Book 类的原型：&quot;, Book.prototype);</span><br></pre></td></tr></table></figure>
+<ul>
+<li><img src="https://gitee.com/cnkangym/BlogImageBed/raw/master/img/20200505162220.png" alt=""></li>
+<li>添加在原型上的属性，公有属性。检索属性时，先从对象实例搜索，其次，再搜索原型对象上的属性。</li>
+<li>添加在原型上的方法，公有方法。检索方法时，先从对象实例搜索，其次，再搜索原型对象上的方法。</li>
+<li>constructor 属性: constructor 指向构造函数。</li>
+<li><code>__proto__</code> 属性：对象原型本身也是一个对象，因此，它也有<strong>proto</strong>属性并不是所有的浏览器都支持</li>
+<li>构造函数的原型跟实例对象的原型是同一个实例对象<code>console.log(Book.prototype === book.__proto__);      // true</code> </li>
+</ul>
+<h3 id="通过构造函数访问原型"><a href="#通过构造函数访问原型" class="headerlink" title="通过构造函数访问原型"></a>通过构造函数访问原型</h3><ul>
+<li><code>console.log(Book.prototype);</code></li>
+</ul>
+<h3 id="通过实例对象访问原型"><a href="#通过实例对象访问原型" class="headerlink" title="通过实例对象访问原型"></a>通过实例对象访问原型</h3><figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">var book &#x3D; new Book(&quot;Javascript&quot;, &quot;2014&quot;, &quot;js&quot;);</span><br><span class="line">console.log(book.__proto__);</span><br></pre></td></tr></table></figure>
+
+<h2 id="原型链"><a href="#原型链" class="headerlink" title="原型链"></a>原型链</h2><h3 id="定义"><a href="#定义" class="headerlink" title="定义"></a>定义</h3><ul>
+<li>每个实例对象(object)都有一个私有属性(称之为<strong>proto</strong>)，指向它的构造函数的原型对象(prototype)。该原型对象也有一个自己的原型对象(<strong>proto</strong>)，层层向上直到一个对象的原型为 null。根据定义，null 没有原型，并作为这个原型链中的最后一个环节。<ul>
+<li>Object 对象：<ul>
+<li><img src="https://gitee.com/cnkangym/BlogImageBed/raw/master/img/20200505162236.png" alt=""></li>
+<li>默认情况下，所有对象都是Object对象的实例。Object.prototype 为构造函数Object的原型，因此，Object.prototype有<strong>proto</strong>属性且值为null。即Object 的原型对象(Object prototype)的原型为原型链的终端<ul>
+<li>console.log(“Object 是 Object 的实例: “, Object instanceof Object);    // true</li>
+<li>console.log(“Object 对象: “, Object);    // Object构造函数</li>
+<li>console.log(“Object 的原型: “, Object.prototype);    // Object 原型</li>
+<li>console.log(“Object 的原型对象的原型为原型链的终端: “, Object.prototype.<strong>proto</strong>);    // null</li>
+</ul>
+</li>
+<li>Function 对象为Object对象的实例。Function 的原型对象的<strong>proto</strong>属性指向Object.prototype。<ul>
+<li>console.log(Function instanceof Object);    // true</li>
+<li>console.log(“Function 对象是Object对象的实例: “, Function instanceof Object);   // true</li>
+<li>console.log(“Function 原型的<strong>proto</strong>是Object 原型的实例:”, Function.prototype.<strong>proto</strong> === Object.prototype);    // true</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>Function 函数：<ul>
+<li><img src="https://gitee.com/cnkangym/BlogImageBed/raw/master/img/20200505182852.png" alt=""></li>
+<li>所有的函数都是 Function 函数的实例。Object 本身就是一个构造函数，那么Object就是Function函数的实例，因此，Object就有<strong>proto</strong>属性且Object.<strong>proto</strong>指向Function对象的原型(Function.prototype)<ul>
+<li>console.log(“Object 构造函数: “, Object);</li>
+<li>console.log(“Object 构造函数是 Function 函数的实例: “,  Object.<strong>proto</strong> === Function.prototype);    // true</li>
+<li>console.log(“Object 构造函数的原型对象的构造函数指向 Function: “, Object.<strong>proto</strong>.constructor);    // Function</li>
+</ul>
+</li>
+<li>Function 函数是自己的实例<ul>
+<li>console.log(“Function 是 Function的实例：”, Function instanceof Function);</li>
+<li>console.log(Function.<strong>proto</strong>.constructor === Function);    // true</li>
+<li>console.log(Function.<strong>proto</strong> === Function.prototype);    // true</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+]]></content>
+      <categories>
+        <category>javascript</category>
+      </categories>
+      <tags>
+        <tag>javascript</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>this</title>
+    <url>/2020/05/05/javascript/this/</url>
+    <content><![CDATA[<blockquote>
+<p>参考《JavaScript核心技术开发解密》</p>
+</blockquote>
+<h1 id="this-的指向及分类"><a href="#this-的指向及分类" class="headerlink" title="this 的指向及分类"></a>this 的指向及分类</h1><h2 id="this-指向的确定"><a href="#this-指向的确定" class="headerlink" title="this 指向的确定"></a>this 指向的确定</h2><ul>
+<li>当前函数的 this 是在函数被调用执行的时候才确定的。（当前的执行上下文处理函数调用栈的栈顶，那么这个时候变量对象会变成活动对象，同时 this 的指向确认）</li>
+</ul>
+<a id="more"></a>
+
+<h2 id="全局对象中的-this"><a href="#全局对象中的-this" class="headerlink" title="全局对象中的 this"></a>全局对象中的 this</h2><ul>
+<li>全局对象中 this 指向它本身  <figure class="highlight plain"><table><tr><td class="code"><pre><span class="line"></span><br><span class="line">通过 this 绑定到全局对象</span><br><span class="line">this.a1 &#x3D; 10;</span><br><span class="line">&#x2F;&#x2F; 通过声明绑定到变量对象，但在全局环境中，变量对象就是它本身</span><br><span class="line">var a2 &#x3D; 20;</span><br><span class="line">&#x2F;&#x2F; 仅仅只有赋值操作，标识符会隐式绑定到全局对象</span><br><span class="line">a3 &#x3D; 30;</span><br></pre></td></tr></table></figure>
+<h2 id="函数中的-this"><a href="#函数中的-this" class="headerlink" title="函数中的 this"></a>函数中的 this</h2></li>
+<li>在一个函数的执行上下文中，this由该函数的调用者提供，由调用函数的方式来决定其指向<ul>
+<li>如果调用者被某一个对象所拥有，那么在调用该函数时，内部的 this 指向该对象</li>
+<li>如果调用者函数独立调用，那么该函数内部的 this 则指向 undefined。但是在非严格模式中，当 this 指向 undefined 时，它会自动指向全局对象</li>
+</ul>
+</li>
+<li>显式指定 this：所有的函数都可以调用以下方法<ul>
+<li>call(): 第一个参数是为函数内部指定的 this 指向，后续的参数则是函数执行时所需要的参数，一个一个传递。<ul>
+<li>函数会立即执行</li>
+</ul>
+</li>
+<li>apply(): 第一个参数与 call 相同，为函数内部 this 指向，而函数的参数，则以数组的形式传递，作为 apply 的第二个参数<ul>
+<li>函数会立即执行</li>
+</ul>
+</li>
+<li>bind():(ECMAScript5 增加)<ul>
+<li>bind()方法创建一个新的函数（称为绑定函数）, 当被调用时，将其this关键字设置为提供的值，在调用新函数时，在任何提供之前提供一个给定的参数序列。</li>
+<li>函数调用 bind 时，函数并不会立即执行，而是返回一个新的函数(绑定函数)。</li>
+<li>function.bind(thisArg[, arg1[, arg2[, …]]])<ul>
+<li>thisArg: 当绑定函数被调用时，该参数会作为this的指向。当使用new 操作符调用绑定函数时，该参数无效。<ul>
+<li>此参数为 null 时表示：不改变this指向，而且可以在后续的调用中去传入参数。</li>
+</ul>
+</li>
+<li>arg1, arg2: 当绑定函数被调用时，这些参数将置于实参之前传递给被绑定的方法。</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>示例：  <figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">var a &#x3D; 10;</span><br><span class="line"></span><br><span class="line">var obj &#x3D; &#123;</span><br><span class="line">    a: 20</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">function print()&#123;</span><br><span class="line">    console.log(this.a);</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">print();                        &#x2F;&#x2F; 调用 print 函数</span><br><span class="line">print.call(obj);                &#x2F;&#x2F; call 方式： this 指向 obj 对象</span><br><span class="line">print.apply(obj);               &#x2F;&#x2F; apply 方式： this 指向 obj 对象</span><br><span class="line">var _print &#x3D; print.bind(null);   &#x2F;&#x2F; bind 方式： this 指向 window 对象</span><br><span class="line">_print();                       &#x2F;&#x2F; 执行 pint 函数的绑定函数_print();</span><br></pre></td></tr></table></figure></li>
+</ul>
+</li>
+</ul>
+]]></content>
+      <categories>
+        <category>javascript</category>
+      </categories>
+      <tags>
+        <tag>javascript</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>javascript 数据类型</title>
+    <url>/2020/05/05/javascript/javascript-%E6%95%B0%E6%8D%AE%E7%B1%BB%E5%9E%8B/</url>
+    <content><![CDATA[<blockquote>
+<p>参考《JavaScript核心技术开发解密》</p>
+</blockquote>
+<h2 id="javascript-数据类型"><a href="#javascript-数据类型" class="headerlink" title="javascript 数据类型"></a>javascript 数据类型</h2><ul>
+<li><p>基本类型</p>
+<ul>
+<li>字符串（String）<ul>
+<li>可以使用单/双引号</li>
+</ul>
+</li>
+<li>数字（Number）<ul>
+<li>javascript 只有一种数字类型，数字可以带小数点，也可以不带<a id="more"></a>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">var x1 &#x3D; 34.00;</span><br><span class="line">var x2 &#x3D; 34;</span><br><span class="line"></span><br><span class="line">var y &#x3D; 123e5;          &#x2F;&#x2F; 12300000</span><br><span class="line">var z &#x3D; 123e-5;         &#x2F;&#x2F; 0.00123</span><br></pre></td></tr></table></figure></li>
+</ul>
+</li>
+<li>布尔（Boolean）<ul>
+<li>true: 真</li>
+<li>false：假</li>
+</ul>
+</li>
+<li>未定义（Undefined）<ul>
+<li>表示这个变更不含有值</li>
+</ul>
+</li>
+<li>空（Null）<ul>
+<li>可以通过将变量值设置为null来清空变量（可以加快垃圾回收）</li>
+</ul>
+</li>
+<li>Symbol: ES6 引入了一种新的原始数据类型，表示独一无二的值。</li>
+</ul>
+</li>
+<li><p>引用数据类型</p>
+<ul>
+<li><p>对象（Object）</p>
+<ul>
+<li>对象由花括号分隔</li>
+<li>在花括号内部，对象的属性以名称和值对的形式来定义（name: value）,属性间由逗号分隔<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line"></span><br><span class="line">var person &#x3D; &#123;</span><br><span class="line">    firstName: &quot;Donny&quot;,</span><br><span class="line">    lastName: &quot;Kang&quot;,</span><br><span class="line">    id: 310</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></li>
+<li>对象属性的寻址方式：<ul>
+<li>name = person.lastName;</li>
+<li>name = person[lastName];</li>
+</ul>
+</li>
+</ul>
+</li>
+<li><p>数组（Array）</p>
+<ul>
+<li><p>数据的定义：</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">&#x2F;&#x2F; 方式一：</span><br><span class="line">var cars &#x3D; new Array();</span><br><span class="line">cars[0] &#x3D; &quot;Saab&quot;;</span><br><span class="line">cars[1] &#x3D; &quot;Volvo&quot;;</span><br><span class="line">cars[2] &#x3D; &quot;BMW&quot;;</span><br><span class="line"></span><br><span class="line">&#x2F;&#x2F; 方式二:</span><br><span class="line">var cars &#x3D; new Array(&quot;Saab&quot;, &quot;Volvo&quot;, &quot;BMW&quot;);</span><br></pre></td></tr></table></figure>
+
+<p>// 方式三:<br>var cars = [“Saab”, “Volvo”, “BMW”];</p>
+</li>
+</ul>
+</li>
+<li><p>函数（Function）</p>
+</li>
+</ul>
+</li>
+</ul>
+<h2 id="javascript-拥有动态类型"><a href="#javascript-拥有动态类型" class="headerlink" title="javascript 拥有动态类型"></a>javascript 拥有动态类型</h2><ul>
+<li>意味着相同的变量可用作不同的类型<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">var x;                  &#x2F;&#x2F; x 为 Undefined</span><br><span class="line">var x &#x3D; 5;              &#x2F;&#x2F; x 为 Number</span><br><span class="line">var x &#x3D; &quot;Donny&quot;;        &#x2F;&#x2F; x 为 String</span><br></pre></td></tr></table></figure></li>
+</ul>
+]]></content>
+      <categories>
+        <category>javascript</category>
+      </categories>
+      <tags>
+        <tag>javascript</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>函数</title>
+    <url>/2020/05/05/javascript/%E5%87%BD%E6%95%B0/</url>
+    <content><![CDATA[<blockquote>
+<p>参考《JavaScript核心技术开发解密》</p>
+</blockquote>
+<h1 id="函数"><a href="#函数" class="headerlink" title="函数"></a>函数</h1><h2 id="函数定义"><a href="#函数定义" class="headerlink" title="函数定义"></a>函数定义</h2><figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">function name([param,[, param,[..., param]]]) &#123;</span><br><span class="line">    statements</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<a id="more"></a>
+<ul>
+<li>参数：param 传递给函数的参数的名称，一个函数最多可以有255个参数。</li>
+<li>返回值：函数总是会返回一个值。如果函数没有使用 return 语句，则它默认返回 undefined，要想返回一个特定的值，则函数必须使用 return 语句来指定一个所要返回的值，return 之后的语句将不再执行。</li>
+</ul>
+<h2 id="函数声明"><a href="#函数声明" class="headerlink" title="函数声明"></a>函数声明</h2><ul>
+<li>用 function 来声明  <figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">function fn()&#123;</span><br><span class="line">    console.log(&#39;function&#39;);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></li>
+<li>函数声明提前：在变量对象的创建过程中，function 声明的函数比 var 声明的变量有更加优先的执行顺序。因此，在同一个执行上下文中，无论在什么地方声明的函数，都可以直接使用。</li>
+</ul>
+<h2 id="函数表达式"><a href="#函数表达式" class="headerlink" title="函数表达式"></a>函数表达式</h2><ul>
+<li>函数表达式是将一个函数赋值给一个变量的过程。  <figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">var fn &#x3D; function()&#123;</span><br><span class="line">    ...</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></li>
+<li>理解函数表达式  <figure class="highlight plain"><table><tr><td class="code"><pre><span class="line"></span><br><span class="line">var fn &#x3D; undefined;</span><br><span class="line">fn &#x3D; function()&#123;...&#125;</span><br></pre></td></tr></table></figure></li>
+<li>使用函数表达式时，要考虑代码的执行顺序。避免变量提升带来的问题</li>
+</ul>
+<h2 id="匿名函数"><a href="#匿名函数" class="headerlink" title="匿名函数"></a>匿名函数</h2><ul>
+<li>定义：没有名字的函数</li>
+<li>使用：<ul>
+<li>一般会作为一个函数的参数或是返回函数来使用<ul>
+<li>setTimeout 中的参数  <figure class="highlight plain"><table><tr><td class="code"><pre><span class="line"></span><br><span class="line">var timer &#x3D; setTimeout(function()&#123;</span><br><span class="line">    ...</span><br><span class="line">&#125;, 1000);</span><br></pre></td></tr></table></figure></li>
+<li>数组方法中的参数  <figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">var arr &#x3D; [1, 2, 3];</span><br><span class="line"></span><br><span class="line">arr.map(function(item)&#123;</span><br><span class="line">    return item + 1;</span><br><span class="line">&#125;)</span><br><span class="line"></span><br><span class="line">arr.forEach(function()&#123;</span><br><span class="line">    &#x2F;&#x2F; do something</span><br><span class="line">&#125;)</span><br></pre></td></tr></table></figure></li>
+<li>匿名函数作为一个返回值  <figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">function add()&#123;</span><br><span class="line">    var a &#x3D; 10;</span><br><span class="line"></span><br><span class="line">    return function()&#123;</span><br><span class="line">        a + 20;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line">add()();</span><br></pre></td></tr></table></figure>
+
+</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<h2 id="函数自执行"><a href="#函数自执行" class="headerlink" title="函数自执行"></a>函数自执行</h2><ul>
+<li>模拟块级作用域，意味着外界已经无法访问到该作用域内的变量与函数。可以利用闭包的特性，把变量与函数选择性地开放给外界。</li>
+<li>函数自执行写法<ul>
+<li>写法一:常用写法  <figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">(function()&#123;</span><br><span class="line">    ...</span><br><span class="line">&#125;)();</span><br></pre></td></tr></table></figure></li>
+<li>写法二：  <figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">+function()&#123;</span><br><span class="line">    ...</span><br><span class="line">&#125;();</span><br></pre></td></tr></table></figure></li>
+<li>写法三  <figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">-function()&#123;</span><br><span class="line">    ...</span><br><span class="line">&#125;();</span><br></pre></td></tr></table></figure></li>
+<li>写法四  <figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">!function()&#123;</span><br><span class="line">    ...</span><br><span class="line">&#125;();</span><br></pre></td></tr></table></figure></li>
+</ul>
+</li>
+<li>模块特性：一个模块可以有：私有变量，公有变量，私有函数和公有函数。  <figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">&lt;script&gt;</span><br><span class="line">    </span><br><span class="line">    (function()&#123;</span><br><span class="line"></span><br><span class="line">        &#x2F;&#x2F; 私有变量</span><br><span class="line">        var name &#x3D; &quot;donny&quot;;</span><br><span class="line">        var age &#x3D; 28;</span><br><span class="line"></span><br><span class="line">        &#x2F;&#x2F; 私有函数</span><br><span class="line">        function getAge()&#123;</span><br><span class="line">            return age;</span><br><span class="line">        &#125;</span><br><span class="line"></span><br><span class="line">        &#x2F;&#x2F; 公有函数</span><br><span class="line">        function getName()&#123;</span><br><span class="line">            return &#96;your name is &#96; + name;</span><br><span class="line">        &#125;</span><br><span class="line"></span><br><span class="line">        &#x2F;&#x2F; 将引用保存在外部执行环境的变量中，这是一种简单对外界开放方法的方式</span><br><span class="line">        window.getName &#x3D; getName;</span><br><span class="line"></span><br><span class="line">    &#125;)();</span><br><span class="line">    </span><br><span class="line">&lt;&#x2F;script&gt;</span><br></pre></td></tr></table></figure></li>
+</ul>
+]]></content>
+      <categories>
+        <category>javascript</category>
+      </categories>
+      <tags>
+        <tag>javascript</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>内存空间</title>
+    <url>/2020/05/05/javascript/%E5%86%85%E5%AD%98%E7%A9%BA%E9%97%B4/</url>
+    <content><![CDATA[<blockquote>
+<p>参考《JavaScript核心技术开发解密》</p>
+</blockquote>
+<h2 id="内存空间使用过程"><a href="#内存空间使用过程" class="headerlink" title="内存空间使用过程"></a>内存空间使用过程</h2><figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">var a &#x3D; 20;</span><br><span class="line">alert(a + 100);</span><br><span class="line">a &#x3D; null;</span><br></pre></td></tr></table></figure>
+<a id="more"></a>
+<ul>
+<li>分配内存</li>
+<li>使用分配到的内存</li>
+<li>不需要时释放内存</li>
+</ul>
+<h2 id="垃圾回收"><a href="#垃圾回收" class="headerlink" title="垃圾回收"></a>垃圾回收</h2><ul>
+<li>js垃圾自动回收机制：JavaScript的垃圾回收实现主要依靠“引用”的概念。当一块内存空间中的数据能够被访问时，垃圾回收器就认为“该数据能够被获得”。不能够被获得的数据，就会被打上标记。并回收内存空间。这种方式叫作 标记-清除算法</li>
+</ul>
+]]></content>
+      <categories>
+        <category>javascript</category>
+      </categories>
+      <tags>
+        <tag>javascript</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>执行上下文与变量对象</title>
+    <url>/2020/05/05/javascript/%E6%89%A7%E8%A1%8C%E4%B8%8A%E4%B8%8B%E6%96%87%E4%B8%8E%E5%8F%98%E9%87%8F%E5%AF%B9%E8%B1%A1/</url>
+    <content><![CDATA[<blockquote>
+<p>参考《JavaScript核心技术开发解密》</p>
+</blockquote>
+<h1 id="执行上下文（EC）"><a href="#执行上下文（EC）" class="headerlink" title="执行上下文（EC）"></a>执行上下文（EC）</h1><h2 id="全局上下文"><a href="#全局上下文" class="headerlink" title="全局上下文"></a>全局上下文</h2><ul>
+<li>全局对象为 window 对象。</li>
+<li>全局上下文的变量对象就是 window 对象，而且全局上下文的变量对象不能变为活动对象。<a id="more"></a>
+  <figure class="highlight plain"><table><tr><td class="code"><pre><span class="line"></span><br><span class="line">&#x2F;&#x2F; 以浏览器为例，全局对象为 window</span><br><span class="line">&#x2F;&#x2F; 全局上下文</span><br><span class="line">windowEC &#x3D; &#123;</span><br><span class="line">    VO: window,</span><br><span class="line">    scopeChain: &#123;&#125;</span><br><span class="line">    this: window</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></li>
+<li>全局上下文的生命周期<ul>
+<li>全局上下文的生命周期与程序和生命周期一致，只要程序运行不结束（比如关掉浏览器窗口），全局上下文就会一起存在，其他所有的上下文环境都能直接访问全局上下文的属性。</li>
+</ul>
+</li>
+</ul>
+<h2 id="函数执行上下文"><a href="#函数执行上下文" class="headerlink" title="函数执行上下文"></a>函数执行上下文</h2><ul>
+<li>定义：函数运行时，会创建一个执行环境，这个执行环境叫做执行上下文（Execution Context）。</li>
+<li>执行上下文的执行过程：<ul>
+<li>上下文的创建阶段<ul>
+<li>确认变量对象并完成变量对象的创建</li>
+</ul>
+</li>
+<li>上下文的执行阶段<ul>
+<li>完成变量的赋值工作</li>
+</ul>
+</li>
+<li>当前函数上下文处于激活状态<ul>
+<li>变量对象称之为活动对象(AO, Activation Object)：活动变量包含了变量对象的所有属性，并且此时所有的属性都已经完成了赋值。除此之外，活动对象还包含了 this 的指向。</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>变量提升（Hoisting）  <figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">console.log(a);</span><br><span class="line">var a &#x3D; 30;</span><br><span class="line"></span><br><span class="line">&#x2F;&#x2F; 实际执行顺序：</span><br><span class="line">&#x2F;&#x2F; 创建阶段</span><br><span class="line">var a &#x3D; undefined;</span><br><span class="line"></span><br><span class="line">&#x2F;&#x2F; 执行阶段</span><br><span class="line">console.log(a);</span><br><span class="line">a &#x3D; 30;</span><br></pre></td></tr></table></figure></li>
+<li>ES6 支持的新的变量声明方式 let/const：是在上下文的执行阶段开始执行的，避免了变量提升带来的一系列问题。</li>
+</ul>
+<h1 id="变量对象（VO）"><a href="#变量对象（VO）" class="headerlink" title="变量对象（VO）"></a>变量对象（VO）</h1><ul>
+<li>由来：在执行上下文中会创建一个叫做变量对象（VO: varaiable Object）的特殊对象。</li>
+<li>变量对象里包括以下内容：<ul>
+<li>当前上下文中的所有变量声明<ul>
+<li>通过 var 声明的变量</li>
+</ul>
+</li>
+<li>当前上下文中的所有函数声明<ul>
+<li>通过 function 声明的函数</li>
+</ul>
+</li>
+<li>函数的所有参数<ul>
+<li>Firefox 中为参数对象 arguments</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>创建过程<ul>
+<li>Chrome 浏览器，变量对象会首先获得函数的参数变量及其值</li>
+<li>Firefox 浏览器，直接将参数对象 arguments 保存在变量对象中</li>
+<li>依次获取当前上下文中所有的函数声明；变量对象中会以函数名建立一个属性，属性值为指向该函数所在的内存地址的引用。如果函数名的属性已经存在，那么该属性的值会被新的引用覆盖。</li>
+<li>依次获取当前上下文中所有的变更声明（使用 var 关键字声明的变量）；每找到一个变量声明，就在变量对象中以变量名建立一个属性，属性值为 undefined。如果该变更名的属性已经存在，为了防止同名的函数被修改为 undefined，则会直接跳过，原属性值不会被修改。</li>
+</ul>
+</li>
+<li>理解变量对象：  <figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">function test()&#123;</span><br><span class="line">    console.log(foo);</span><br><span class="line">    console.log(bar);</span><br><span class="line"></span><br><span class="line">    var foo &#x3D; &#39;Hello&#39;;</span><br><span class="line"></span><br><span class="line">    console.log(foo);</span><br><span class="line"></span><br><span class="line">    var bar &#x3D; function()&#123;</span><br><span class="line">        return &#39;world&#39;;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    console.log(bar);</span><br><span class="line"></span><br><span class="line">    function foo()&#123;</span><br><span class="line">        return &#39;hello&#39;;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line">test();</span><br><span class="line"></span><br><span class="line">&#x2F;&#x2F; 变量对象创建阶段</span><br><span class="line">VO &#x3D; &#123;</span><br><span class="line">    arguments: &#123;...&#125;,</span><br><span class="line">    foo: &lt;foo reference&gt;,</span><br><span class="line">    bar: undefined</span><br><span class="line">&#125;</span><br><span class="line">&#x2F;&#x2F; 变量对象执行阶段</span><br><span class="line">VO -&gt; AO</span><br><span class="line">AO &#x3D; &#123;</span><br><span class="line">    arguments: &#123;...&#125;,</span><br><span class="line">    foo: &#39;Hello&#39;,</span><br><span class="line">    bar: &lt;bar reference&gt;,   &#x2F;&#x2F; world</span><br><span class="line">    this: Window            &#x2F;&#x2F; 当前函数的 this 是在函数被调用执行时，才确定的。</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<ul>
+<li>Local: 当前正在执行的活动对象，随着函数的执行，变量对象中的属性值会一直发生变化<ul>
+<li>执行到 var foo = ‘Hello’; 之前<ul>
+<li><img src="https://gitee.com/cnkangym/BlogImageBed/raw/master/img/js_ec_01.png" alt=""></li>
+</ul>
+</li>
+<li>执行到 var foo = ‘Hello’; 之后<ul>
+<li><img src="https://gitee.com/cnkangym/BlogImageBed/raw/master/img/js_ec_02.png" alt=""></li>
+</ul>
+</li>
+<li>执行过 var bar = function(){return ‘world’;}之后<ul>
+<li><img src="https://gitee.com/cnkangym/BlogImageBed/raw/master/img/js_ec_03.png" alt=""></li>
+</ul>
+</li>
+</ul>
+</li>
+<li>执行结果<ul>
+<li><img src="https://gitee.com/cnkangym/BlogImageBed/raw/master/img/js_ec_04.png" alt=""></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<h1 id="JavaScript代码的运行机制"><a href="#JavaScript代码的运行机制" class="headerlink" title="JavaScript代码的运行机制"></a>JavaScript代码的运行机制</h1><h2 id="JavaScript中的运行环境包括："><a href="#JavaScript中的运行环境包括：" class="headerlink" title="JavaScript中的运行环境包括："></a>JavaScript中的运行环境包括：</h2><ul>
+<li>全局环境：代码运行起来后会首先进入全局环境</li>
+<li>函数环境：当函数被调用时，会进入当前函数中执行代码</li>
+<li>eval环境：不建议使用</li>
+</ul>
+<h2 id="执行上下文与函数调用栈（Call-Stack）"><a href="#执行上下文与函数调用栈（Call-Stack）" class="headerlink" title="执行上下文与函数调用栈（Call Stack）"></a>执行上下文与函数调用栈（Call Stack）</h2><ul>
+<li>来源：函数执行时，会创建一个执行环境。这个执行环境叫做执行上下文（EC）。函数执行时，才会创建执行上下文</li>
+<li>JavaScript 代码在执行时，会进入一个执行上下文中。执行上下文可以理解为当前代码的运行环境。</li>
+<li>一个JavaScript程序中，会出现多少执行上下文。</li>
+<li>JavaScript引擎会使用函数调用栈来处理执行上下文。栈底永远都是全局上下文，栈顶则是当前正在执行的上下文。处于栈顶的执行上下文执行完毕之后，会自动出栈。</li>
+</ul>
+<h2 id="JavaScript代码的生命周期"><a href="#JavaScript代码的生命周期" class="headerlink" title="JavaScript代码的生命周期"></a>JavaScript代码的生命周期</h2><ul>
+<li>全局上下文入栈，并一起在于栈底</li>
+<li>全局上下文入栈之后，从可执行代码开始执行。创建可执行代码自己的执行上下文，并把当前的执行上下文入栈。</li>
+<li>执行当前执行上下文中的可执行代码。创建它自己的可执行上下文，并入栈。</li>
+<li>可执行代码执行完后，依次出栈。</li>
+<li>ECStack中就只剩下全局上下文了，全局上下文在浏览器窗口关闭后出栈。</li>
+<li>注意：函数执行过程中遇到Return能直接终止可执行代码的执行，因此会直接将当前上下文弹出栈。</li>
+</ul>
+]]></content>
+      <categories>
+        <category>javascript</category>
+      </categories>
+      <tags>
+        <tag>javascript</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>回调函数</title>
+    <url>/2020/05/05/javascript/%E5%9B%9E%E8%B0%83%E5%87%BD%E6%95%B0/</url>
+    <content><![CDATA[<blockquote>
+<p>参考《JavaScript核心技术开发解密》</p>
+</blockquote>
+<h1 id="回调函数"><a href="#回调函数" class="headerlink" title="回调函数"></a>回调函数</h1><h2 id="函数小知识点"><a href="#函数小知识点" class="headerlink" title="函数小知识点"></a>函数小知识点</h2><ul>
+<li>引用数据类型的特性: 引用类型为保存在变量对象中的一个引用（地址指针），该地址指针与堆内存中的对象（引用类型数据的值）相关联。<a id="more"></a>
+  <figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">function add(a, b) &#123;</span><br><span class="line">    return a + b;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">var add2 &#x3D; add;</span><br><span class="line"></span><br><span class="line">console.log(add2(10, 20));             &#x2F;&#x2F; 30</span><br></pre></td></tr></table></figure></li>
+<li>变量对象的创建过程：同名的变量与函数  <figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">console.log(say);</span><br><span class="line">console.log(say());</span><br><span class="line"></span><br><span class="line">function say()&#123;</span><br><span class="line">    console.log(&#39;function say&#39;);</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">console.log(say);</span><br><span class="line">console.log(say());</span><br><span class="line"></span><br><span class="line">var say &#x3D; &#39;variable speak&#39;;</span><br><span class="line"></span><br><span class="line">console.log(say);</span><br><span class="line">console.log(say());</span><br><span class="line"></span><br><span class="line">&#x2F;&#x2F; 实际执行顺序：</span><br><span class="line">&#x2F;&#x2F; 创建阶段：确定函数参数，函数及变量对象</span><br><span class="line">VO &#x3D; &#123;</span><br><span class="line">    arguments: &#123;...&#125;,</span><br><span class="line">    say: &lt;say reference&gt;</span><br><span class="line">&#125;</span><br><span class="line">&#x2F;&#x2F; 执行阶段：随着代码的执行，变量对象的值会一直发生变化</span><br><span class="line">VO-&gt;AO</span><br><span class="line">AO1 &#x3D; &#123;</span><br><span class="line">    arguments: &#123;...&#125;,</span><br><span class="line">    say: &lt;say reference&gt;</span><br><span class="line">&#125;</span><br><span class="line">AO2 &#x3D; &#123;</span><br><span class="line">    arguments: &#123;...&#125;,</span><br><span class="line">    say: variable speak</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<ul>
+<li>Local: 当前正在执行的活动对象，随着函数的执行，变量对象中的属性值会一直发生变化 <ul>
+<li>执行到 var = ‘variable speak’; 之前<ul>
+<li><img src="https://gitee.com/cnkangym/BlogImageBed/raw/master/img/js_callback_01.png" alt=""></li>
+</ul>
+</li>
+<li>执行到 var = ‘variable speak’; 之后<ul>
+<li><img src="https://gitee.com/cnkangym/BlogImageBed/raw/master/img/js_callback_02.png" alt=""></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<h2 id="回调函数定义"><a href="#回调函数定义" class="headerlink" title="回调函数定义"></a>回调函数定义</h2><ul>
+<li>A callback is a function that is passwd as an agrument to another function and is executed after its partent function has completed.(</li>
+<li>回调函数（B）就是一个参数，将这个函数B作为参数传到另一个函数（A）里面，当函数（A）执行完之后，再执行传进去的函数（B），这个过程就叫做回调)<h2 id="理解回调函数"><a href="#理解回调函数" class="headerlink" title="理解回调函数"></a>理解回调函数</h2></li>
+<li>将一个函数（sayHi）传递给主函数（hello）<ul>
+<li>示例代码：  <figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">    </span><br><span class="line">function test()&#123;</span><br><span class="line">    function hello(func)&#123;</span><br><span class="line">        func();</span><br><span class="line">    &#125;</span><br><span class="line">    function sayHi()&#123;</span><br><span class="line">        console.log(&#39;Hello, 你好！&#39;);</span><br><span class="line">    &#125;</span><br><span class="line">    hello(sayHi);</span><br><span class="line">&#125;</span><br><span class="line">test();</span><br></pre></td></tr></table></figure></li>
+<li>执行结果：<ul>
+<li><img src="https://gitee.com/cnkangym/BlogImageBed/raw/master/img/js_callback_03.png" alt=""></li>
+</ul>
+</li>
+</ul>
+</li>
+<li>将匿名函数作为参数传递给主函数（hello）<ul>
+<li>示例代码：  <figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">function test()&#123;</span><br><span class="line">    function hello(func)&#123;</span><br><span class="line">        func();</span><br><span class="line">    &#125;</span><br><span class="line">    hello(function sayHi()&#123;</span><br><span class="line">        console.log(&#39;Hello, 你好！&#39;);</span><br><span class="line">    &#125;);</span><br><span class="line">&#125;</span><br><span class="line">test();</span><br></pre></td></tr></table></figure></li>
+<li>执行结果：<ul>
+<li><img src="https://gitee.com/cnkangym/BlogImageBed/raw/master/img/js_callback_04.png" alt=""></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<h2 id="回调函数—-传参"><a href="#回调函数—-传参" class="headerlink" title="回调函数—-传参"></a>回调函数—-传参</h2><ul>
+<li>将回调函数的参数作为与回调函数同等级的参数进行传递  <figure class="highlight plain"><table><tr><td class="code"><pre><span class="line"></span><br><span class="line">function test()&#123;</span><br><span class="line">    function hello(func, name)&#123;</span><br><span class="line">        func(name);</span><br><span class="line">    &#125;</span><br><span class="line">    hello(function sayHi(name)&#123;</span><br><span class="line">        console.log(&#39;Hello, &#39; + name);</span><br><span class="line">    &#125;, &#39;Donny&#39;);</span><br><span class="line">&#125;</span><br><span class="line">test();                 &#x2F;&#x2F; Hello, Donny</span><br></pre></td></tr></table></figure></li>
+<li>将回调函数的参数在调用函数内部创建  <figure class="highlight plain"><table><tr><td class="code"><pre><span class="line"></span><br><span class="line">function test()&#123;</span><br><span class="line">    function hello(func)&#123;</span><br><span class="line">        var name &#x3D; &#39;Donny&#39;;</span><br><span class="line">        func(name);</span><br><span class="line">    &#125;</span><br><span class="line">    hello(function sayHi(name)&#123;</span><br><span class="line">        console.log(&#39;Hello, &#39; + name);</span><br><span class="line">    &#125;);</span><br><span class="line">&#125;</span><br><span class="line">test();                 &#x2F;&#x2F; Hello, Donny</span><br></pre></td></tr></table></figure>
+
+</li>
+</ul>
+<h2 id="回调函数的应用"><a href="#回调函数的应用" class="headerlink" title="回调函数的应用"></a>回调函数的应用</h2><ul>
+<li>函数式编程</li>
+<li>比较耗时的操作<ul>
+<li>AJAX 请求</li>
+<li>处理文件</li>
+</ul>
+</li>
+</ul>
+]]></content>
+      <categories>
+        <category>javascript</category>
+      </categories>
+      <tags>
+        <tag>javascript</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>闭包</title>
+    <url>/2020/05/05/javascript/%E9%97%AD%E5%8C%85/</url>
+    <content><![CDATA[<blockquote>
+<p>参考《JavaScript核心技术开发解密》</p>
+</blockquote>
+<h1 id="闭包（Closures）"><a href="#闭包（Closures）" class="headerlink" title="闭包（Closures）"></a>闭包（Closures）</h1><h2 id="理解闭包："><a href="#理解闭包：" class="headerlink" title="理解闭包："></a>理解闭包：</h2><ul>
+<li>它由两部分组成-执行上下文（代号A），以及在该执行上下文中创建的函数（代号B）。当B执行时，如果访问了A中变量对象中的值，那么闭包变会产生。Chrome中，以执行上下文A的函数名代指闭包。</li>
+</ul>
+<a id="more"></a>
+
+<h2 id="闭包的本质："><a href="#闭包的本质：" class="headerlink" title="闭包的本质："></a>闭包的本质：</h2><ul>
+<li>在函数外部保持了内部变量的引用。</li>
+</ul>
+<h2 id="闭包的影响"><a href="#闭包的影响" class="headerlink" title="闭包的影响"></a>闭包的影响</h2><h3 id="闭包带来的问题："><a href="#闭包带来的问题：" class="headerlink" title="闭包带来的问题："></a>闭包带来的问题：</h3><ul>
+<li>闭包会阻止垃圾回收机制进行回收。<h3 id="闭包对函数调用栈-Call-Stack-的影响"><a href="#闭包对函数调用栈-Call-Stack-的影响" class="headerlink" title="闭包对函数调用栈(Call Stack)的影响"></a>闭包对函数调用栈(Call Stack)的影响</h3></li>
+<li>函数调用栈其实是在代码执行时才确定的。<h3 id="闭包对函数作用域链-Scope-Chain-的影响"><a href="#闭包对函数作用域链-Scope-Chain-的影响" class="headerlink" title="闭包对函数作用域链(Scope Chain)的影响"></a>闭包对函数作用域链(Scope Chain)的影响</h3></li>
+<li>作用域规则是在代码编辑阶段就已经确定。虽然作用域链是在代码执行时才生成的，但是它的规则并不会在代码执行时发生变化。</li>
+</ul>
+<h2 id="理解闭包"><a href="#理解闭包" class="headerlink" title="理解闭包"></a>理解闭包</h2><ul>
+<li>代码一：（没有闭包产生）  <figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">&lt;script&gt;</span><br><span class="line">    var name &#x3D; &quot;Window&quot;;</span><br><span class="line">    var p &#x3D; &#123;</span><br><span class="line">        name: &quot;donny&quot;,</span><br><span class="line">        printName: function()&#123;</span><br><span class="line">            return function()&#123;</span><br><span class="line">                return this.name;</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    var getName &#x3D; p.printName();</span><br><span class="line">    var name &#x3D; getName();</span><br><span class="line">    console.log(name);</span><br><span class="line">&lt;&#x2F;script&gt;</span><br></pre></td></tr></table></figure>
+<ul>
+<li>var getName = p.printName(); 访问 p 对象中的 printName 方法，返回值为一个函数。把函数的引用赋值给 getName 变量。</li>
+<li>var name = getName(); 执行匿名函数 function(){ return this.name }. 由于 getName 函数是调用者且为独立调用，此时的 this 指向为 undefined，但是在非严格模式中，当 this 指向 undefined时，会自动指向全局对象 window. 所以，此时的 this.name 返回的值为 Window.</li>
+<li>console.log(name); 输出 this.name的值。</li>
+</ul>
+</li>
+<li>代码二：  <figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">&lt;script&gt;</span><br><span class="line">    var name &#x3D; &quot;Window&quot;;</span><br><span class="line">    var p &#x3D; &#123;</span><br><span class="line">        name: &quot;donny&quot;,</span><br><span class="line">        printName: function()&#123;</span><br><span class="line">            return function()&#123;</span><br><span class="line">                return this.name;</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    var getName &#x3D; p.printName();</span><br><span class="line">    var name &#x3D; getName.call(p);</span><br><span class="line">    console.log(name);</span><br><span class="line">&lt;&#x2F;script&gt;</span><br></pre></td></tr></table></figure>
+<ul>
+<li>var getName = p.printName(); 访问p对象中的printName方法，返回值为一个函数。把函数的引用赋值给 getName 变量。</li>
+<li>var name = getName.call(p); 使用call函数时会改变this的指向,此时this指向p对象实例</li>
+<li>console.log(name); 输出 p.name 的值</li>
+</ul>
+</li>
+<li>代码三：  <figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">&lt;script&gt;</span><br><span class="line">    var name &#x3D; &quot;Window&quot;;</span><br><span class="line">    var p &#x3D; &#123;</span><br><span class="line">        name: &quot;donny&quot;,</span><br><span class="line">        printName: function()&#123;</span><br><span class="line">            var self &#x3D; this;</span><br><span class="line">            return function()&#123;</span><br><span class="line">                return self.name;</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    var getName &#x3D; p.printName();</span><br><span class="line">    var name &#x3D; getName();</span><br><span class="line">    console.log(name);</span><br><span class="line">&lt;&#x2F;script&gt;</span><br></pre></td></tr></table></figure>
+<ul>
+<li>var getName = p.printName(); 访问p对象中的printName方法，printName的执行上下文中，会创建名为self的变量对象。并将当前的p对象实例的指针指向 self 变量。</li>
+<li>var name = getName(); 当前函数为独立调用函数，在非严格模式中，将this的指向自动指向window。并执行函数 function(){ return self.name }。在此函数中，会形成一个闭包(printName)，根据当前函数的作用域及作用域链，将访问上级作用域(printName)中的self变量及p对象的name属性。</li>
+<li>console.log(name); 输出 p.name 的值</li>
+</ul>
+</li>
+</ul>
+<h2 id="闭包的应用"><a href="#闭包的应用" class="headerlink" title="闭包的应用"></a>闭包的应用</h2><h3 id="循环、setTimeout与闭包"><a href="#循环、setTimeout与闭包" class="headerlink" title="循环、setTimeout与闭包"></a>循环、setTimeout与闭包</h3><ul>
+<li><p>代码一：</p>
+  <figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">&lt;script&gt;</span><br><span class="line"></span><br><span class="line">    for(var i &#x3D; 1; i &lt;&#x3D; 5; i++)&#123;</span><br><span class="line">        console.log(&#39;i:&#39;, i);</span><br><span class="line">    &#125;</span><br><span class="line">    </span><br><span class="line">&lt;&#x2F;script&gt;</span><br></pre></td></tr></table></figure>
+<ul>
+<li>程序输出，1到5的值。</li>
+<li><img src="https://gitee.com/cnkangym/BlogImageBed/raw/master/img/js_Closures_01.png" alt=""></li>
+</ul>
+</li>
+<li><p>代码二：</p>
+  <figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">&lt;script&gt;</span><br><span class="line"></span><br><span class="line">    for(var i &#x3D; 1; i &lt;&#x3D; 5; i++)&#123;</span><br><span class="line"></span><br><span class="line">        console.log(&#39;i值开始：&#39;, i);</span><br><span class="line"></span><br><span class="line">        setTimeout(function()&#123;</span><br><span class="line">            console.log(&#39;i值:&#39;, i);</span><br><span class="line">        &#125;, i * 1000);</span><br><span class="line"></span><br><span class="line">        console.log(&#39;i值结束：&#39;, i);</span><br><span class="line">    &#125;</span><br><span class="line">    </span><br><span class="line">&lt;&#x2F;script&gt;</span><br></pre></td></tr></table></figure>
+<ul>
+<li>for 循环的大括号并不会形成自己的作用域，因此这个时候没有闭包产生。i 值作为一个全局变量，随着循环的递增，i的值也会依次递增，最终i值为6. 而每一个循环中，setTimeout函数的第二个参数访问的都是当前的i值。因此，第二个参数的值分别为：1，2，3，4，5. setTimeout函数的第一个参数为一个函数。访问了变量i。虽然i跟第二个参数中的i是同一个值。但是在setTimeout函数执行时，由于延迟原因，i值已经变为6.所以，程序会隔秒输出6.</li>
+<li><img src="https://gitee.com/cnkangym/BlogImageBed/raw/master/img/js_Closures_02.png" alt=""></li>
+</ul>
+</li>
+<li><p>代码三：</p>
+  <figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">&lt;script&gt;</span><br><span class="line">    </span><br><span class="line">    for(var i &#x3D; 1; i &lt;&#x3D; 5; i++)&#123;</span><br><span class="line"></span><br><span class="line">        (function(i)&#123;</span><br><span class="line"></span><br><span class="line">            console.log(&#39;i值开始：&#39;, i);</span><br><span class="line"></span><br><span class="line">            setTimeout(function()&#123;</span><br><span class="line">                console.log(&#39;i值:&#39;, i);</span><br><span class="line">            &#125;, i * 1000);</span><br><span class="line"></span><br><span class="line">            console.log(&#39;i值结束：&#39;, i);</span><br><span class="line"></span><br><span class="line">        &#125;)(i);</span><br><span class="line">    &#125;</span><br><span class="line">    </span><br><span class="line">&lt;&#x2F;script&gt;</span><br><span class="line">* 程序使用了闭包。setTimeout函数中访问的变量i是自己作用域中定义的i值。这个i值分别为：1，2，3，4，5. 因此，程序会隔秒输出：1，2，3，4，5</span><br></pre></td></tr></table></figure>
+<ul>
+<li><img src="https://gitee.com/cnkangym/BlogImageBed/raw/master/img/js_Closures_03.png" alt=""></li>
+</ul>
+</li>
+<li><p>代码四：</p>
+  <figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">&lt;script&gt;</span><br><span class="line">        </span><br><span class="line">    for(var i &#x3D; 1; i &lt;&#x3D; 5; i++)&#123;</span><br><span class="line"></span><br><span class="line">        console.log(&#39;i值开始：&#39;, i);</span><br><span class="line"></span><br><span class="line">        setTimeout((function timer(i)&#123;</span><br><span class="line">            return function()&#123;</span><br><span class="line">                console.log(&#39;i值:&#39;, i);</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;)(i), i * 1000);</span><br><span class="line"></span><br><span class="line">        console.log(&#39;i值结束：&#39;, i);</span><br><span class="line">    &#125;</span><br><span class="line">    </span><br><span class="line">&lt;&#x2F;script&gt;</span><br></pre></td></tr></table></figure>
+<ul>
+<li>同代码三，闭包形成的位置不同。</li>
+<li><img src="https://gitee.com/cnkangym/BlogImageBed/raw/master/img/js_Closures_04.png" alt=""><h3 id="单例模式与闭包"><a href="#单例模式与闭包" class="headerlink" title="单例模式与闭包"></a>单例模式与闭包</h3></li>
+</ul>
+</li>
+<li><p>单例模式，就是只有一个实例</p>
+</li>
+<li><p>最简单的单例模式：对象字面量，将属性和方法都放在对象字面量里。</p>
+  <figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">&lt;script&gt;</span><br><span class="line">        </span><br><span class="line">    var donny &#x3D; &#123;</span><br><span class="line">        name: &quot;donny&quot;,</span><br><span class="line">        age: 28,</span><br><span class="line"></span><br><span class="line">        getName: function()&#123;</span><br><span class="line">            return this.name;</span><br><span class="line">        &#125;,</span><br><span class="line"></span><br><span class="line">        setName: function(val)&#123;</span><br><span class="line">            this.name &#x3D; val;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    console.log(&#39;donny: &#39;, donny);</span><br><span class="line"></span><br><span class="line">    var name &#x3D; donny.getName();</span><br><span class="line">    console.log(&#39;donny Name: &#39;, name);</span><br><span class="line"></span><br><span class="line">    donny.setName(&#39;dkk&#39;);</span><br><span class="line">    console.log(&#39;donny Name: &#39;, donny.getName());</span><br><span class="line">    </span><br><span class="line">&lt;&#x2F;script&gt;</span><br></pre></td></tr></table></figure>
+<ul>
+<li><img src="https://gitee.com/cnkangym/BlogImageBed/raw/master/img/js_Closures_05.png" alt=""></li>
+<li>对象里的属性和方法都公开的，可以随时被外部修改调用。</li>
+</ul>
+</li>
+<li><p>有私有属性和方法的单例模式</p>
+  <script>
+
+      var donny = (function(){
+          var name = "donny";
+          var age = 28;
+
+          return {
+              getName: function(){
+                  return name;
+              },
+
+              setName: function(val){
+                  name = val;
+              }
+          }
+      })();
+
+      var name = donny.getName();
+
+      console.log('donny name: ', name);
+
+      donny.setName("dkk");
+
+      name = donny.getName();
+
+      console.log('donny name: ', name);
+
+      console.log(donny.name);
+
+  </script>
+<ul>
+<li><img src="https://gitee.com/cnkangym/BlogImageBed/raw/master/img/js_Closures_06.png" alt=""></li>
+</ul>
+</li>
+<li><p>调用时才初始化的单例模式</p>
+  <figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">&lt;script&gt;</span><br><span class="line">        </span><br><span class="line">    var per &#x3D; (function()&#123;</span><br><span class="line"></span><br><span class="line">        var instance &#x3D; null;</span><br><span class="line"></span><br><span class="line">        var name &#x3D; &quot;donny&quot;;</span><br><span class="line">        var age &#x3D; 28;</span><br><span class="line"></span><br><span class="line">        function inital()&#123;</span><br><span class="line">            return &#123;</span><br><span class="line">                getName: function()&#123;</span><br><span class="line">                    return name;</span><br><span class="line">                &#125;,</span><br><span class="line"></span><br><span class="line">                setName: function(value)&#123;</span><br><span class="line">                    name &#x3D; value;</span><br><span class="line">                &#125;</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line"></span><br><span class="line">        return &#123;</span><br><span class="line">            getInstance: function()&#123;</span><br><span class="line"></span><br><span class="line">                &#x2F;&#x2F; console.log(&#39;instance: &#39;, instance);</span><br><span class="line"></span><br><span class="line">                if(!instance)&#123;</span><br><span class="line"></span><br><span class="line">                    console.log(&#39;instance: &#39;, instance);</span><br><span class="line"></span><br><span class="line">                    instance &#x3D; inital();</span><br><span class="line">                &#125;</span><br><span class="line"></span><br><span class="line">                return instance;</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line"></span><br><span class="line">    &#125;)();</span><br><span class="line"></span><br><span class="line">    var p1 &#x3D; per.getInstance();</span><br><span class="line">    var p2 &#x3D; per.getInstance();</span><br><span class="line"></span><br><span class="line">    console.log(p1.getName());</span><br><span class="line"></span><br><span class="line">    console.log(p1 &#x3D;&#x3D;&#x3D; p2);</span><br><span class="line">    </span><br><span class="line">&lt;&#x2F;script&gt;</span><br></pre></td></tr></table></figure>
+<h3 id="模块化与闭包"><a href="#模块化与闭包" class="headerlink" title="模块化与闭包"></a>模块化与闭包</h3></li>
+<li><p>每个单例就是一个模块</p>
+</li>
+</ul>
+]]></content>
+      <categories>
+        <category>javascript</category>
+      </categories>
+      <tags>
+        <tag>javascript</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>数据结构</title>
+    <url>/2020/05/05/javascript/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/</url>
+    <content><![CDATA[<blockquote>
+<p>参考《JavaScript核心技术开发解密》</p>
+</blockquote>
+<h1 id="数据结构"><a href="#数据结构" class="headerlink" title="数据结构"></a>数据结构</h1><h2 id="栈（Stack）"><a href="#栈（Stack）" class="headerlink" title="栈（Stack）"></a>栈（Stack）</h2><ul>
+<li>是一种数据结构，它表达的是数据的一种存取方式</li>
+<li>栈可以规定代码的执行顺序，在javascript中叫做函数调用栈（call stack），它是要根据数据结构而实现的一种实践。</li>
+<li>数据在内存中的存储区域，通常叫作栈区。<a id="more"></a></li>
+<li>特点：<ul>
+<li>先进后出，后进先出（LIFO, Last In, First Out）</li>
+</ul>
+</li>
+<li>数组提供了两个栈方法<ul>
+<li>push: 向数组末尾添加元素（进栈方法）</li>
+<li>pop: 弹出数组最末尾的一个元素（出栈方法）</li>
+</ul>
+</li>
+<li>函数调用栈  <figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">function foo() &#123;</span><br><span class="line">    var z &#x3D; &quot;foo!&quot;;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">function bar() &#123;</span><br><span class="line">    var y &#x3D; &quot;bar!&quot;;</span><br><span class="line">    foo();</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">function baz() &#123;</span><br><span class="line">    var x &#x3D; &quot;baz!&quot;;</span><br><span class="line">    bar();</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">baz();</span><br></pre></td></tr></table></figure>
+<ul>
+<li>函数调用栈：会依次创建baz的函数执行上下文，bar的函数执行上下文，foo的函数执行上下文。函数的执行环境是由函数调用栈来控制执行次序的。<ul>
+<li><img src="https://gitee.com/cnkangym/BlogImageBed/raw/master/img/js_datastructure_01.png" alt=""></li>
+<li><img src="https://gitee.com/cnkangym/BlogImageBed/raw/master/img/js_datastructure_02.png" alt=""></li>
+</ul>
+</li>
+<li>函数的尾调用(PTC)：如果这些函数间没有相互调用，而只是依次执行 – 比如前一个函数运行结束后才开始调用下一个函数 baz(); bar(); foo(); – 则堆栈帧并没有产生；因为在下一个函数开始之前，上一个函数运行结束并把它的帧从堆栈里面移除了。在 ES6 出来之前，JavaScript 对尾调用一直没明确规定（也没有禁用）。ES6 明确规定了 PTC 的特定形式，在 ES6 中，只要使用尾调用，就不会发生栈溢出。实际上这也就意味着，只要正确的使用 PTC，就不会抛出 RangeError 这样的异常错误。<br>首先，在 JavaScript 中应用 PTC，必须以严格模式书写代码。如果你以前没有用过严格模式，你得试着用用了。那么，您，应该已经在使用严格模式了吧！？<ul>
+<li><img src="https://gitee.com/cnkangym/BlogImageBed/raw/master/img/js_datastructure_03.png" alt=""></li>
+<li>正确的尾调用：<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">return foo( .. );</span><br></pre></td></tr></table></figure></li>
+<li>下面这些不能称之为PTC<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">foo();</span><br><span class="line">return;</span><br><span class="line"></span><br><span class="line">&#x2F;&#x2F; 或</span><br><span class="line">var x &#x3D; foo( .. );</span><br><span class="line">return x;</span><br><span class="line"></span><br><span class="line">&#x2F;&#x2F; 或</span><br><span class="line">return 1 + foo( .. );</span><br></pre></td></tr></table></figure></li>
+<li>注意： 一些 JS 引擎 能够 把 var x = foo(); return x; 自动识别为 return foo();，这样也可以达到 PTC 的效果。但这毕竟不符合规范。<br>foo(..) 运行结束之后 1+ 这部分才开始执行，所以此时的堆栈帧依然存在。不过下面这个是PTC<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">return x ? foo( .. ) : bar( .. ); &#x2F;&#x2F; x 进行条件判断之后，或执行 foo(..)，或执行 bar(..)，不论执行哪个，返回结果都会被 return 返回掉。这个例子符合 PTC 规范。</span><br></pre></td></tr></table></figure></li>
+<li>为了避免堆栈增加，PTC 要求所有的递归必须是在尾部调用，因此，二分法递归 —— 两次（或以上）递归调用 —— 是不能实现 PTC 的。我们曾在文章的前面部分展示过把二分法递归转变为相互递归的例子。也许我们可以试着化整为零，把多重递归拆分成符合 PTC 规范的单个函数回调。</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<h2 id="堆（Heap）"><a href="#堆（Heap）" class="headerlink" title="堆（Heap）"></a>堆（Heap）</h2><ul>
+<li>通常是一种树状结构。<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">var testHeap &#x3D; &#123;</span><br><span class="line">    a: 10,</span><br><span class="line">    b: 20,</span><br><span class="line">    </span><br><span class="line">    c: &#123;</span><br><span class="line">        m: 100,</span><br><span class="line">        n: 110</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">testHeap.a;</span><br></pre></td></tr></table></figure>
+
+</li>
+</ul>
+<h2 id="队列（Queue）"><a href="#队列（Queue）" class="headerlink" title="队列（Queue）"></a>队列（Queue）</h2><ul>
+<li>是一种先进先出(FIFO)的数据结构。</li>
+</ul>
+]]></content>
+      <categories>
+        <category>javascript</category>
+      </categories>
+      <tags>
+        <tag>javascript</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>面向对象</title>
+    <url>/2020/05/05/javascript/%E9%9D%A2%E5%90%91%E5%AF%B9%E8%B1%A1/</url>
+    <content><![CDATA[<h1 id="面向对象"><a href="#面向对象" class="headerlink" title="面向对象"></a>面向对象</h1><ul>
+<li>面向对象编程就是将需求抽象成一个对象，然后针对这个对象分析其特征(属性)与动作(方法).</li>
+<li>这个对象，称之为类</li>
+</ul>
+<a id="more"></a>
+
+
+<h2 id="封装"><a href="#封装" class="headerlink" title="封装"></a>封装</h2><h3 id="静态方法"><a href="#静态方法" class="headerlink" title="静态方法"></a>静态方法</h3><p>直接挂载在构造函数上的方法称之为静态方法。</p>
+<ul>
+<li>静态方法不能通过实例访问，只能通过构造函数来访问</li>
+<li>静态方法又称为工具方法，常用来实现一些常用的，与具体实例无关的功能。如：jQuery.each, jQuery.ajax, jQuery.extend, jQuery.isArray 等方法。</li>
+</ul>
+<h3 id="原型方法"><a href="#原型方法" class="headerlink" title="原型方法"></a>原型方法</h3><p>挂载在对象原型上，只执行一次。</p>
+<h3 id="实例方法"><a href="#实例方法" class="headerlink" title="实例方法"></a>实例方法</h3><p>对象的方法，执行构造函数时，就会被复制一次。</p>
+<h2 id="继承"><a href="#继承" class="headerlink" title="继承"></a>继承</h2><h3 id="类式继承-子类的原型对象"><a href="#类式继承-子类的原型对象" class="headerlink" title="类式继承(子类的原型对象)"></a>类式继承(子类的原型对象)</h3><ul>
+<li>声明2个类，将父类的实例赋值给子类的原型。类的原型对象的作用就是为类的原型添加共有方法，但类不能直接访问这些属性和方法，必须通过原型prototype来访问。而我们实例化一个父类的时候，新创建的对象复制了父类的构造函数内的属性和方法并且将原型<strong>proto</strong>指向了父类的原型对象。这样就拥有了父类的原型对象上的属性和方法，并且这个新创建的对象可直接访问到父类原型对象上的属性和方法。如果我们将这个新创建的对象赋值给了子类的原型，那么子类的原型就可以访问到父类的原型属性和方法。  <figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">&#x2F;&#x2F; 声明父类</span><br><span class="line">function SuperClass()&#123;</span><br><span class="line">    this.superValue &#x3D; true;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">&#x2F;&#x2F; 为父类添加公有方法</span><br><span class="line">SuperClass.prototype.getSuperValue &#x3D; function()&#123;</span><br><span class="line">    return this.superValue;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">&#x2F;&#x2F; 声明子类</span><br><span class="line">function SubClass()&#123;</span><br><span class="line">    this.subValue &#x3D; false;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">&#x2F;&#x2F; 继承父类</span><br><span class="line">SubClass.prototype &#x3D; new SuperClass();</span><br><span class="line"></span><br><span class="line">&#x2F;&#x2F; 为子类添加公有方法</span><br><span class="line">SubClass.prototype.getSubValue &#x3D; function()&#123;</span><br><span class="line">    return this.subValue;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">var instance &#x3D; new SubClass();</span><br><span class="line">console.log(&quot;instance.getSuperValue(): &quot;, instance.getSuperValue());    &#x2F;&#x2F; true</span><br><span class="line">console.log(&quot;instance.getSubValue(): &quot;, instance.getSubValue());    &#x2F;&#x2F; false</span><br></pre></td></tr></table></figure>
+<ul>
+<li>实例与父类、子类的关系(instanceof 用来判断一个对象是否是一个构造函数的实例，而并不关心对象和构造函数的自身结构)<ul>
+<li>console.log(instance instanceof SuperClass);    // true</li>
+<li>console.log(instance instanceof SubClass);    // true</li>
+<li>console.log(SubClass instanceof SuperClass);    // false</li>
+<li>console.log(SubClass.prototype === SuperClass);    // false</li>
+<li>console.log(SubClass.prototype instanceof SuperClass);    // true</li>
+</ul>
+</li>
+<li>此种方法继承的缺点<ul>
+<li>如果父类中的共有属性(包括实例属性和原型属性)是引用类型，如果一个子类实例修改了子类原型从父类继承来的共有属性，就会直接影响到其他子类。【因为该继承方法是通过子类的原型方法继承，子类的原型只会执行一次，所以，子类的原型是同一个对象。因此，所有子类实例都会共享同一个对象的属性】  <figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">var SuperClass &#x3D; function()&#123;</span><br><span class="line">  this.books &#x3D; [&#39;js&#39;, &#39;html&#39;, &#39;css&#39;];</span><br><span class="line">&#125;;</span><br><span class="line">&#x2F;&#x2F; SuperClass.prototype.books &#x3D; [&#39;js&#39;, &#39;html&#39;, &#39;css&#39;];</span><br><span class="line"></span><br><span class="line">var SubClass &#x3D; function()&#123;&#125;;</span><br><span class="line">SubClass.prototype &#x3D; new SuperClass();</span><br><span class="line"></span><br><span class="line">var subInstance &#x3D; new SubClass();</span><br><span class="line">console.log(subInstance.books);</span><br><span class="line"></span><br><span class="line">subInstance.books.pop();</span><br><span class="line">var subInstance2 &#x3D; new SubClass();</span><br><span class="line">console.log(subInstance2.books);</span><br></pre></td></tr></table></figure>
+<ul>
+<li><img src="https://gitee.com/cnkangym/BlogImageBed/raw/master/img/20200505184129.png" alt=""></li>
+</ul>
+</li>
+<li>由于子类实现的继承是靠其原型 prototype 对父类的实例化实现的，因此，在创建父类的时候，是无法向父类传递参数的，因而在实例化父类的时候也无法对父类的构造函数内部的属性进行初始化。【事实上是可以在父类构造函数上加参数传递的，不过，这个时候这个属性不是子类实例对象的属性值而是子类的属性值。所有的子类实例对象都得被迫得接受这个值。如此写完全失去了面向对象的意义】</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<h3 id="构造函数继承-创建即继承"><a href="#构造函数继承-创建即继承" class="headerlink" title="构造函数继承(创建即继承)"></a>构造函数继承(创建即继承)</h3><ul>
+<li>在子类的构造函数中，执行 SuperClass.call(this), 将子类中的变量在父类的构造函数中执行一遍，由于父类的构造函数是给this绑定属性，因此子类自然也就继承了父类的共有属性。由于这种继承方式不涉及到原型 prototype，所以，父类的原型方法不会被子类继承。  <figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">&#x2F;&#x2F; 定义父类</span><br><span class="line">function SuperClass(id)&#123;</span><br><span class="line">  this.books &#x3D; [&#39;Javascript&#39;, &#39;html&#39;, &#39;css&#39;];</span><br><span class="line">  this.id &#x3D; id;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">&#x2F;&#x2F; 父类原型上的方法</span><br><span class="line">SuperClass.prototype.showBooks &#x3D; function()&#123;</span><br><span class="line">  console.log(this.books);  </span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">&#x2F;&#x2F; 定义子类</span><br><span class="line">function SubClass(id)&#123;</span><br><span class="line">  SuperClass.call(this, id);</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">&#x2F;&#x2F; 子类实例1</span><br><span class="line">var instance1 &#x3D; new SubClass(10);</span><br><span class="line">console.log(instance1.id);</span><br><span class="line">console.log(instance1.books);</span><br><span class="line"></span><br><span class="line">&#x2F;&#x2F; 子类实例1修改了父类中公有属性且属性值为引用</span><br><span class="line">instance1.books.push(&#39;java&#39;);</span><br><span class="line">console.log(instance1.books);</span><br><span class="line"></span><br><span class="line">&#x2F;&#x2F; 子类实例2</span><br><span class="line">var instance2 &#x3D; new SubClass(11);</span><br><span class="line">console.log(instance2.id);</span><br><span class="line">console.log(instance2.books);</span><br><span class="line"></span><br><span class="line">&#x2F;&#x2F; 执行父类原型上的方法</span><br><span class="line">instance1.showBooks();</span><br></pre></td></tr></table></figure>
+<ul>
+<li>实例与父类、子类的关系<ul>
+<li>console.log(instance1 instanceof SuperClass);    // false</li>
+<li>console.log(instance1 instanceof SubClass); // true;</li>
+<li>console.log(SubClass instanceof SuperClass);    // false</li>
+</ul>
+</li>
+<li>此继承的缺点<ul>
+<li>由于此种方式没有涉及到对象原型，所以，父类原型上的属性和方法将不会被子类实例所继承。</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<h3 id="组合继承-结合类式继承和构造式继承"><a href="#组合继承-结合类式继承和构造式继承" class="headerlink" title="组合继承(结合类式继承和构造式继承)"></a>组合继承(结合类式继承和构造式继承)</h3><ul>
+<li>类式继承：通过子类的原型prototype对父类实例化来实现父类的继承；构造函数式继承：通过在子类构造函数作用环境中执行一次父类的构造来实现对父类的继承。  <figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">&#x2F;&#x2F; 定义父类</span><br><span class="line">function SuperClass(name)&#123;</span><br><span class="line">  this.books &#x3D; [&#39;Javascript&#39;, &#39;html&#39;, &#39;css&#39;];</span><br><span class="line">  this.name &#x3D; name;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">&#x2F;&#x2F; 父类原型上的方法</span><br><span class="line">SuperClass.prototype.getName &#x3D; function()&#123;</span><br><span class="line">  console.log(this.name);  </span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">&#x2F;&#x2F; 定义子类</span><br><span class="line">function SubClass(name, time)&#123;</span><br><span class="line">    &#x2F;&#x2F; 构造函数方式实现继承</span><br><span class="line">  SuperClass.call(this, name);</span><br><span class="line">  this.time &#x3D; time;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">&#x2F;&#x2F; 类式继承方式实现继承</span><br><span class="line">SubClass.prototype &#x3D; new SuperClass();</span><br><span class="line"></span><br><span class="line">SubClass.prototype.getTime &#x3D; function()&#123;</span><br><span class="line">  console.log(this.time);</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">&#x2F;&#x2F; 子类实例1</span><br><span class="line">var instance1 &#x3D; new SubClass(&#39;instance 1&#39;, &#39;2020-01-01&#39;);</span><br><span class="line">console.log(instance1.name);</span><br><span class="line">console.log(instance1.books);</span><br><span class="line"></span><br><span class="line">&#x2F;&#x2F; 子类实例1修改了父类中公有属性且属性值为引用</span><br><span class="line">instance1.books.push(&#39;java&#39;);</span><br><span class="line">console.log(instance1.books);</span><br><span class="line"></span><br><span class="line">&#x2F;&#x2F; 子类实例2</span><br><span class="line">var instance2 &#x3D; new SubClass(&#39;instance 2&#39;, &#39;2020-02-20&#39;);</span><br><span class="line">console.log(instance2.name);</span><br><span class="line">console.log(instance2.books);</span><br><span class="line"></span><br><span class="line">&#x2F;&#x2F; 执行父类原型上的方法</span><br><span class="line">instance1.getName();</span><br><span class="line"></span><br><span class="line">&#x2F;&#x2F; 执行子类原型上的方法</span><br><span class="line">instance1.getTime();</span><br></pre></td></tr></table></figure>
+<ul>
+<li>实例与父类、子类的关系<ul>
+<li>console.log(instance1 instanceof SuperClass);    // true</li>
+<li>console.log(instance1 instanceof SubClass);    // true</li>
+<li>console.log(SubClass instanceof SuperClass);    // false</li>
+</ul>
+</li>
+<li>缺点：<ul>
+<li>父类的构造函数执行了两次</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<h3 id="原型式继承"><a href="#原型式继承" class="headerlink" title="原型式继承"></a>原型式继承</h3><ul>
+<li>2006年道格拉斯·克罗克福德发表一篇《JavaScript 中原型式继承》的文章，他的观点是，借助原型 prototype 可以根据已有的对象创建一个新的对象，同时不必创建新的自定义对象类型。本质上跟类式继承一样，不过，是基于对象层面处理继承关系。<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">&#x2F;&#x2F; 原型式继承</span><br><span class="line">function inheritObject(o)&#123;</span><br><span class="line"></span><br><span class="line">    &#x2F;&#x2F; 声明一个过渡构造函数</span><br><span class="line">    var F &#x3D; function()&#123;&#125;</span><br><span class="line">    </span><br><span class="line">    &#x2F;&#x2F; 构造函数的原型继承父类</span><br><span class="line">    F.prototype &#x3D; o;</span><br><span class="line">    </span><br><span class="line">    &#x2F;&#x2F; 返回过渡构造函数的一个实例，该实例的原型继承了父对象</span><br><span class="line">    return new F();</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">&#x2F;&#x2F; 父对象</span><br><span class="line">var hqg &#x3D; &#123;</span><br><span class="line">  name: &quot;洪七公&quot;,</span><br><span class="line">  skills: [&#39;打狗棒法&#39;]</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">hqg.__proto__.getSkills &#x3D; function()&#123;</span><br><span class="line">  return this.skills;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">var gj &#x3D; inheritObject(hqg);</span><br><span class="line">gj.name &#x3D; &quot;郭靖&quot;;</span><br><span class="line">console.log(gj.name);</span><br><span class="line">console.log(gj.skills);</span><br><span class="line">console.log(&quot;访问父对象原型上的方法：&quot;, gj.getSkills());</span><br><span class="line"></span><br><span class="line">gj.skills.push(&quot;降龙十八掌&quot;);</span><br><span class="line">console.log(gj.skills);</span><br><span class="line"></span><br><span class="line">var hr &#x3D; inheritObject(hqg);</span><br><span class="line">hr.name &#x3D; &quot;黄蓉&quot;;</span><br><span class="line">console.log(hr.name);</span><br><span class="line">console.log(hr.skills);</span><br></pre></td></tr></table></figure>
+<ul>
+<li>实例间关系<ul>
+<li>console.log(gj.<strong>proto</strong> === hr.<strong>proto</strong>);    // true</li>
+</ul>
+</li>
+<li>缺点：<ul>
+<li>包含引用类型值的原型属性会被所有实例共享，这会导致对一个实例的修改影响到另一个实例。</li>
+<li>必须有一个对象作为基础。</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<h3 id="寄生式继承"><a href="#寄生式继承" class="headerlink" title="寄生式继承"></a>寄生式继承</h3><ul>
+<li>寄托于原型继承模式，增加新创建对象的继承方式。跟【原型式继承】相比，优点为：可以在子类对象内部添加自己的属性和方法。<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">function inheritObject(o)&#123;</span><br><span class="line">    var F &#x3D; function()&#123;&#125;</span><br><span class="line"></span><br><span class="line">  F.prototype &#x3D; o;</span><br><span class="line"></span><br><span class="line">  return new F();</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">function teachKongFu(obj)&#123;</span><br><span class="line">  </span><br><span class="line">  var o &#x3D; inheritObject(obj);</span><br><span class="line">  </span><br><span class="line">  o.getName &#x3D; function()&#123;</span><br><span class="line">    console.log(this.name);</span><br><span class="line">  &#125;</span><br><span class="line">  </span><br><span class="line">  return o;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">var hqg &#x3D; &#123;</span><br><span class="line">  name: &quot;洪七公&quot;,</span><br><span class="line">  skills: [&#39;打狗棒法&#39;]</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">hqg.__proto__.getSkills &#x3D; function()&#123;</span><br><span class="line">  return this.skills;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">var gj &#x3D; teachKongFu(hqg);</span><br><span class="line">gj.name &#x3D; &quot;郭靖&quot;;</span><br><span class="line">console.log(gj.name);</span><br><span class="line">console.log(gj.skills);</span><br><span class="line">console.log(&quot;访问父对象原型上的方法：&quot;, gj.getSkills());</span><br><span class="line">gj.getName();</span><br><span class="line"></span><br><span class="line">gj.skills.push(&quot;降龙十八掌&quot;);</span><br><span class="line">console.log(gj.skills);</span><br><span class="line"></span><br><span class="line">var hr &#x3D; teachKongFu(hqg);</span><br><span class="line">hr.name &#x3D; &quot;黄蓉&quot;;</span><br><span class="line">console.log(hr.name);</span><br><span class="line">console.log(hr.skills);</span><br></pre></td></tr></table></figure></li>
+<li>缺点：<ul>
+<li>包含引用类型值的原型属性会被所有实例共享，这会导致对一个实例的修改影响到另一个实例。</li>
+<li>必须有一个对象作为基础。</li>
+</ul>
+</li>
+</ul>
+<h3 id="寄生组合式继承"><a href="#寄生组合式继承" class="headerlink" title="寄生组合式继承"></a>寄生组合式继承</h3><ul>
+<li>寄生：寄生式继承，寄生式继承依托于原型继承，原型继承又与类式继承相像；组合中的另一个是指构造函数继承。</li>
+</ul>
+<h2 id="多态"><a href="#多态" class="headerlink" title="多态"></a>多态</h2>]]></content>
+      <categories>
+        <category>javascript</category>
+      </categories>
+      <tags>
+        <tag>javascript</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>递归</title>
+    <url>/2020/05/05/javascript/%E9%80%92%E5%BD%92/</url>
+    <content><![CDATA[<blockquote>
+<p>参考《JavaScript核心技术开发解密》</p>
+</blockquote>
+<h1 id="递归"><a href="#递归" class="headerlink" title="递归"></a><a href="https://cloud.tencent.com/developer/article/1013625" target="_blank" rel="noopener">递归</a></h1><h2 id="本质"><a href="#本质" class="headerlink" title="本质"></a>本质</h2><ul>
+<li>递归的本质就是使用函数自身来解决问题的思路。</li>
+</ul>
+<a id="more"></a>
+
+<h2 id="定义"><a href="#定义" class="headerlink" title="定义"></a>定义</h2><ul>
+<li>程序调用自身的编程技巧称为递归。</li>
+</ul>
+<h2 id="递归条件"><a href="#递归条件" class="headerlink" title="递归条件"></a>递归条件</h2><ul>
+<li>递归要有边界条件、递归前进段和递归返回段。<ul>
+<li>当边界条件不满足时，递归前进；</li>
+<li>当边界条件满足时，递归返回。</li>
+</ul>
+</li>
+</ul>
+<h2 id="递归要解决的问题"><a href="#递归要解决的问题" class="headerlink" title="递归要解决的问题"></a>递归要解决的问题</h2><ul>
+<li>子总是须与原始总是为同样的事，且更为简单。</li>
+<li>不能无限制地调用本身，须有个出口，化简为非递归状况处理。</li>
+</ul>
+<h2 id="递归使用"><a href="#递归使用" class="headerlink" title="递归使用"></a>递归使用</h2><ul>
+<li>猴子吃桃子问题:有一堆桃子，猴子每天吃一半扔一个，第六天剩余1个，问开始有多少个桃子？<ul>
+<li>普通方式: 使用for循环来解决问题，我们定义一个循环，循环六次，也就是六天。计算逻辑：前一天的数量=当前数量 加 一，再乘以二。  <figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">var total &#x3D; 1;</span><br><span class="line">for(var i &#x3D; 0; i &lt; 6; i++)&#123;</span><br><span class="line">    total &#x3D; (total + 1) * 2;</span><br><span class="line">&#125;</span><br><span class="line">console.log(total);</span><br></pre></td></tr></table></figure>
+<ul>
+<li>得出：开始有160个桃子。</li>
+</ul>
+</li>
+<li>递归方式：计算逻辑：当前的数量 = （下一天数量 + 1） * 2  <figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">function count(day)&#123;</span><br><span class="line">    </span><br><span class="line">    if(day &#x3D;&#x3D; 6)&#123;</span><br><span class="line">        return 1;</span><br><span class="line">    &#125;</span><br><span class="line">    return (count(day + 1) + 1) * 2;</span><br><span class="line">&#125;</span><br><span class="line">console.log(count(0));</span><br></pre></td></tr></table></figure>
+<ul>
+<li>得出：刚开始有160个桃子</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+]]></content>
+      <categories>
+        <category>javascript</category>
+      </categories>
+      <tags>
+        <tag>javascript</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>面向过程</title>
+    <url>/2020/05/05/javascript/%E9%9D%A2%E5%90%91%E8%BF%87%E7%A8%8B/</url>
+    <content><![CDATA[<h1 id="面向过程"><a href="#面向过程" class="headerlink" title="面向过程"></a>面向过程</h1><h2 id="特点"><a href="#特点" class="headerlink" title="特点"></a>特点</h2><ul>
+<li>编写一个一个的函数解决来解决需求的方式</li>
+<li>在页面中每添加一个方法就相当于在页面中添加了一个全局变量</li>
+</ul>
+<a id="more"></a>
+
+<pre><code><figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">function checkName()&#123;</span><br><span class="line">    console.log(&quot;check name...&quot;);</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">checkName();</span><br><span class="line"></span><br><span class="line">function checkEmail()&#123;</span><br><span class="line">    console.log(&quot;check email...&quot;);</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">function checkPassword()&#123;</span><br><span class="line">    console.log(&quot;check password...&quot;);</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">&#x2F;******************************&#x2F;</span><br><span class="line"></span><br><span class="line">var checkName &#x3D; function(name)&#123;</span><br><span class="line">    console.log(&quot;check &quot; + name);</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">checkName(&quot;donny&quot;);</span><br><span class="line"></span><br><span class="line">var checkEmail &#x3D; function()&#123;</span><br><span class="line">    console.log(&quot;check email...&quot;);</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">var checkPassword &#x3D; function()&#123;</span><br><span class="line">    console.log(&quot;check password...&quot;);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></code></pre><h2 id="从面向过程到面向对象的转变"><a href="#从面向过程到面向对象的转变" class="headerlink" title="从面向过程到面向对象的转变"></a>从面向过程到面向对象的转变</h2><h3 id="用对象收编变量"><a href="#用对象收编变量" class="headerlink" title="用对象收编变量"></a>用对象收编变量</h3><ul>
+<li>对象有属性和方法，我们可以把函数放到对象中，作为对象的方法。通过”.”操作符访问对象的方法。  <figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">var CheckObj &#x3D; &#123;</span><br><span class="line">    checkName: function()&#123;</span><br><span class="line">        &#x2F;&#x2F;</span><br><span class="line">    &#125;,</span><br><span class="line"></span><br><span class="line">    checkEmail: function()&#123;</span><br><span class="line">        &#x2F;&#x2F;</span><br><span class="line">    &#125;,</span><br><span class="line"></span><br><span class="line">    checkPassword: function()&#123;</span><br><span class="line">        &#x2F;&#x2F;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h3 id="真假对象"><a href="#真假对象" class="headerlink" title="真假对象"></a>真假对象</h3></li>
+<li>如果对象有一个属性，当多个人访问此属性时，会有相互影响  <figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">var CheckObj &#x3D; &#123;</span><br><span class="line"></span><br><span class="line">    counter: 0,</span><br><span class="line"></span><br><span class="line">    printCounter: function()&#123;</span><br><span class="line">        console.log(++CheckObj.counter);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">&#x2F;&#x2F; 第一个人调用</span><br><span class="line">CheckObj.printCounter();    &#x2F;&#x2F; 1</span><br><span class="line"></span><br><span class="line">&#x2F;&#x2F; 第二个人调用</span><br><span class="line">CheckObj.printCounter();    &#x2F;&#x2F; 2</span><br></pre></td></tr></table></figure></li>
+<li>返回另一个对象  <figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">var CheckObj &#x3D; &#123;</span><br><span class="line">    counter: 0,</span><br><span class="line"></span><br><span class="line">    return &#123;</span><br><span class="line">        printCounter: function()&#123;</span><br><span class="line">            console.log(++CheckObj.counter);</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+</li>
+</ul>
+]]></content>
+      <categories>
+        <category>javascript</category>
+      </categories>
+      <tags>
+        <tag>javascript</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>MAC Shell(bash 与 zsh)</title>
+    <url>/2020/05/05/mac/MAC-Shell-bash-%E4%B8%8E-zsh/</url>
+    <content><![CDATA[<h1 id="MAC-Shell-bash-与-zsh"><a href="#MAC-Shell-bash-与-zsh" class="headerlink" title="MAC Shell(bash 与 zsh)"></a>MAC Shell(bash 与 zsh)</h1><p>Shell本质就是一个工具箱，用于与操作系统内核做交互。</p>
+<ul>
+<li>查看系统中带的 Shell：<code>$ cat /etc/shells</code></li>
+</ul>
+<a id="more"></a>
+
+<h2 id="bash"><a href="#bash" class="headerlink" title="bash"></a>bash</h2><h3 id="MAC-下环境变量的加载顺序"><a href="#MAC-下环境变量的加载顺序" class="headerlink" title="MAC 下环境变量的加载顺序"></a>MAC 下环境变量的加载顺序</h3><ul>
+<li>系统级别环境变量，系统启动就会加载<ul>
+<li><code>/etc/profile</code>:</li>
+<li><code>/etc/paths</code>:</li>
+<li><code>/ect/bashrc</code>: （一般在这个文件中添加系统级环境变量）</li>
+</ul>
+</li>
+<li>用户级别环境变量，<ul>
+<li><code>~/.bash_profile</code>: 如果存在此文件，如果~/.bash_profile文件存在，则后面的几个文件就会被忽略不读了。(MAC系统使用)</li>
+<li><code>~/.bash_login</code>:如果~/.bash_profile文件不存在，才会以此类推读取后面2个文件。</li>
+<li><code>~/profile</code>:</li>
+<li><code>~/.bashrc</code>: ~/.bashrc没有上述规则，它是bash shell打开的时候载入的。(linux系统使用)</li>
+</ul>
+</li>
+</ul>
+<h2 id="zsh"><a href="#zsh" class="headerlink" title="zsh"></a>zsh</h2><p>比 bash 更强大的 Shell工具。<br>bij</p>
+<h3 id="zsh-替代-bash-的方法"><a href="#zsh-替代-bash-的方法" class="headerlink" title="zsh 替代 bash 的方法"></a>zsh 替代 bash 的方法</h3><ul>
+<li>执行此命令: <code>chsh -s /bin/zsh</code></li>
+</ul>
+<h3 id="MAC-下环境变量的加载顺序-1"><a href="#MAC-下环境变量的加载顺序-1" class="headerlink" title="MAC 下环境变量的加载顺序"></a>MAC 下环境变量的加载顺序</h3><ul>
+<li><code>~/.zshrc</code>，作用等同于 bash 的 <code>~/.bash_profile</code></li>
+</ul>
+<h3 id="解决-zsh-下-bash-profile环境变量不起使用的问题"><a href="#解决-zsh-下-bash-profile环境变量不起使用的问题" class="headerlink" title="解决 zsh 下 ~/.bash_profile环境变量不起使用的问题"></a>解决 zsh 下 <code>~/.bash_profile</code>环境变量不起使用的问题</h3><ul>
+<li>打开zsh配置文件: <code>vim ~/.zshrc</code></li>
+<li>在文件的最后面加上source “~/.bash_profile”</li>
+<li>使 <code>~/.zsh</code> 生效: <code>source ~/.zshrc</code></li>
+</ul>
+<h2 id="环境变量作用"><a href="#环境变量作用" class="headerlink" title="环境变量作用"></a>环境变量作用</h2><ul>
+<li>环境变量(Environment Variables)一般是指在操作系统中用来指定操作系统运行环境的一些参数。</li>
+</ul>
+<h3 id="MAC-环境变量的情况"><a href="#MAC-环境变量的情况" class="headerlink" title="MAC 环境变量的情况"></a>MAC 环境变量的情况</h3><h4 id="全局（公有）配置，不管是哪个用户，登录时都会读取该文件【建议：不修改这个文件】"><a href="#全局（公有）配置，不管是哪个用户，登录时都会读取该文件【建议：不修改这个文件】" class="headerlink" title="全局（公有）配置，不管是哪个用户，登录时都会读取该文件【建议：不修改这个文件】"></a>全局（公有）配置，不管是哪个用户，登录时都会读取该文件【建议：不修改这个文件】</h4><ul>
+<li><code>/etc/profile</code><h4 id="全局（公有）配置，bash-shell执行时，不管是何种方式，都会读取此文件【一般在这个文件中添加系统级环境变量】"><a href="#全局（公有）配置，bash-shell执行时，不管是何种方式，都会读取此文件【一般在这个文件中添加系统级环境变量】" class="headerlink" title="全局（公有）配置，bash shell执行时，不管是何种方式，都会读取此文件【一般在这个文件中添加系统级环境变量】"></a>全局（公有）配置，bash shell执行时，不管是何种方式，都会读取此文件【一般在这个文件中添加系统级环境变量】</h4></li>
+<li><code>/etc/bashrc</code><h4 id="用户自己的环境变量：每个用户都可以使用该文件输入专用于自己使用的shell信息，当用户登录时，该文件仅仅执行一次。"><a href="#用户自己的环境变量：每个用户都可以使用该文件输入专用于自己使用的shell信息，当用户登录时，该文件仅仅执行一次。" class="headerlink" title="用户自己的环境变量：每个用户都可以使用该文件输入专用于自己使用的shell信息，当用户登录时，该文件仅仅执行一次。"></a>用户自己的环境变量：每个用户都可以使用该文件输入专用于自己使用的shell信息，当用户登录时，该文件仅仅执行一次。</h4></li>
+<li><code>~/.bash_profile</code></li>
+<li>文件位置： /Users/<code>YourMacUserName</code>/.bash_profile</li>
+</ul>
+<h3 id="配置自己的环境变量"><a href="#配置自己的环境变量" class="headerlink" title="配置自己的环境变量"></a>配置自己的环境变量</h3><ul>
+<li>创建.bash_profile<ul>
+<li>打开终端</li>
+<li>进入当前用户的目录:<code>cd ~</code></li>
+<li>输入命令：<code>touch .bash_profile</code></li>
+</ul>
+</li>
+<li>查看、编辑 .bash_profile 文件<ul>
+<li>打开终端</li>
+<li>查看.bash_profile文件<ul>
+<li><code>open .bash_profile</code></li>
+</ul>
+</li>
+<li>编辑.bash_profile文件<ul>
+<li><code>open -e .bash_profile</code></li>
+</ul>
+</li>
+</ul>
+</li>
+<li>更新刚配置的环境变量<ul>
+<li><code>source .bash_profile</code></li>
+</ul>
+</li>
+<li>临时的环境变量配置：用于错误不小心改了.bash_profile这个文件，也就是配置环境变量，结果导致终端很多基本命令都不能使用<ul>
+<li>在命令行中输入命令<ul>
+<li><code>export PATH=/usr/bin:/usr/sbin:/bin:/sbin:/usr/X11R6/bin</code></li>
+</ul>
+</li>
+</ul>
+</li>
+<li>上面是我配置好的java和android环境变量;<br>由于自己之前没有备份，最后一行export PATH=/usr/local/bin:/usr/local/sbin:~/bin:$PATH是在网上找的，据说是系统默认的环境变量配置</li>
+</ul>
+<h3 id="Path：是告诉系统，当要求系统运行一个程序而没有告诉它程序所在的完整路径时，系统除了在当前目录下面寻找此程序外，还应到哪些目录下寻找。"><a href="#Path：是告诉系统，当要求系统运行一个程序而没有告诉它程序所在的完整路径时，系统除了在当前目录下面寻找此程序外，还应到哪些目录下寻找。" class="headerlink" title="Path：是告诉系统，当要求系统运行一个程序而没有告诉它程序所在的完整路径时，系统除了在当前目录下面寻找此程序外，还应到哪些目录下寻找。"></a>Path：是告诉系统，当要求系统运行一个程序而没有告诉它程序所在的完整路径时，系统除了在当前目录下面寻找此程序外，还应到哪些目录下寻找。</h3><h3 id="常用的环境变量配置"><a href="#常用的环境变量配置" class="headerlink" title="常用的环境变量配置"></a>常用的环境变量配置</h3><figure class="highlight plain"><table><tr><td class="code"><pre><span class="line"># java</span><br><span class="line">export JAVA_HOME &#x3D; &#x2F;home&#x2F;myuser&#x2F;jdk1.7.0_03</span><br><span class="line">export PATH &#x3D; $JAVA_HOME&#x2F;bin:$PATH</span><br><span class="line">export CLASSPATH&#x3D;.:$JAVA_HOME&#x2F;lib&#x2F;dt.jar:$JAVA_HOME&#x2F;lib&#x2F;tools.jar</span><br><span class="line"></span><br><span class="line"># hadoop</span><br><span class="line">export HADOOP_HOME&#x3D;&#x2F;Users&#x2F;YourUserName&#x2F;Documents&#x2F;Dev&#x2F;hadoop-2.7.3</span><br><span class="line">export PATH&#x3D;$PATH:$HADOOP_HOME&#x2F;bin:$HADOOP_HOME&#x2F;sbin</span><br><span class="line"></span><br><span class="line"># spunk</span><br><span class="line">export SPLUNK_HOME&#x3D;&#x2F;Applications&#x2F;Splunk</span><br><span class="line">export PATH&#x3D;$PATH:$SPLUNK_HOME&#x2F;bin</span><br><span class="line"></span><br><span class="line"># Setting PATH for Python 3.5</span><br><span class="line"># The original version is saved in .bash_profile.pysave</span><br><span class="line">PATH&#x3D;&quot;&#x2F;Library&#x2F;Frameworks&#x2F;Python.framework&#x2F;Versions&#x2F;3.5&#x2F;bin:$&#123;PATH&#125;&quot;</span><br><span class="line">export PATH</span><br><span class="line"></span><br><span class="line">export CLASSPATH&#x3D;$&#123;CLASSPATH&#125;:&#x2F;Users&#x2F;YourUserName&#x2F;Documents&#x2F;Lib&#x2F;hadoop_cli</span><br><span class="line"></span><br><span class="line"># ant</span><br><span class="line">export ANT_HOME&#x3D;&#x2F;Users&#x2F;YourUserName&#x2F;Documents&#x2F;Dev&#x2F;apache-ant-1.9.7</span><br><span class="line">export PATH&#x3D;$PATH:$&#123;ANT_HOME&#125;&#x2F;bin</span><br><span class="line"></span><br><span class="line"># JBOSS</span><br><span class="line">export JBOSS_HOME&#x3D;&#x2F;Users&#x2F;YourUserName&#x2F;Documents&#x2F;Dev&#x2F;wildfly-10.1.0.Final</span><br><span class="line">export PATH&#x3D;$PATH:$JBOSS_HOME&#x2F;bin</span><br><span class="line"></span><br><span class="line"># M2_HOME</span><br><span class="line">export M2_HOME&#x3D;&#x2F;Users&#x2F;YourUserName&#x2F;Documents&#x2F;Dev&#x2F;apache-maven-3.3.9</span><br><span class="line">export PATH&#x3D;$PATH:$M2_HOME&#x2F;bin</span><br></pre></td></tr></table></figure>]]></content>
+      <categories>
+        <category>mac</category>
+      </categories>
+      <tags>
+        <tag>mac</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>Node 开发环境搭建及配置</title>
+    <url>/2020/05/05/node/Node-%E5%BC%80%E5%8F%91%E7%8E%AF%E5%A2%83%E6%90%AD%E5%BB%BA%E5%8F%8A%E9%85%8D%E7%BD%AE/</url>
+    <content><![CDATA[<h1 id="Node-开发环境搭建及配置"><a href="#Node-开发环境搭建及配置" class="headerlink" title="Node 开发环境搭建及配置"></a>Node 开发环境搭建及配置</h1><h2 id="node-js"><a href="#node-js" class="headerlink" title="node.js"></a>node.js</h2><p>运行在服务端的 javascript.</p>
+<h3 id="安装"><a href="#安装" class="headerlink" title="安装"></a>安装</h3><ul>
+<li>官网上下载 <a href="https://nodejs.org/zh-cn/" target="_blank" rel="noopener">pkg</a> 安装包</li>
+<li>使用 brew 命令来安装：<code>$ brew install node</code></li>
+</ul>
+<a id="more"></a>
+
+<h3 id="卸载-node-js"><a href="#卸载-node-js" class="headerlink" title="卸载 node.js"></a>卸载 node.js</h3><p>全局安装的node通常会有权限问题，因此建议用nvm方式来安装node</p>
+<ul>
+<li>打开”Finder”，按”shift + command + G”打开前往对话框，分别删除 node 和 node_modules 相关的文件和文件夹。<ul>
+<li>打开 /usr/local/lib，删除 node 和 node_modules 相关的文件和文件夹</li>
+<li>打开 /usr/local/include，删除 node 和 node_modules 相关的文件和文件夹</li>
+<li>如果你是使用的 brew install node 安装的 NodeJS，那么你还需要在终端中执行 brew uninstall node 命令来卸载</li>
+<li>检查你的个人主文件夹下面的所有的 local、lib 以及 include 文件夹，并且删除所有与 node 和 node_modules 相关的文件以及文件夹</li>
+<li>打开 /usr/local/bin 并删除 node 可执行文件</li>
+<li>再输入一些额外的指令<figure class="highlight java"><table><tr><td class="code"><pre><span class="line">sudo rm /usr/local/bin/npm</span><br><span class="line">sudo rm /usr/local/share/man/man1/node<span class="number">.1</span></span><br><span class="line">sudo rm /usr/local/lib/dtrace/node.d</span><br><span class="line">sudo rm -rf ~/.npm</span><br><span class="line">sudo rm -rf ~/.node-gyp</span><br><span class="line">sudo rm /opt/local/bin/node</span><br><span class="line">sudo rm /opt/local/include/node</span><br><span class="line">sudo rm -rf /opt/local/lib/node_modules</span><br></pre></td></tr></table></figure>
+<h3 id="npm-切换镜像站点"><a href="#npm-切换镜像站点" class="headerlink" title="npm 切换镜像站点"></a>npm 切换镜像站点</h3></li>
+</ul>
+</li>
+<li>查看 npm 配置文件：<code>$ npm config ls</code></li>
+<li>修改 npm 镜像站点：<code>$ npm config set registry URL</code><ul>
+<li>```java<br>npm —- <a href="https://registry.npmjs.org/" target="_blank" rel="noopener">https://registry.npmjs.org/</a><br>cnpm — <a href="http://r.cnpmjs.org/" target="_blank" rel="noopener">http://r.cnpmjs.org/</a><br>*taobao- <a href="http://registry.npm.taobao.org/" target="_blank" rel="noopener">http://registry.npm.taobao.org/</a><br>edunpm - <a href="http://registry.enpmjs.org/" target="_blank" rel="noopener">http://registry.enpmjs.org/</a><br>eu —– <a href="http://registry.npmjs.eu/" target="_blank" rel="noopener">http://registry.npmjs.eu/</a><br>au —– <a href="http://registry.npmjs.org.au/" target="_blank" rel="noopener">http://registry.npmjs.org.au/</a><br>sl —– <a href="http://npm.strongloop.com/" target="_blank" rel="noopener">http://npm.strongloop.com/</a><br>nj —– <a href="https://registry.nodejitsu.com/" target="_blank" rel="noopener">https://registry.nodejitsu.com/</a><br>pt —– <a href="http://registry.npmjs.pt/" target="_blank" rel="noopener">http://registry.npmjs.pt/</a><figure class="highlight plain"><table><tr><td class="code"><pre><span class="line"></span><br><span class="line">### 相关文档</span><br><span class="line">- [使用 nvm 管理不同版本的 node 与 npm</span><br><span class="line">](https:&#x2F;&#x2F;www.runoob.com&#x2F;w3cnote&#x2F;nvm-manager-node-versions.html)</span><br><span class="line">- [npm 切换镜像站点](https:&#x2F;&#x2F;www.runoob.com&#x2F;w3cnote&#x2F;npm-switch-repo.html)</span><br><span class="line"></span><br><span class="line">## npm: 包管理工具</span><br><span class="line">node(Node Package Manager) 是 javascript 世界的包管理工具，并且是 Node.js 平台的默认包管理工具。</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">### 安装：</span><br><span class="line">- 安装node.js时会自动安装</span><br><span class="line">- 使用 nvm 管理 npm 工具</span><br><span class="line"></span><br><span class="line">### 作用：</span><br><span class="line">通过 npm 可以安装、共享、分发代码，管理项目依赖关系。</span><br><span class="line">- 允许用户从NPM服务器下载别人编写的第三方包到本地使用。</span><br><span class="line">- 允许用户从NPM服务器下载并安装别人编写的命令行程序到本地使用。</span><br><span class="line">- 允许用户将自己编写的包或命令行程序上传到NPM服务器供别人使用。</span><br><span class="line"></span><br><span class="line">### 常用命令</span><br><span class="line">- 查看npm版本号：&#96;$ npm -v&#96;</span><br><span class="line">- 使用npm安装模块: &#96;$ npm install &lt;Module Name&gt;&#96;</span><br><span class="line">  - 本地安装: 正常命令</span><br><span class="line">  - 全局安装: 正常命令 + &#96;-g&#96;</span><br><span class="line">- 查看安装包信息：&#96;$ npm list -g&#96;</span><br><span class="line">- 查看某个模块的版本号：&#96;$ npm list &lt;Module Name&gt;&#96;</span><br><span class="line">- 卸载模块: &#96;$ npm uninstall &lt;Module Name&gt;&#96;</span><br><span class="line">- 查看有哪些模块命令: &#96;$ npm ls&#96;</span><br><span class="line">- 更新模块: &#96;$ npm update &lt;Module Name&gt;&#96;</span><br><span class="line">- 搜索模块: &#96;$ npm search &lt;Module Name&gt;&#96;</span><br><span class="line"></span><br><span class="line">### 相关文档</span><br><span class="line">- [npm 官网](https:&#x2F;&#x2F;www.npmjs.com&#x2F;package&#x2F;npm)</span><br><span class="line">- [NPM 使用介绍](https:&#x2F;&#x2F;www.runoob.com&#x2F;nodejs&#x2F;nodejs-npm.html)</span><br><span class="line"></span><br><span class="line">## nvm: npm 版本管理工具</span><br><span class="line">管理多版本 node&#x2F;npm</span><br><span class="line"></span><br><span class="line">### 安装</span><br><span class="line">- 下载</span><br><span class="line">  - curl命令：&#96;$ curl -o- https:&#x2F;&#x2F;raw.githubusercontent.com&#x2F;nvm-sh&#x2F;nvm&#x2F;v0.35.3&#x2F;install.sh | bash&#96;</span><br><span class="line">  - wget命令: &#96;$ wget -qO- https:&#x2F;&#x2F;raw.githubusercontent.com&#x2F;nvm-sh&#x2F;nvm&#x2F;v0.35.3&#x2F;install.sh | bash&#96;</span><br><span class="line">  - git 安装: </span><br><span class="line">    - 命令行输入 &#96;$ cd ~&#x2F;&#96;，然后 copy nvm 项目&#96;git clone https:&#x2F;&#x2F;github.com&#x2F;nvm-sh&#x2F;nvm.git .nvm&#96;</span><br><span class="line">    - 进入目录，然后指定版本：&#96;$ cd ~&#x2F;.nvm&#96; &#96;$ git checkout v0.35.3&#96;</span><br><span class="line">    - 启用 node: &#96;$ . nvm.sh&#96;</span><br><span class="line">  - 手动安装</span><br><span class="line"></span><br><span class="line">- 配置环境变量</span><br><span class="line">  - 配置到以下路径(~&#x2F;.bash_profile, ~&#x2F;.zshrc, ~&#x2F;.profile, or ~&#x2F;.bashrc)</span><br><span class="line">    &#96;&#96;&#96;java</span><br><span class="line">    export NVM_DIR&#x3D;&quot;$([ -z &quot;$&#123;XDG_CONFIG_HOME-&#125;&quot; ] &amp;&amp; printf %s &quot;$&#123;HOME&#125;&#x2F;.nvm&quot; || printf %s &quot;$&#123;XDG_CONFIG_HOME&#125;&#x2F;nvm&quot;)&quot;</span><br><span class="line">    [ -s &quot;$NVM_DIR&#x2F;nvm.sh&quot; ] &amp;&amp; \. &quot;$NVM_DIR&#x2F;nvm.sh&quot; # This loads nvm</span><br></pre></td></tr></table></figure>
+<h3 id="验证安装成功"><a href="#验证安装成功" class="headerlink" title="验证安装成功"></a>验证安装成功</h3></li>
+</ul>
+</li>
+<li>命令行输入”command -v nvm”，显示：nvm 则表示安装成功</li>
+</ul>
+<h3 id="常用命令"><a href="#常用命令" class="headerlink" title="常用命令"></a>常用命令</h3><ul>
+<li>安装 node:<ul>
+<li>安装最新版本的node: <code>$ nvm install node</code></li>
+<li>安装最新长期维护版本的node: <code>$ nvm install --lts</code></li>
+<li>安装指定版本的node: <code>$ nvm install 6.14.4</code> 6.14.4为node的版本号</li>
+</ul>
+</li>
+<li>切换到指定版本的node: <ul>
+<li>切换到最新长期维护版本的node: <code>$ nvm use install --lts</code></li>
+<li>切换到指定版本: <code>$ nvm use 6.14.4</code> 6.14.4为node的版本号</li>
+</ul>
+</li>
+<li>查看系统中有哪些版本的 node: <code>$ nvm ls</code></li>
+</ul>
+<h3 id="相关文档"><a href="#相关文档" class="headerlink" title="相关文档"></a>相关文档</h3><ul>
+<li><a href="https://github.com/nvm-sh/nvm/tree/v0.35.3" target="_blank" rel="noopener">git 地址</a></li>
+</ul>
+]]></content>
+      <categories>
+        <category>node</category>
+      </categories>
+      <tags>
+        <tag>node</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>计算机字长</title>
+    <url>/2020/05/05/codingbasic/%E8%AE%A1%E7%AE%97%E6%9C%BA%E5%AD%97%E9%95%BF/</url>
+    <content><![CDATA[<h1 id="字长"><a href="#字长" class="headerlink" title="字长"></a>字长</h1><p>计算机每个字所包含的位数称为字长。</p>
+<a id="more"></a>
+
+<h2 id="数据存储"><a href="#数据存储" class="headerlink" title="数据存储"></a>数据存储</h2><p>数据存储是以10进制数表示</p>
+<h2 id="数据传输"><a href="#数据传输" class="headerlink" title="数据传输"></a>数据传输</h2><p>数据传输是以2进制数表示</p>
+<h2 id="不同量级间转换，国际单位制-SI"><a href="#不同量级间转换，国际单位制-SI" class="headerlink" title="不同量级间转换，国际单位制(SI)"></a>不同量级间转换，国际单位制(SI)</h2><h3 id="位（b-bit-“比特”）"><a href="#位（b-bit-“比特”）" class="headerlink" title="位（b, bit, “比特”）"></a>位（b, bit, “比特”）</h3><p>数据存储的最小单位，数据传输的单位。每个二进制数字0或1就是一个位(bit)。</p>
+<h3 id="字节（B，Byte）"><a href="#字节（B，Byte）" class="headerlink" title="字节（B，Byte）"></a>字节（B，Byte）</h3><p>数据存储是以“字节”为单位，8 bit 就称为一个字节</p>
+<h3 id="双字节"><a href="#双字节" class="headerlink" title="双字节"></a>双字节</h3><p>16位就是一个双字节，包含两个字节</p>
+<h3 id="KB-千字节"><a href="#KB-千字节" class="headerlink" title="KB(千字节)"></a>KB(千字节)</h3><p>1 KB = 1024 B = 2^10 B</p>
+<h3 id="MB-兆字节-百万字节，简称“兆”"><a href="#MB-兆字节-百万字节，简称“兆”" class="headerlink" title="MB(兆字节, 百万字节，简称“兆”)"></a>MB(兆字节, 百万字节，简称“兆”)</h3><p>1 MB = 1024 kb = 2^20 B</p>
+<h3 id="GB-吉字节-十亿字节，又称为“千兆”"><a href="#GB-吉字节-十亿字节，又称为“千兆”" class="headerlink" title="GB(吉字节, 十亿字节，又称为“千兆”)"></a>GB(吉字节, 十亿字节，又称为“千兆”)</h3><p>1 GB = 1024 MB = 2^30 B</p>
+<h3 id="TB-太字节，万亿字节"><a href="#TB-太字节，万亿字节" class="headerlink" title="TB(太字节，万亿字节)"></a>TB(太字节，万亿字节)</h3><p>1 TB = 1024 GB = 2^40 B</p>
+<h3 id="PB-拍字节-千万亿字节"><a href="#PB-拍字节-千万亿字节" class="headerlink" title="PB(拍字节, 千万亿字节)"></a>PB(拍字节, 千万亿字节)</h3><p>1 PB = 1024 TB = 2^50 B</p>
+<h3 id="EB-艾字节-百亿亿字节"><a href="#EB-艾字节-百亿亿字节" class="headerlink" title="EB(艾字节, 百亿亿字节)"></a>EB(艾字节, 百亿亿字节)</h3><p>1 EB = 1024 PB = 2^60 B</p>
+<h3 id="ZB-泽字节-十万亿亿字节"><a href="#ZB-泽字节-十万亿亿字节" class="headerlink" title="ZB(泽字节, 十万亿亿字节)"></a>ZB(泽字节, 十万亿亿字节)</h3><p>1 ZB = 1024 EB = 2^70 B</p>
+<h3 id="YB-尧字节-一亿亿亿字节"><a href="#YB-尧字节-一亿亿亿字节" class="headerlink" title="YB(尧字节, 一亿亿亿字节)"></a>YB(尧字节, 一亿亿亿字节)</h3><p>1 YB = 1024 ZB = 2^80 B</p>
+<h3 id="BB-一千亿亿亿字节"><a href="#BB-一千亿亿亿字节" class="headerlink" title="BB(一千亿亿亿字节)"></a>BB(一千亿亿亿字节)</h3><p>1 BB = 1024 YB = 2^90 B</p>
+<h3 id="NB-一百万亿亿亿字节"><a href="#NB-一百万亿亿亿字节" class="headerlink" title="NB(一百万亿亿亿字节)"></a>NB(一百万亿亿亿字节)</h3><p>1 NB = 1024 BB = 2^100 B</p>
+<h3 id="DB-十亿亿亿亿字节"><a href="#DB-十亿亿亿亿字节" class="headerlink" title="DB(十亿亿亿亿字节)"></a>DB(十亿亿亿亿字节)</h3><p>1 DB = 1024 NB = 2^110 B</p>
+]]></content>
+      <categories>
+        <category>coding basic</category>
+      </categories>
+      <tags>
+        <tag>coding basic</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>Salesforce 无法刷新Sandbox</title>
+    <url>/2020/05/05/salesforce/commonissue/Salesforce-%E6%97%A0%E6%B3%95%E5%88%B7%E6%96%B0Sandbox/</url>
+    <content><![CDATA[<h1 id="Salesforce-无法刷新Sandbox"><a href="#Salesforce-无法刷新Sandbox" class="headerlink" title="Salesforce 无法刷新Sandbox"></a>Salesforce 无法刷新Sandbox</h1><h2 id="Question"><a href="#Question" class="headerlink" title="Question"></a>Question</h2><p>When navigating to Setup –&gt; Administration Setup –&gt; Data Management –&gt; Sandboxes, the Refresh option is not available.  Why is the Refresh option missing for the Sandbox?</p>
+<a id="more"></a>
+
+<h2 id="Answer"><a href="#Answer" class="headerlink" title="Answer"></a>Answer</h2><p>Salesforce sets a limit on the current number of Sandboxes a customer can have.  If the limit is exceeded for any of the Sandbox categories, the Refresh option is removed for every Sandbox.</p>
+<p>Example:</p>
+<p>A production org has the current total Sandboxes and used Sandboxes:</p>
+<pre><code>Developer Sandbox - 60 total, 5 in use
+Developer Pro - 5 total, 7 in use
+Partial Copy - 1 total, 1 in use
+Full - 1 total, 1 in use</code></pre><p>Since this org is only licensed for 5 Developer Pro Sandboxes and has 7 in use, the Refresh option disappears from every Sandbox.  To resolve this, two of the Developer Pro Sandboxes need to be deleted.  As soon as this is done the refresh option appears again.</p>
+<p>Note: Click “Create Sandbox” to see the total available sandboxes. </p>
+<h2 id="Related-Documentation"><a href="#Related-Documentation" class="headerlink" title="Related Documentation:"></a>Related Documentation:</h2><p><a href="https://support.veeva.com/hc/en-us/articles/115004663047-Why-is-the-Refresh-Sandbox-Option-Missing-in-CRM-" target="_blank" rel="noopener">https://support.veeva.com/hc/en-us/articles/115004663047-Why-is-the-Refresh-Sandbox-Option-Missing-in-CRM-</a></p>
+]]></content>
+      <categories>
+        <category>salesforce</category>
+      </categories>
+      <tags>
+        <tag>salesforce</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>Salesforce 实例数据中心所在地</title>
+    <url>/2020/05/05/salesforce/commonissue/Salesforce-%E5%AE%9E%E4%BE%8B%E6%95%B0%E6%8D%AE%E4%B8%AD%E5%BF%83%E6%89%80%E5%9C%A8%E5%9C%B0/</url>
+    <content><![CDATA[<h1 id="Salesforce-实例数据中心所在地"><a href="#Salesforce-实例数据中心所在地" class="headerlink" title="Salesforce 实例数据中心所在地"></a>Salesforce 实例数据中心所在地</h1><h2 id="描述"><a href="#描述" class="headerlink" title="描述"></a>描述</h2><ul>
+<li>Salesforce 数据中心所在地：</li>
+</ul>
+<a id="more"></a>
+
+<pre><code>- USA（美国）
+    - Chicago, Illinois, United States (USA)【芝加哥，伊利诺伊州，美国】
+    - Dallas, Texas, United States (USA)【达拉斯，德克萨斯，美国】
+    - Phoenix, Arizona, United States (USA)【凤凰城，亚利桑那州，美国】
+    - Washington DC, United States (USA): Washington DC, USA (North) &amp; Washington DC, USA (South)【美国华盛顿特区（北部）和美国华盛顿特区（南部）】
+- GER（德国）
+    - Frankfurt, Germany (GER)【德国法兰克福（德国）】
+- West（西部）
+    - London, United Kingdom (UK): London, UK (North) &amp; London, UK (West)【英国伦敦（北部）和英国伦敦（西部）】
+- FRA（法国）
+    - Paris, France (FRA)【法国巴黎】
+- JPN（日本）
+    - Kobe, Japan (JPN)【日本神户】
+    - Tokyo, Japan (JPN)【日本东京】</code></pre><h2 id="结论"><a href="#结论" class="headerlink" title="结论"></a>结论</h2><h2 id="官方链接"><a href="#官方链接" class="headerlink" title="官方链接"></a>官方链接</h2><ul>
+<li><a href="https://help.salesforce.com/articleView?id=000314281&amp;language=en_US&amp;type=1&amp;mode=1" target="_blank" rel="noopener">https://help.salesforce.com/articleView?id=000314281&amp;language=en_US&amp;type=1&amp;mode=1</a></li>
+</ul>
+]]></content>
+      <categories>
+        <category>salesforce</category>
+      </categories>
+      <tags>
+        <tag>salesforce</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>代理审批人设置</title>
+    <url>/2020/05/05/salesforce/commonissue/%E4%BB%A3%E7%90%86%E5%AE%A1%E6%89%B9%E4%BA%BA%E8%AE%BE%E7%BD%AE/</url>
+    <content><![CDATA[<h1 id="代理审批人设置"><a href="#代理审批人设置" class="headerlink" title="代理审批人设置"></a>代理审批人设置</h1><h2 id="背景"><a href="#背景" class="headerlink" title="背景"></a>背景</h2><p>Salesforce审批流程中，启用了代理审批人功能。代理审批人可以替代审批人进行数据的审批。</p>
+<h2 id="设置代理审批人"><a href="#设置代理审批人" class="headerlink" title="设置代理审批人"></a>设置代理审批人</h2><h3 id="审批流程配置"><a href="#审批流程配置" class="headerlink" title="审批流程配置"></a>审批流程配置</h3><ul>
+<li>Setting &gt; Approval Process &gt; Approval Step Edit &gt; Select Assigned Approver<br><img src="https://gitee.com/cnkangym/BlogImageBed/raw/master/img/20200505161231.png" alt=""></li>
+</ul>
+<a id="more"></a>
+
+<h3 id="设置代理审批人-1"><a href="#设置代理审批人-1" class="headerlink" title="设置代理审批人"></a>设置代理审批人</h3><ul>
+<li>配置代理审批人(Delegated Approver)<br><img src="https://gitee.com/cnkangym/BlogImageBed/raw/master/img/20200505161253.png" alt=""></li>
+<li>配置代理审批人的”Recieve Approval Request Emails”为”If I am an approver or delegated approver”<ul>
+<li>If I am an approver or delegated approver<ul>
+<li>UserPreferencesReceiveNoNotificationsAsApprover = false</li>
+<li>UserPreferencesReceiveNotificationsAsDelegatedApprover = true</li>
+</ul>
+</li>
+<li>Only if I am an approver<ul>
+<li>UserPreferencesReceiveNoNotificationsAsApprover = false</li>
+<li>UserPreferencesReceiveNotificationsAsDelegatedApprover = false</li>
+</ul>
+</li>
+<li>Only if I am an delegated approver<ul>
+<li>UserPreferencesReceiveNoNotificationsAsApprover = true</li>
+<li>UserPreferencesReceiveNotificationsAsDelegatedApprover = true</li>
+</ul>
+</li>
+<li>Never<ul>
+<li>UserPreferencesReceiveNoNotificationsAsApprover = true</li>
+<li>UserPreferencesReceiveNotificationsAsDelegatedApprover = false</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<h2 id="注意事项"><a href="#注意事项" class="headerlink" title="注意事项"></a>注意事项</h2><ul>
+<li>代理审批人收到的邮件跟审批人收到的邮件是一样的，只是在邮件主题上会有提示是代理审批</li>
+<li>代理审批人无法分配给其他人审批，只能审批批准或拒绝</li>
+</ul>
+<h2 id="相关链接"><a href="#相关链接" class="headerlink" title="相关链接"></a>相关链接</h2><ul>
+<li><a href="http://sfdcsrini.blogspot.com/2015/12/approver-settings-approver-settings-can.html" target="_blank" rel="noopener">http://sfdcsrini.blogspot.com/2015/12/approver-settings-approver-settings-can.html</a></li>
+<li><a href="https://help.salesforce.com/articleView?id=000330521&type=1&mode=1" target="_blank" rel="noopener">https://help.salesforce.com/articleView?id=000330521&amp;type=1&amp;mode=1</a></li>
+<li><a href="https://success.salesforce.com/ideaView?id=08730000000aIbxAAE" target="_blank" rel="noopener">https://success.salesforce.com/ideaView?id=08730000000aIbxAAE</a></li>
+<li><a href="https://communities.bmc.com/docs/DOC-33610" target="_blank" rel="noopener">https://communities.bmc.com/docs/DOC-33610</a></li>
+</ul>
+]]></content>
+      <categories>
+        <category>salesforce</category>
+      </categories>
+      <tags>
+        <tag>salesforce</tag>
+      </tags>
   </entry>
 </search>

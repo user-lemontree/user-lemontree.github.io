@@ -1,0 +1,1742 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=2">
+<meta name="theme-color" content="#222">
+<meta name="generator" content="Hexo 4.2.0">
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16.png">
+
+<link rel="stylesheet" href="/css/main.css">
+
+
+<link rel="stylesheet" href="/lib/font-awesome/css/all.min.css">
+  <link rel="stylesheet" href="/lib/pace/pace-theme-minimal.min.css">
+  <script src="/lib/pace/pace.min.js"></script>
+
+<script id="hexo-configurations">
+    var NexT = window.NexT || {};
+    var CONFIG = {"hostname":"cnkangym.com","root":"/","scheme":"Gemini","version":"7.8.0","exturl":false,"sidebar":{"position":"left","display":"hide","padding":18,"offset":12,"onmobile":true},"copycode":{"enable":false,"show_result":false,"style":null},"back2top":{"enable":true,"sidebar":true,"scrollpercent":true},"bookmark":{"enable":false,"color":"#222","save":"auto"},"fancybox":false,"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"algolia":{"hits":{"per_page":10},"labels":{"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}},"localsearch":{"enable":true,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false},"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},"path":"search.xml"};
+  </script>
+
+  <meta name="description" content="字符编码方式在计算机中，所有的数据存储和运算时都要使用二进制数据表示">
+<meta property="og:type" content="article">
+<meta property="og:title" content="字符编码方式">
+<meta property="og:url" content="http://cnkangym.com/2020/05/05/codingbasic/%E5%AD%97%E7%AC%A6%E7%BC%96%E7%A0%81%E6%96%B9%E5%BC%8F/index.html">
+<meta property="og:site_name" content="我的博客">
+<meta property="og:description" content="字符编码方式在计算机中，所有的数据存储和运算时都要使用二进制数据表示">
+<meta property="og:locale" content="zh_CN">
+<meta property="og:image" content="https://gitee.com/cnkangym/BlogImageBed/raw/master/img/20200505153404.png">
+<meta property="og:image" content="https://gitee.com/cnkangym/BlogImageBed/raw/master/img/20200505151827.png">
+<meta property="article:published_time" content="2020-05-05T07:31:42.000Z">
+<meta property="article:modified_time" content="2020-05-05T07:34:33.879Z">
+<meta property="article:author" content="dkk">
+<meta property="article:tag" content="coding basic">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="https://gitee.com/cnkangym/BlogImageBed/raw/master/img/20200505153404.png">
+
+<link rel="canonical" href="http://cnkangym.com/2020/05/05/codingbasic/%E5%AD%97%E7%AC%A6%E7%BC%96%E7%A0%81%E6%96%B9%E5%BC%8F/">
+
+
+<script id="page-configurations">
+  // https://hexo.io/docs/variables.html
+  CONFIG.page = {
+    sidebar: "",
+    isHome : false,
+    isPost : true,
+    lang   : 'zh-CN'
+  };
+</script>
+
+  <title>字符编码方式 | 我的博客</title>
+  
+
+
+
+
+
+
+  <noscript>
+  <style>
+  .use-motion .brand,
+  .use-motion .menu-item,
+  .sidebar-inner,
+  .use-motion .post-block,
+  .use-motion .pagination,
+  .use-motion .comments,
+  .use-motion .post-header,
+  .use-motion .post-body,
+  .use-motion .collection-header { opacity: initial; }
+
+  .use-motion .site-title,
+  .use-motion .site-subtitle {
+    opacity: initial;
+    top: initial;
+  }
+
+  .use-motion .logo-line-before i { left: initial; }
+  .use-motion .logo-line-after i { right: initial; }
+  </style>
+</noscript>
+
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage">
+  <div class="container use-motion">
+    <div class="headband"></div>
+
+    <header class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-container">
+  <div class="site-nav-toggle">
+    <div class="toggle" aria-label="切换导航栏">
+      <span class="toggle-line toggle-line-first"></span>
+      <span class="toggle-line toggle-line-middle"></span>
+      <span class="toggle-line toggle-line-last"></span>
+    </div>
+  </div>
+
+  <div class="site-meta">
+
+    <a href="/" class="brand" rel="start">
+      <span class="logo-line-before"><i></i></span>
+      <h1 class="site-title">我的博客</h1>
+      <span class="logo-line-after"><i></i></span>
+    </a>
+  </div>
+
+  <div class="site-nav-right">
+    <div class="toggle popup-trigger">
+        <i class="fa fa-search fa-fw fa-lg"></i>
+    </div>
+  </div>
+</div>
+
+
+
+
+<nav class="site-nav">
+  <ul id="menu" class="main-menu menu">
+        <li class="menu-item menu-item-home">
+
+    <a href="/" rel="section"><i class="fa fa-home fa-fw"></i>首页</a>
+
+  </li>
+        <li class="menu-item menu-item-about">
+
+    <a href="/about/" rel="section"><i class="fa fa-user fa-fw"></i>关于</a>
+
+  </li>
+        <li class="menu-item menu-item-tags">
+
+    <a href="/tags/" rel="section"><i class="fa fa-tags fa-fw"></i>标签</a>
+
+  </li>
+        <li class="menu-item menu-item-categories">
+
+    <a href="/categories/" rel="section"><i class="fa fa-th fa-fw"></i>分类</a>
+
+  </li>
+        <li class="menu-item menu-item-archives">
+
+    <a href="/archives/" rel="section"><i class="fa fa-archive fa-fw"></i>归档</a>
+
+  </li>
+      <li class="menu-item menu-item-search">
+        <a role="button" class="popup-trigger"><i class="fa fa-search fa-fw"></i>搜索
+        </a>
+      </li>
+  </ul>
+</nav>
+
+
+
+  <div class="search-pop-overlay">
+    <div class="popup search-popup">
+        <div class="search-header">
+  <span class="search-icon">
+    <i class="fa fa-search"></i>
+  </span>
+  <div class="search-input-container">
+    <input autocomplete="off" autocapitalize="off"
+           placeholder="搜索..." spellcheck="false"
+           type="search" class="search-input">
+  </div>
+  <span class="popup-btn-close">
+    <i class="fa fa-times-circle"></i>
+  </span>
+</div>
+<div id="search-result">
+  <div id="no-result">
+    <i class="fa fa-spinner fa-pulse fa-5x fa-fw"></i>
+  </div>
+</div>
+
+    </div>
+  </div>
+
+</div>
+    </header>
+
+    
+  <div class="reading-progress-bar"></div>
+
+  <a href="https://github.com/cnkangym" class="github-corner" title="Follow me on GitHub" aria-label="Follow me on GitHub" rel="noopener" target="_blank"><svg width="80" height="80" viewBox="0 0 250 250" aria-hidden="true"><path d="M0,0 L115,115 L130,115 L142,142 L250,250 L250,0 Z"></path><path d="M128.3,109.0 C113.8,99.7 119.0,89.6 119.0,89.6 C122.0,82.7 120.5,78.6 120.5,78.6 C119.2,72.0 123.4,76.3 123.4,76.3 C127.3,80.9 125.5,87.3 125.5,87.3 C122.9,97.6 130.6,101.9 134.4,103.2" fill="currentColor" style="transform-origin: 130px 106px;" class="octo-arm"></path><path d="M115.0,115.0 C114.9,115.1 118.7,116.5 119.8,115.4 L133.7,101.6 C136.9,99.2 139.9,98.4 142.2,98.6 C133.8,88.0 127.5,74.4 143.8,58.0 C148.5,53.4 154.0,51.2 159.7,51.0 C160.3,49.4 163.2,43.6 171.4,40.1 C171.4,40.1 176.1,42.5 178.8,56.2 C183.1,58.6 187.2,61.8 190.9,65.4 C194.5,69.0 197.7,73.2 200.1,77.6 C213.8,80.2 216.3,84.9 216.3,84.9 C212.7,93.1 206.9,96.0 205.4,96.6 C205.1,102.4 203.0,107.8 198.3,112.5 C181.9,128.9 168.3,122.5 157.7,114.1 C157.9,116.9 156.7,120.9 152.7,124.9 L141.0,136.5 C139.8,137.7 141.6,141.9 141.8,141.8 Z" fill="currentColor" class="octo-body"></path></svg></a>
+
+
+    <main class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          
+
+          <div class="content post posts-expand">
+            
+
+    
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
+    <link itemprop="mainEntityOfPage" href="http://cnkangym.com/2020/05/05/codingbasic/%E5%AD%97%E7%AC%A6%E7%BC%96%E7%A0%81%E6%96%B9%E5%BC%8F/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/dkk.jpg">
+      <meta itemprop="name" content="dkk">
+      <meta itemprop="description" content="">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="我的博客">
+    </span>
+      <header class="post-header">
+        <h1 class="post-title" itemprop="name headline">
+          字符编码方式
+        </h1>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-calendar"></i>
+              </span>
+              <span class="post-meta-item-text">发表于</span>
+              
+
+              <time title="创建时间：2020-05-05 15:31:42 / 修改时间：15:34:33" itemprop="dateCreated datePublished" datetime="2020-05-05T15:31:42+08:00">2020-05-05</time>
+            </span>
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-folder"></i>
+              </span>
+              <span class="post-meta-item-text">分类于</span>
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/boding-basic/" itemprop="url" rel="index"><span itemprop="name">boding basic</span></a>
+                </span>
+            </span>
+
+          
+            <span class="post-meta-item" title="阅读次数" id="busuanzi_container_page_pv" style="display: none;">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-eye"></i>
+              </span>
+              <span class="post-meta-item-text">阅读次数：</span>
+              <span id="busuanzi_value_page_pv"></span>
+            </span><br>
+            <span class="post-meta-item" title="本文字数">
+              <span class="post-meta-item-icon">
+                <i class="far fa-file-word"></i>
+              </span>
+                <span class="post-meta-item-text">本文字数：</span>
+              <span>6.2k</span>
+            </span>
+            <span class="post-meta-item" title="阅读时长">
+              <span class="post-meta-item-icon">
+                <i class="far fa-clock"></i>
+              </span>
+                <span class="post-meta-item-text">阅读时长 &asymp;</span>
+              <span>6 分钟</span>
+            </span>
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+        <h1 id="字符编码方式"><a href="#字符编码方式" class="headerlink" title="字符编码方式"></a>字符编码方式</h1><p>在计算机中，所有的数据存储和运算时都要使用二进制数据表示</p>
+<a id="more"></a>
+
+<h2 id="ASCII-码"><a href="#ASCII-码" class="headerlink" title="ASCII 码"></a>ASCII 码</h2><p>ASCII(American Standard Code for Information Interchange)，美国信息交换标准代码，主要用于显示现代英语和其他西欧语言。</p>
+<h3 id="表达方式"><a href="#表达方式" class="headerlink" title="表达方式"></a>表达方式</h3><p>ASCII 码使用指定的7位或8位二进制数组合来表示128或256种可能的字符。标准ACSII码也叫基础ASCII码，使用7位二进制数来表示（最高位二进制为0）。</p>
+<h3 id="编码标准表"><a href="#编码标准表" class="headerlink" title="编码标准表"></a>编码标准表</h3><h4 id="控制字符-0-31及127"><a href="#控制字符-0-31及127" class="headerlink" title="控制字符(0~31及127)"></a>控制字符(0~31及127)</h4><table>
+<thead>
+<tr>
+<th>Bin(二进制)</th>
+<th>Oct(八进制)</th>
+<th>Dec(十进制)</th>
+<th>Hex(十六进制)</th>
+<th>缩写/字符</th>
+<th>解释</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>0000 0000</td>
+<td>0</td>
+<td>0</td>
+<td>0x00</td>
+<td>NUL(null)</td>
+<td>空字符</td>
+</tr>
+<tr>
+<td>0000 0001</td>
+<td>1</td>
+<td>1</td>
+<td>0x01</td>
+<td>SOH(start of headline)</td>
+<td>标题开始</td>
+</tr>
+<tr>
+<td>0000 0010</td>
+<td>2</td>
+<td>2</td>
+<td>0x02</td>
+<td>STX (start of text)</td>
+<td>正文开始</td>
+</tr>
+<tr>
+<td>0000 0011</td>
+<td>3</td>
+<td>3</td>
+<td>0x03</td>
+<td>ETX (end of text)</td>
+<td>正文结束</td>
+</tr>
+<tr>
+<td>0000 0100</td>
+<td>4</td>
+<td>4</td>
+<td>0x04</td>
+<td>EOT (end of transmission)</td>
+<td>传输结束</td>
+</tr>
+<tr>
+<td>0000 0101</td>
+<td>5</td>
+<td>5</td>
+<td>0x05</td>
+<td>ENQ (enquiry)</td>
+<td>请求</td>
+</tr>
+<tr>
+<td>0000 0110</td>
+<td>6</td>
+<td>6</td>
+<td>0x06</td>
+<td>ACK (acknowledge)</td>
+<td>收到通知</td>
+</tr>
+<tr>
+<td>0000 0111</td>
+<td>7</td>
+<td>7</td>
+<td>0x07</td>
+<td>BEL (bell)</td>
+<td>响铃</td>
+</tr>
+<tr>
+<td>0000 1000</td>
+<td>10</td>
+<td>8</td>
+<td>0x08</td>
+<td>BS (backspace)</td>
+<td>退格</td>
+</tr>
+<tr>
+<td>0000 1001</td>
+<td>11</td>
+<td>9</td>
+<td>0x09</td>
+<td>HT (horizontal tab)</td>
+<td>水平制表符</td>
+</tr>
+<tr>
+<td>0000 1010</td>
+<td>12</td>
+<td>10</td>
+<td>0x0A</td>
+<td>LF (NL line feed, new line)</td>
+<td>换行键</td>
+</tr>
+<tr>
+<td>0000 1011</td>
+<td>13</td>
+<td>11</td>
+<td>0x0B</td>
+<td>VT (vertical tab)</td>
+<td>垂直制表符</td>
+</tr>
+<tr>
+<td>0000 1100</td>
+<td>14</td>
+<td>12</td>
+<td>0x0C</td>
+<td>FF (NP form feed, new page)</td>
+<td>换页键</td>
+</tr>
+<tr>
+<td>0000 1101</td>
+<td>15</td>
+<td>13</td>
+<td>0x0D</td>
+<td>CR (carriage return)</td>
+<td>回车键</td>
+</tr>
+<tr>
+<td>0000 1110</td>
+<td>16</td>
+<td>14</td>
+<td>0x0E</td>
+<td>SO (shift out)</td>
+<td>不用切换</td>
+</tr>
+<tr>
+<td>0000 1111</td>
+<td>17</td>
+<td>15</td>
+<td>0x0F</td>
+<td>SI (shift in)</td>
+<td>启用切换</td>
+</tr>
+<tr>
+<td>0001 0000</td>
+<td>20</td>
+<td>16</td>
+<td>0x10</td>
+<td>DLE (data link escape)</td>
+<td>数据链路转义</td>
+</tr>
+<tr>
+<td>0001 0001</td>
+<td>21</td>
+<td>17</td>
+<td>0x11</td>
+<td>DC1 (device control 1)</td>
+<td>设备控制1</td>
+</tr>
+<tr>
+<td>0001 0010</td>
+<td>22</td>
+<td>18</td>
+<td>0x12</td>
+<td>DC2 (device control 2)</td>
+<td>设备控制2</td>
+</tr>
+<tr>
+<td>0001 0011</td>
+<td>23</td>
+<td>19</td>
+<td>0x13</td>
+<td>DC3 (device control 3)</td>
+<td>设备控制3</td>
+</tr>
+<tr>
+<td>0001 0100</td>
+<td>24</td>
+<td>20</td>
+<td>0x14</td>
+<td>DC4 (device control 4)</td>
+<td>设备控制4</td>
+</tr>
+<tr>
+<td>0001 0101</td>
+<td>25</td>
+<td>21</td>
+<td>0x15</td>
+<td>NAK (negative acknowledge)</td>
+<td>拒绝接收</td>
+</tr>
+<tr>
+<td>0001 0110</td>
+<td>26</td>
+<td>22</td>
+<td>0x16</td>
+<td>SYN (synchronous idle)</td>
+<td>同步空闲</td>
+</tr>
+<tr>
+<td>0001 0111</td>
+<td>27</td>
+<td>23</td>
+<td>0x17</td>
+<td>ETB (end of trans. block)</td>
+<td>结束传输块</td>
+</tr>
+<tr>
+<td>0001 1000</td>
+<td>30</td>
+<td>24</td>
+<td>0x18</td>
+<td>CAN (cancel)</td>
+<td>取消</td>
+</tr>
+<tr>
+<td>0001 1001</td>
+<td>31</td>
+<td>25</td>
+<td>0x19</td>
+<td>EM (end of medium)</td>
+<td>媒介结束</td>
+</tr>
+<tr>
+<td>0111 1111</td>
+<td>177</td>
+<td>127</td>
+<td>0x7F</td>
+<td>DEL (delete)</td>
+<td>删除</td>
+</tr>
+</tbody></table>
+<h4 id="显示字符-32-126"><a href="#显示字符-32-126" class="headerlink" title="显示字符(32~126)"></a>显示字符(32~126)</h4><table>
+<thead>
+<tr>
+<th>Bin(二进制)</th>
+<th>Oct(八进制)</th>
+<th>Dec(十进制)</th>
+<th>Hex(十六进制)</th>
+<th>缩写/字符</th>
+<th>解释</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>0001 1010</td>
+<td>32</td>
+<td>26</td>
+<td>0x1A</td>
+<td>SUB (substitute)</td>
+<td>代替</td>
+</tr>
+<tr>
+<td>0001 1011</td>
+<td>33</td>
+<td>27</td>
+<td>0x1B</td>
+<td>ESC (escape)</td>
+<td>换码(溢出)</td>
+</tr>
+<tr>
+<td>0001 1100</td>
+<td>34</td>
+<td>28</td>
+<td>0x1C</td>
+<td>FS (file separator)</td>
+<td>文件分隔符</td>
+</tr>
+<tr>
+<td>0001 1101</td>
+<td>35</td>
+<td>29</td>
+<td>0x1D</td>
+<td>GS (group separator)</td>
+<td>分组符</td>
+</tr>
+<tr>
+<td>0001 1110</td>
+<td>36</td>
+<td>30</td>
+<td>0x1E</td>
+<td>RS (record separator)</td>
+<td>记录分隔符</td>
+</tr>
+<tr>
+<td>0001 1111</td>
+<td>37</td>
+<td>31</td>
+<td>0x1F</td>
+<td>US (unit separator)</td>
+<td>单元分隔符</td>
+</tr>
+<tr>
+<td>0010 0000</td>
+<td>40</td>
+<td>32</td>
+<td>0x20</td>
+<td>(space)</td>
+<td>空格</td>
+</tr>
+<tr>
+<td>0010 0001</td>
+<td>41</td>
+<td>33</td>
+<td>0x21</td>
+<td>!</td>
+<td>叹号</td>
+</tr>
+<tr>
+<td>0010 0010</td>
+<td>42</td>
+<td>34</td>
+<td>0x22</td>
+<td>“</td>
+<td>双引号</td>
+</tr>
+<tr>
+<td>0010 0011</td>
+<td>43</td>
+<td>35</td>
+<td>0x23</td>
+<td>#</td>
+<td>井号</td>
+</tr>
+<tr>
+<td>0010 0100</td>
+<td>44</td>
+<td>36</td>
+<td>0x24</td>
+<td>$</td>
+<td>美元符</td>
+</tr>
+<tr>
+<td>0010 0101</td>
+<td>45</td>
+<td>37</td>
+<td>0x25</td>
+<td>%</td>
+<td>百分号</td>
+</tr>
+<tr>
+<td>0010 0110</td>
+<td>46</td>
+<td>38</td>
+<td>0x26</td>
+<td>&amp;</td>
+<td>和号</td>
+</tr>
+<tr>
+<td>0010 0111</td>
+<td>47</td>
+<td>39</td>
+<td>0x27</td>
+<td>‘</td>
+<td>闭单引号</td>
+</tr>
+<tr>
+<td>0010 1000</td>
+<td>50</td>
+<td>40</td>
+<td>0x28</td>
+<td>(</td>
+<td>开括号</td>
+</tr>
+<tr>
+<td>0010 1001</td>
+<td>51</td>
+<td>41</td>
+<td>0x29</td>
+<td>)</td>
+<td>闭括号</td>
+</tr>
+<tr>
+<td>0010 1010</td>
+<td>52</td>
+<td>42</td>
+<td>0x2A</td>
+<td>*</td>
+<td>星号</td>
+</tr>
+<tr>
+<td>0010 1011</td>
+<td>53</td>
+<td>43</td>
+<td>0x2B</td>
+<td>+</td>
+<td>加号</td>
+</tr>
+<tr>
+<td>0010 1100</td>
+<td>54</td>
+<td>44</td>
+<td>0x2C</td>
+<td>,</td>
+<td>逗号</td>
+</tr>
+<tr>
+<td>0010 1101</td>
+<td>55</td>
+<td>45</td>
+<td>0x2D</td>
+<td>-</td>
+<td>减号/破折号</td>
+</tr>
+<tr>
+<td>0010 1110</td>
+<td>56</td>
+<td>46</td>
+<td>0x2E</td>
+<td>.</td>
+<td>句号</td>
+</tr>
+<tr>
+<td>0010 1111</td>
+<td>57</td>
+<td>47</td>
+<td>0x2F</td>
+<td>/</td>
+<td>斜杠</td>
+</tr>
+<tr>
+<td>0011 0000</td>
+<td>60</td>
+<td>48</td>
+<td>0x30</td>
+<td>0</td>
+<td>字符0</td>
+</tr>
+<tr>
+<td>0011 0001</td>
+<td>61</td>
+<td>49</td>
+<td>0x31</td>
+<td>1</td>
+<td>字符1</td>
+</tr>
+<tr>
+<td>0011 0010</td>
+<td>62</td>
+<td>50</td>
+<td>0x32</td>
+<td>2</td>
+<td>字符2</td>
+</tr>
+<tr>
+<td>0011 0011</td>
+<td>63</td>
+<td>51</td>
+<td>0x33</td>
+<td>3</td>
+<td>字符3</td>
+</tr>
+<tr>
+<td>0011 0100</td>
+<td>64</td>
+<td>52</td>
+<td>0x34</td>
+<td>4</td>
+<td>字符4</td>
+</tr>
+<tr>
+<td>0011 0101</td>
+<td>65</td>
+<td>53</td>
+<td>0x35</td>
+<td>5</td>
+<td>字符5</td>
+</tr>
+<tr>
+<td>0011 0110</td>
+<td>66</td>
+<td>54</td>
+<td>0x36</td>
+<td>6</td>
+<td>字符6</td>
+</tr>
+<tr>
+<td>0011 0111</td>
+<td>67</td>
+<td>55</td>
+<td>0x37</td>
+<td>7</td>
+<td>字符7</td>
+</tr>
+<tr>
+<td>0011 1000</td>
+<td>70</td>
+<td>56</td>
+<td>0x38</td>
+<td>8</td>
+<td>字符8</td>
+</tr>
+<tr>
+<td>0011 1001</td>
+<td>71</td>
+<td>57</td>
+<td>0x39</td>
+<td>9</td>
+<td>字符9</td>
+</tr>
+<tr>
+<td>0011 1010</td>
+<td>72</td>
+<td>58</td>
+<td>0x3A</td>
+<td>:</td>
+<td>冒号</td>
+</tr>
+<tr>
+<td>0011 1011</td>
+<td>73</td>
+<td>59</td>
+<td>0x3B</td>
+<td>;</td>
+<td>分号</td>
+</tr>
+<tr>
+<td>0011 1100</td>
+<td>74</td>
+<td>60</td>
+<td>0x3C</td>
+<td>&lt;</td>
+<td>小于</td>
+</tr>
+<tr>
+<td>0011 1101</td>
+<td>75</td>
+<td>61</td>
+<td>0x3D</td>
+<td>=</td>
+<td>等号</td>
+</tr>
+<tr>
+<td>0011 1110</td>
+<td>76</td>
+<td>62</td>
+<td>0x3E</td>
+<td>&gt;</td>
+<td>大于</td>
+</tr>
+<tr>
+<td>0011 1111</td>
+<td>77</td>
+<td>63</td>
+<td>0x3F</td>
+<td>?</td>
+<td>问号</td>
+</tr>
+<tr>
+<td>0100 0000</td>
+<td>100</td>
+<td>64</td>
+<td>0x40</td>
+<td>@</td>
+<td>电子邮件符号</td>
+</tr>
+<tr>
+<td>0100 0001</td>
+<td>101</td>
+<td>65</td>
+<td>0x41</td>
+<td>A</td>
+<td>大写字母A</td>
+</tr>
+<tr>
+<td>0100 0010</td>
+<td>102</td>
+<td>66</td>
+<td>0x42</td>
+<td>B</td>
+<td>大写字母B</td>
+</tr>
+<tr>
+<td>0100 0011</td>
+<td>103</td>
+<td>67</td>
+<td>0x43</td>
+<td>C</td>
+<td>大写字母C</td>
+</tr>
+<tr>
+<td>0100 0100</td>
+<td>104</td>
+<td>68</td>
+<td>0x44</td>
+<td>D</td>
+<td>大写字母D</td>
+</tr>
+<tr>
+<td>0100 0101</td>
+<td>105</td>
+<td>69</td>
+<td>0x45</td>
+<td>E</td>
+<td>大写字母E</td>
+</tr>
+<tr>
+<td>0100 0110</td>
+<td>106</td>
+<td>70</td>
+<td>0x46</td>
+<td>F</td>
+<td>大写字母F</td>
+</tr>
+<tr>
+<td>0100 0111</td>
+<td>107</td>
+<td>71</td>
+<td>0x47</td>
+<td>G</td>
+<td>大写字母G</td>
+</tr>
+<tr>
+<td>0100 1000</td>
+<td>110</td>
+<td>72</td>
+<td>0x48</td>
+<td>H</td>
+<td>大写字母H</td>
+</tr>
+<tr>
+<td>0100 1001</td>
+<td>111</td>
+<td>73</td>
+<td>0x49</td>
+<td>I</td>
+<td>大写字母I</td>
+</tr>
+<tr>
+<td>1001010</td>
+<td>112</td>
+<td>74</td>
+<td>0x4A</td>
+<td>J</td>
+<td>大写字母J</td>
+</tr>
+<tr>
+<td>0100 1011</td>
+<td>113</td>
+<td>75</td>
+<td>0x4B</td>
+<td>K</td>
+<td>大写字母K</td>
+</tr>
+<tr>
+<td>0100 1100</td>
+<td>114</td>
+<td>76</td>
+<td>0x4C</td>
+<td>L</td>
+<td>大写字母L</td>
+</tr>
+<tr>
+<td>0100 1101</td>
+<td>115</td>
+<td>77</td>
+<td>0x4D</td>
+<td>M</td>
+<td>大写字母M</td>
+</tr>
+<tr>
+<td>0100 1110</td>
+<td>116</td>
+<td>78</td>
+<td>0x4E</td>
+<td>N</td>
+<td>大写字母N</td>
+</tr>
+<tr>
+<td>0100 1111</td>
+<td>117</td>
+<td>79</td>
+<td>0x4F</td>
+<td>O</td>
+<td>大写字母O</td>
+</tr>
+<tr>
+<td>0101 0000</td>
+<td>120</td>
+<td>80</td>
+<td>0x50</td>
+<td>P</td>
+<td>大写字母P</td>
+</tr>
+<tr>
+<td>0101 0001</td>
+<td>121</td>
+<td>81</td>
+<td>0x51</td>
+<td>Q</td>
+<td>大写字母Q</td>
+</tr>
+<tr>
+<td>0101 0010</td>
+<td>122</td>
+<td>82</td>
+<td>0x52</td>
+<td>R</td>
+<td>大写字母R</td>
+</tr>
+<tr>
+<td>0101 0011</td>
+<td>123</td>
+<td>83</td>
+<td>0x53</td>
+<td>S</td>
+<td>大写字母S</td>
+</tr>
+<tr>
+<td>0101 0100</td>
+<td>124</td>
+<td>84</td>
+<td>0x54</td>
+<td>T</td>
+<td>大写字母T</td>
+</tr>
+<tr>
+<td>0101 0101</td>
+<td>125</td>
+<td>85</td>
+<td>0x55</td>
+<td>U</td>
+<td>大写字母U</td>
+</tr>
+<tr>
+<td>0101 0110</td>
+<td>126</td>
+<td>86</td>
+<td>0x56</td>
+<td>V</td>
+<td>大写字母V</td>
+</tr>
+<tr>
+<td>0101 0111</td>
+<td>127</td>
+<td>87</td>
+<td>0x57</td>
+<td>W</td>
+<td>大写字母W</td>
+</tr>
+<tr>
+<td>0101 1000</td>
+<td>130</td>
+<td>88</td>
+<td>0x58</td>
+<td>X</td>
+<td>大写字母X</td>
+</tr>
+<tr>
+<td>0101 1001</td>
+<td>131</td>
+<td>89</td>
+<td>0x59</td>
+<td>Y</td>
+<td>大写字母Y</td>
+</tr>
+<tr>
+<td>0101 1010</td>
+<td>132</td>
+<td>90</td>
+<td>0x5A</td>
+<td>Z</td>
+<td>大写字母Z</td>
+</tr>
+<tr>
+<td>0101 1011</td>
+<td>133</td>
+<td>91</td>
+<td>0x5B</td>
+<td>[</td>
+<td>开方括号</td>
+</tr>
+<tr>
+<td>0101 1100</td>
+<td>134</td>
+<td>92</td>
+<td>0x5C</td>
+<td>\</td>
+<td>反斜杠</td>
+</tr>
+<tr>
+<td>0101 1101</td>
+<td>135</td>
+<td>93</td>
+<td>0x5D</td>
+<td>]</td>
+<td>闭方括号</td>
+</tr>
+<tr>
+<td>0101 1110</td>
+<td>136</td>
+<td>94</td>
+<td>0x5E</td>
+<td>^</td>
+<td>脱字符</td>
+</tr>
+<tr>
+<td>0101 1111</td>
+<td>137</td>
+<td>95</td>
+<td>0x5F</td>
+<td>_</td>
+<td>下划线</td>
+</tr>
+<tr>
+<td>0110 0000</td>
+<td>140</td>
+<td>96</td>
+<td>0x60</td>
+<td>`</td>
+<td>开单引号</td>
+</tr>
+<tr>
+<td>0110 0001</td>
+<td>141</td>
+<td>97</td>
+<td>0x61</td>
+<td>a</td>
+<td>小写字母a</td>
+</tr>
+<tr>
+<td>0110 0010</td>
+<td>142</td>
+<td>98</td>
+<td>0x62</td>
+<td>b</td>
+<td>小写字母b</td>
+</tr>
+<tr>
+<td>0110 0011</td>
+<td>143</td>
+<td>99</td>
+<td>0x63</td>
+<td>c</td>
+<td>小写字母c</td>
+</tr>
+<tr>
+<td>0110 0100</td>
+<td>144</td>
+<td>100</td>
+<td>0x64</td>
+<td>d</td>
+<td>小写字母d</td>
+</tr>
+<tr>
+<td>0110 0101</td>
+<td>145</td>
+<td>101</td>
+<td>0x65</td>
+<td>e</td>
+<td>小写字母e</td>
+</tr>
+<tr>
+<td>0110 0110</td>
+<td>146</td>
+<td>102</td>
+<td>0x66</td>
+<td>f</td>
+<td>小写字母f</td>
+</tr>
+<tr>
+<td>0110 0111</td>
+<td>147</td>
+<td>103</td>
+<td>0x67</td>
+<td>g</td>
+<td>小写字母g</td>
+</tr>
+<tr>
+<td>0110 1000</td>
+<td>150</td>
+<td>104</td>
+<td>0x68</td>
+<td>h</td>
+<td>小写字母h</td>
+</tr>
+<tr>
+<td>0110 1001</td>
+<td>151</td>
+<td>105</td>
+<td>0x69</td>
+<td>i</td>
+<td>小写字母i</td>
+</tr>
+<tr>
+<td>0110 1010</td>
+<td>152</td>
+<td>106</td>
+<td>0x6A</td>
+<td>j</td>
+<td>小写字母j</td>
+</tr>
+<tr>
+<td>0110 1011</td>
+<td>153</td>
+<td>107</td>
+<td>0x6B</td>
+<td>k</td>
+<td>小写字母k</td>
+</tr>
+<tr>
+<td>0110 1100</td>
+<td>154</td>
+<td>108</td>
+<td>0x6C</td>
+<td>l</td>
+<td>小写字母l</td>
+</tr>
+<tr>
+<td>0110 1101</td>
+<td>155</td>
+<td>109</td>
+<td>0x6D</td>
+<td>m</td>
+<td>小写字母m</td>
+</tr>
+<tr>
+<td>0110 1110</td>
+<td>156</td>
+<td>110</td>
+<td>0x6E</td>
+<td>n</td>
+<td>小写字母n</td>
+</tr>
+<tr>
+<td>0110 1111</td>
+<td>157</td>
+<td>111</td>
+<td>0x6F</td>
+<td>o</td>
+<td>小写字母o</td>
+</tr>
+<tr>
+<td>0111 0000</td>
+<td>160</td>
+<td>112</td>
+<td>0x70</td>
+<td>p</td>
+<td>小写字母p</td>
+</tr>
+<tr>
+<td>0111 0001</td>
+<td>161</td>
+<td>113</td>
+<td>0x71</td>
+<td>q</td>
+<td>小写字母q</td>
+</tr>
+<tr>
+<td>0111 0010</td>
+<td>162</td>
+<td>114</td>
+<td>0x72</td>
+<td>r</td>
+<td>小写字母r</td>
+</tr>
+<tr>
+<td>0111 0011</td>
+<td>163</td>
+<td>115</td>
+<td>0x73</td>
+<td>s</td>
+<td>小写字母s</td>
+</tr>
+<tr>
+<td>0111 0100</td>
+<td>164</td>
+<td>116</td>
+<td>0x74</td>
+<td>t</td>
+<td>小写字母t</td>
+</tr>
+<tr>
+<td>0111 0101</td>
+<td>165</td>
+<td>117</td>
+<td>0x75</td>
+<td>u</td>
+<td>小写字母u</td>
+</tr>
+<tr>
+<td>0111 0110</td>
+<td>166</td>
+<td>118</td>
+<td>0x76</td>
+<td>v</td>
+<td>小写字母v</td>
+</tr>
+<tr>
+<td>0111 0111</td>
+<td>167</td>
+<td>119</td>
+<td>0x77</td>
+<td>w</td>
+<td>小写字母w</td>
+</tr>
+<tr>
+<td>0111 1000</td>
+<td>170</td>
+<td>120</td>
+<td>0x78</td>
+<td>x</td>
+<td>小写字母x</td>
+</tr>
+<tr>
+<td>0111 1001</td>
+<td>171</td>
+<td>121</td>
+<td>0x79</td>
+<td>y</td>
+<td>小写字母y</td>
+</tr>
+<tr>
+<td>0111 1010</td>
+<td>172</td>
+<td>122</td>
+<td>0x7A</td>
+<td>z</td>
+<td>小写字母z</td>
+</tr>
+<tr>
+<td>0111 1011</td>
+<td>173</td>
+<td>123</td>
+<td>0x7B</td>
+<td>{</td>
+<td>开花括号</td>
+</tr>
+<tr>
+<td>0111 1100</td>
+<td>174</td>
+<td>124</td>
+<td>0x7C</td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>0111 1101</td>
+<td>175</td>
+<td>125</td>
+<td>0x7D</td>
+<td>}</td>
+<td>闭花括号</td>
+</tr>
+<tr>
+<td>0111 1110</td>
+<td>176</td>
+<td>126</td>
+<td>0x7E</td>
+<td>~</td>
+<td>波浪号</td>
+</tr>
+</tbody></table>
+<h2 id="ISO-8859-1"><a href="#ISO-8859-1" class="headerlink" title="ISO-8859-1"></a>ISO-8859-1</h2><p>ISO-8859-1是单字节编码，向下兼容ASCII码。</p>
+<h3 id="编码范围"><a href="#编码范围" class="headerlink" title="编码范围"></a>编码范围</h3><p>其编码范围是0x00-0xFF，0x00-0x7F之间完全和ASCII一致，0x80-0x9F之间是控制字符，0xA0-0xFF之间是文字符号。</p>
+<h2 id="GB2312"><a href="#GB2312" class="headerlink" title="GB2312"></a>GB2312</h2><p>它的全称是《信息交换用汉字编码字符集基本集》，向下兼容ASCII码。</p>
+<h3 id="字节结构（区位码-区字节-位字节）"><a href="#字节结构（区位码-区字节-位字节）" class="headerlink" title="字节结构（区位码 = 区字节 + 位字节）"></a>字节结构（区位码 = 区字节 + 位字节）</h3><p>它是双字节编码，每个汉字及符号用两个字节来表示。第一个字节称为“高位字节（也称区字节）”，第二个字节称为“低位字节（也称位字节）”</p>
+<h2 id="GBK"><a href="#GBK" class="headerlink" title="GBK"></a>GBK</h2><p>GBK全称《汉字内码扩展规范》（GBK即“国标”、“扩展”汉语拼音的第一个字母，英文名称：Chinese Internal Code Specification） ，中华人民共和国全国信息技术标准化技术委员会1995年12月1日制订，国家技术监督局标准化司、电子工业部科技与质量监督司1995年12月15日联合以技监标函1995 229号文件的形式，将它确定为技术规范指导性文件。这一版的GBK规范为1.0版。</p>
+<p>GBK 向下与 GB 2312 编码兼容，向上支持 ISO 10646.1国际标准，是前者向后者过渡过程中的一个承上启下的产物。</p>
+<h3 id="编码方式"><a href="#编码方式" class="headerlink" title="编码方式"></a>编码方式</h3><p>GBK 是采用单双字节变长编码，英文使用单字节，完成兼容ASCII码。中文部分采用双字节编码。</p>
+<h2 id="Unicode"><a href="#Unicode" class="headerlink" title="Unicode"></a>Unicode</h2><p>Unicode（统一码、万国码、单一码）是计算机科学领域里的一项业界标准，包括字符集、编码方案等。Unicode 是为了解决传统的字符编码方案的局限而产生的，它为每种语言中的每个字符设定了统一并且唯一的二进制编码，以满足跨语言、跨平台进行文本转换、处理的要求。1990年开始研发，1994年正式公布。</p>
+<h3 id="Unicode-平面"><a href="#Unicode-平面" class="headerlink" title="Unicode 平面"></a><a href="https://www.ibm.com/developerworks/cn/java/unicode-programming-language/index.html" target="_blank" rel="noopener">Unicode 平面</a></h3><p>Unicode 编码分为17个平面（plane），每个平面包含2^16 (即65536)个码位（Code Point）。共计17 * 65536 = 1114112 个码点。</p>
+<p><img src="https://gitee.com/cnkangym/BlogImageBed/raw/master/img/20200505153404.png" alt=""></p>
+<p><img src="https://gitee.com/cnkangym/BlogImageBed/raw/master/img/20200505151827.png" alt=""></p>
+<p>通用字符集（Universal Character Set, UCS）是由ISO制定的ISO 10646（或称ISO/IEC 10646）标准所定义的标准字符集。UCS-2用两个字节编码，UCS-4用4个字节编码。</p>
+<h3 id="Unicode-的实现方式"><a href="#Unicode-的实现方式" class="headerlink" title="Unicode 的实现方式"></a>Unicode 的实现方式</h3><p>Unicode 统一了所有字符的编码，是一个 Character Set，也就是字符集，字符集只是给所有字符一个编号，但没有规定如何存储。</p>
+<h4 id="UTF-8"><a href="#UTF-8" class="headerlink" title="UTF-8"></a>UTF-8</h4><p>UTF-8 最大的一个特点，就是它是一种变长的编码方式。它可以使用1~4个字节表示一个符号，根据不同的符号而变化字节长度。</p>
+<ul>
+<li><p>在UTF-8编码中，英文字符占一个字节，中文字符占用3个字节。</p>
+</li>
+<li><p>编码规则：</p>
+<table>
+<thead>
+<tr>
+<th>Unicode编码(十六进制)</th>
+<th>UTF-8 字节流(二进制)</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>000000-00007F</td>
+<td>0xxxxxxx</td>
+</tr>
+<tr>
+<td>000080-0007FF</td>
+<td>110xxxxx 10xxxxxx</td>
+</tr>
+<tr>
+<td>000800-00FFFF</td>
+<td>1110xxxx 10xxxxxx 10xxxxxx</td>
+</tr>
+<tr>
+<td>010000-10FFFF</td>
+<td>11110xxx 10xxxxxx 10xxxxxx 10xxxxxx</td>
+</tr>
+</tbody></table>
+<ul>
+<li><p>对于单字节符号，字节的第一位设为0，后面7位为这个符号的Unicode码。（因此，对于英文字母ASCII码和Unicode码是相同的）</p>
+</li>
+<li><p>对于n字节的符号（n &gt; 1），第一个字节的前n位都设为1，第n+1位都设为0，后面字节的前两位都设为10。剩下的没有提及的二进制位，全部用这个符号的Unicode码。</p>
+<p>  那么对于一个具体的 Unicode 编号，具体怎么进行 UTF-8 的编码呢？<br>首先找到该 Unicode 编号所在的编号范围，进而可以找到与之对应的二进制格式，然后将该 Unicode 编号转化为二进制数（去掉高位的 0），最后将该二进制数从右向左依次填入二进制格式的 X 中，如果还有 X 未填，则设为 0 。<br>比如：“马”的 Unicode 编号是：0x9A6C，整数编号是 39532，对应第三个范围（2048 - 65535），其格式为：1110XXXX 10XXXXXX 10XXXXXX，39532 对应的二进制是 1001 1010 0110 1100，将二进制填入进去就为：<br>11101001 10101001 10101100 。</p>
+</li>
+</ul>
+</li>
+</ul>
+<h4 id="UTF-16"><a href="#UTF-16" class="headerlink" title="UTF-16"></a>UTF-16</h4><p>用两个字节或四个字节表示一个字符。</p>
+<h4 id="UTF-32"><a href="#UTF-32" class="headerlink" title="UTF-32"></a>UTF-32</h4><p>一个字符用四个字节存储，也就是32位。</p>
+<h3 id="Unicode-中的BOM"><a href="#Unicode-中的BOM" class="headerlink" title="Unicode 中的BOM"></a>Unicode 中的BOM</h3><p>BOM是byte order mark的缩写，在UTF-16和UTF-32中需要使用BOM来区分字节的顺序，因为我们目前的CPU有两种系列，一种是大端模式，一种是小端模式（我们常用的电脑手机均是这种）。当我们在自己电脑上编写文件时可能并不会出现问题，但是如果我们在自己电脑（小端）上写了一个文件上传给服务器（大端）进行分析，就会出现问题，因此人们为了解决这个问题就在整个文本文件的最前面添加了一个叫BOM的东西，用来记录这个文件是用小端顺序存储的还是大端顺序存储的。这样以来不管这个文件传到哪里，只要按照BOM所记录的顺序来解析就不会出错。</p>
+<p>你可能会注意我们在上面仅提到了UTF-16和UTF-32，并没有提到UFT-8，这是因为UTF-8自己的编码方式决定了它不可能出现由字节顺序引起的问题，但是带有强迫症的微软公司，没错就是这个叫Microsoft的公司，莫名其妙在UTF-8这种编码的文件头也添加了BOM，这就导致后来的UTF-8编码的文件有带有BOM版和不带BOM版这两个版本，大部分高级编辑器默认保存的文件是不带BOM版，Microsoft自家的notpad默认保存的文件是带有BOM版的。UTF-8的BOM为”EF BB BF”，所以如果接受者收到”EF BB BF”开头的字节流，就知道就是UTF-8编码了。Windows就是使用BOM来标记文件的编码方式的。UTF-8编码的文件中，BOM占三个字节。</p>
+<h4 id="BOM方式-EF-BB-BF、LE、BE"><a href="#BOM方式-EF-BB-BF、LE、BE" class="headerlink" title="BOM方式(EF BB BF、LE、BE)"></a>BOM方式(EF BB BF、LE、BE)</h4><p>用来标记多字节编码文件的编码类型和字节顺序（big-endian或little- endian）。</p>
+<ul>
+<li><p>UTF-8</p>
+<ul>
+<li>EF BB BF</li>
+</ul>
+</li>
+<li><p>UTF-16</p>
+<ul>
+<li>LE: little-endian(小尾字节序列标)，十六进制表示为：FF FE</li>
+<li>BE: big-endian(大尾字节序列标)，十六进制表示为: FE FF</li>
+</ul>
+</li>
+<li><p>UTF-32</p>
+<ul>
+<li>LE: little-endian(小尾字节序列标)，十六进制表示为：FF FE 0000</li>
+<li>BE: big-endian(大尾字节序列标)，十六进制表示为: 0000 FE FF</li>
+</ul>
+</li>
+</ul>
+
+    </div>
+
+    
+    
+    <div>
+    
+        <div style="text-align:center;color: #ccc;font-size:14px;">
+        -------------本文结束 <i class="fa fa-paw"></i> 感谢您的阅读-------------
+        </div>
+    
+</div>
+        
+
+<div>
+<ul class="post-copyright">
+  <li class="post-copyright-author">
+    <strong>本文作者： </strong>dkk
+  </li>
+  <li class="post-copyright-link">
+    <strong>本文链接：</strong>
+    <a href="http://cnkangym.com/2020/05/05/codingbasic/%E5%AD%97%E7%AC%A6%E7%BC%96%E7%A0%81%E6%96%B9%E5%BC%8F/" title="字符编码方式">http://cnkangym.com/2020/05/05/codingbasic/字符编码方式/</a>
+  </li>
+  <li class="post-copyright-license">
+    <strong>版权声明： </strong>本博客所有文章除特别声明外，均采用 <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/zh-CN" rel="noopener" target="_blank"><i class="fab fa-fw fa-creative-commons"></i>BY-NC-SA</a> 许可协议。转载请注明出处！
+  </li>
+</ul>
+</div>
+
+
+      <footer class="post-footer">
+          
+          <div class="post-tags">
+              <a href="/tags/coding-basic/" rel="tag"><i class="fa fa-tag"></i> coding basic</a>
+          </div>
+
+        
+
+
+        
+    <div class="post-nav">
+      <div class="post-nav-item">
+    <a href="/2020/05/05/node/Node-%E5%BC%80%E5%8F%91%E7%8E%AF%E5%A2%83%E6%90%AD%E5%BB%BA%E5%8F%8A%E9%85%8D%E7%BD%AE/" rel="prev" title="Node 开发环境搭建及配置">
+      <i class="fa fa-chevron-left"></i> Node 开发环境搭建及配置
+    </a></div>
+      <div class="post-nav-item">
+    <a href="/2020/05/05/codingbasic/%E8%AE%A1%E7%AE%97%E6%9C%BA%E5%AD%97%E9%95%BF/" rel="next" title="计算机字长">
+      计算机字长 <i class="fa fa-chevron-right"></i>
+    </a></div>
+    </div>
+      </footer>
+    
+  </article>
+  
+  
+  
+
+
+
+          </div>
+          
+
+<script>
+  window.addEventListener('tabs:register', () => {
+    let { activeClass } = CONFIG.comments;
+    if (CONFIG.comments.storage) {
+      activeClass = localStorage.getItem('comments_active') || activeClass;
+    }
+    if (activeClass) {
+      let activeTab = document.querySelector(`a[href="#comment-${activeClass}"]`);
+      if (activeTab) {
+        activeTab.click();
+      }
+    }
+  });
+  if (CONFIG.comments.storage) {
+    window.addEventListener('tabs:click', event => {
+      if (!event.target.matches('.tabs-comment .tab-content .tab-pane')) return;
+      let commentClass = event.target.classList[1];
+      localStorage.setItem('comments_active', commentClass);
+    });
+  }
+</script>
+
+        </div>
+          
+  
+  <div class="toggle sidebar-toggle">
+    <span class="toggle-line toggle-line-first"></span>
+    <span class="toggle-line toggle-line-middle"></span>
+    <span class="toggle-line toggle-line-last"></span>
+  </div>
+
+  <aside class="sidebar">
+    <div class="sidebar-inner">
+
+      <ul class="sidebar-nav motion-element">
+        <li class="sidebar-nav-toc">
+          文章目录
+        </li>
+        <li class="sidebar-nav-overview">
+          站点概览
+        </li>
+      </ul>
+
+      <!--noindex-->
+      <div class="post-toc-wrap sidebar-panel">
+          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#字符编码方式"><span class="nav-number">1.</span> <span class="nav-text">字符编码方式</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#ASCII-码"><span class="nav-number">1.1.</span> <span class="nav-text">ASCII 码</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#表达方式"><span class="nav-number">1.1.1.</span> <span class="nav-text">表达方式</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#编码标准表"><span class="nav-number">1.1.2.</span> <span class="nav-text">编码标准表</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#控制字符-0-31及127"><span class="nav-number">1.1.2.1.</span> <span class="nav-text">控制字符(0~31及127)</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#显示字符-32-126"><span class="nav-number">1.1.2.2.</span> <span class="nav-text">显示字符(32~126)</span></a></li></ol></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#ISO-8859-1"><span class="nav-number">1.2.</span> <span class="nav-text">ISO-8859-1</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#编码范围"><span class="nav-number">1.2.1.</span> <span class="nav-text">编码范围</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#GB2312"><span class="nav-number">1.3.</span> <span class="nav-text">GB2312</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#字节结构（区位码-区字节-位字节）"><span class="nav-number">1.3.1.</span> <span class="nav-text">字节结构（区位码 &#x3D; 区字节 + 位字节）</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#GBK"><span class="nav-number">1.4.</span> <span class="nav-text">GBK</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#编码方式"><span class="nav-number">1.4.1.</span> <span class="nav-text">编码方式</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Unicode"><span class="nav-number">1.5.</span> <span class="nav-text">Unicode</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#Unicode-平面"><span class="nav-number">1.5.1.</span> <span class="nav-text">Unicode 平面</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Unicode-的实现方式"><span class="nav-number">1.5.2.</span> <span class="nav-text">Unicode 的实现方式</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#UTF-8"><span class="nav-number">1.5.2.1.</span> <span class="nav-text">UTF-8</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#UTF-16"><span class="nav-number">1.5.2.2.</span> <span class="nav-text">UTF-16</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#UTF-32"><span class="nav-number">1.5.2.3.</span> <span class="nav-text">UTF-32</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Unicode-中的BOM"><span class="nav-number">1.5.3.</span> <span class="nav-text">Unicode 中的BOM</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#BOM方式-EF-BB-BF、LE、BE"><span class="nav-number">1.5.3.1.</span> <span class="nav-text">BOM方式(EF BB BF、LE、BE)</span></a></li></ol></li></ol></li></ol></li></ol></div>
+      </div>
+      <!--/noindex-->
+
+      <div class="site-overview-wrap sidebar-panel">
+        <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+    <img class="site-author-image" itemprop="image" alt="dkk"
+      src="/images/dkk.jpg">
+  <p class="site-author-name" itemprop="name">dkk</p>
+  <div class="site-description" itemprop="description"></div>
+</div>
+<div class="site-state-wrap motion-element">
+  <nav class="site-state">
+      <div class="site-state-item site-state-posts">
+          <a href="/archives/">
+        
+          <span class="site-state-item-count">21</span>
+          <span class="site-state-item-name">日志</span>
+        </a>
+      </div>
+      <div class="site-state-item site-state-categories">
+            <a href="/categories/">
+          
+        <span class="site-state-item-count">7</span>
+        <span class="site-state-item-name">分类</span></a>
+      </div>
+      <div class="site-state-item site-state-tags">
+            <a href="/tags/">
+          
+        <span class="site-state-item-count">6</span>
+        <span class="site-state-item-name">标签</span></a>
+      </div>
+  </nav>
+</div>
+  <div class="links-of-author motion-element">
+      <span class="links-of-author-item">
+        <a href="https://github.com/cnkangym" title="GitHub → https:&#x2F;&#x2F;github.com&#x2F;cnkangym" rel="noopener" target="_blank"><i class="fab fa-github fa-fw"></i>GitHub</a>
+      </span>
+      <span class="links-of-author-item">
+        <a href="mailto:cnkangym@gmail.com" title="E-Mail → mailto:cnkangym@gmail.com" rel="noopener" target="_blank"><i class="fa fa-envelope fa-fw"></i>E-Mail</a>
+      </span>
+  </div>
+  <div class="cc-license motion-element" itemprop="license">
+    <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/zh-CN" class="cc-opacity" rel="noopener" target="_blank"><img src="/images/cc-by-nc-sa.svg" alt="Creative Commons"></a>
+  </div>
+
+
+
+      </div>
+        <div class="back-to-top motion-element">
+          <i class="fa fa-arrow-up"></i>
+          <span>0%</span>
+        </div>
+
+    </div>
+  </aside>
+  <div id="sidebar-dimmer"></div>
+
+
+      </div>
+    </main>
+
+    <footer class="footer">
+      <div class="footer-inner">
+        
+
+        
+
+<div class="copyright">
+  
+  &copy; 2019 – 
+  <span itemprop="copyrightYear">2020</span>
+  <span class="with-love">
+    <i class="fa fa-heart"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">dkk</span>
+    <span class="post-meta-divider">|</span>
+    <span class="post-meta-item-icon">
+      <i class="fa fa-chart-area"></i>
+    </span>
+      <span class="post-meta-item-text">站点总字数：</span>
+    <span title="站点总字数">46k</span>
+    <span class="post-meta-divider">|</span>
+    <span class="post-meta-item-icon">
+      <i class="fa fa-coffee"></i>
+    </span>
+      <span class="post-meta-item-text">站点阅读时长 &asymp;</span>
+    <span title="站点阅读时长">41 分钟</span>
+</div>
+
+        
+<div class="busuanzi-count">
+  <script data-pjax async src="https://busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+    <span class="post-meta-item" id="busuanzi_container_site_uv" style="display: none;">
+      <span class="post-meta-item-icon">
+        <i class="fa fa-user"></i>
+      </span>
+      <span class="site-uv" title="总访客量">
+        <span id="busuanzi_value_site_uv"></span>
+      </span>
+    </span>
+    <span class="post-meta-divider">|</span>
+    <span class="post-meta-item" id="busuanzi_container_site_pv" style="display: none;">
+      <span class="post-meta-item-icon">
+        <i class="fa fa-eye"></i>
+      </span>
+      <span class="site-pv" title="总访问量">
+        <span id="busuanzi_value_site_pv"></span>
+      </span>
+    </span>
+</div>
+
+
+
+
+
+
+
+
+      </div>
+    </footer>
+  </div>
+
+  
+  <script src="/lib/anime.min.js"></script>
+  <script src="/lib/pjax/pjax.min.js"></script>
+  <script src="/lib/velocity/velocity.min.js"></script>
+  <script src="/lib/velocity/velocity.ui.min.js"></script>
+
+<script src="/js/utils.js"></script>
+
+<script src="/js/motion.js"></script>
+
+
+<script src="/js/schemes/pisces.js"></script>
+
+
+<script src="/js/next-boot.js"></script>
+
+  <script>
+var pjax = new Pjax({
+  selectors: [
+    'head title',
+    '#page-configurations',
+    '.content-wrap',
+    '.post-toc-wrap',
+    '.languages',
+    '#pjax'
+  ],
+  switches: {
+    '.post-toc-wrap': Pjax.switches.innerHTML
+  },
+  analytics: false,
+  cacheBust: false,
+  scrollTo : !CONFIG.bookmark.enable
+});
+
+window.addEventListener('pjax:success', () => {
+  document.querySelectorAll('script[data-pjax], script#page-configurations, #pjax script').forEach(element => {
+    var code = element.text || element.textContent || element.innerHTML || '';
+    var parent = element.parentNode;
+    parent.removeChild(element);
+    var script = document.createElement('script');
+    if (element.id) {
+      script.id = element.id;
+    }
+    if (element.className) {
+      script.className = element.className;
+    }
+    if (element.type) {
+      script.type = element.type;
+    }
+    if (element.src) {
+      script.src = element.src;
+      // Force synchronous loading of peripheral JS.
+      script.async = false;
+    }
+    if (element.dataset.pjax !== undefined) {
+      script.dataset.pjax = '';
+    }
+    if (code !== '') {
+      script.appendChild(document.createTextNode(code));
+    }
+    parent.appendChild(script);
+  });
+  NexT.boot.refresh();
+  // Define Motion Sequence & Bootstrap Motion.
+  if (CONFIG.motion.enable) {
+    NexT.motion.integrator
+      .init()
+      .add(NexT.motion.middleWares.subMenu)
+      .add(NexT.motion.middleWares.postList)
+      .bootstrap();
+  }
+  NexT.utils.updateSidebarPosition();
+});
+</script>
+
+
+  <script defer src="/lib/three/three.min.js"></script>
+    <script defer src="/lib/three/canvas_lines.min.js"></script>
+
+
+  
+
+
+
+
+  
+<script src="/js/local-search.js"></script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+    <div id="pjax">
+  
+
+  
+  <script src="//cdn.jsdelivr.net/npm/quicklink@1/dist/quicklink.umd.js"></script>
+  <script>
+      window.addEventListener('load', () => {
+      quicklink({
+        timeout : 3000,
+        priority: true,
+        ignores : [uri => uri.includes('#'),uri => uri === 'http://cnkangym.com/2020/05/05/codingbasic/%E5%AD%97%E7%AC%A6%E7%BC%96%E7%A0%81%E6%96%B9%E5%BC%8F/',]
+      });
+      });
+  </script>
+
+    </div>
+</body>
+</html>
